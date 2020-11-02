@@ -13,7 +13,7 @@ namespace MyLaptopShop.Data.Models
     /// <summary>
     /// This the Model class of the Brands.
     /// </summary>
-    [Table("Laptop")]
+    [Table("Laptops")]
     public class Laptop
     {
         /// <summary>
@@ -44,21 +44,38 @@ namespace MyLaptopShop.Data.Models
         /// Gets or sets the ID of the laptos brand, it's a foreignkey.
         /// </summary>
         [ForeignKey(nameof(Brand))]
+        [Required]
         public int BrandId { get; set; }
 
         /// <summary>
         /// Gets or sets the Name of a instance laptop.
         /// </summary>
+        [Required]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the release Year of a instance laptop.
         /// </summary>
+        [Required]
         public int ReleaseYear { get; set; }
 
         /// <summary>
         /// Gets or sets the base price of a instance laptop.
         /// </summary>
+        [Required]
         public int BasePrice { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the brand of the laptop, not mapped poroperty.
+        /// </summary>
+        [NotMapped]
+        public virtual Brand Brand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the specifications of the laptop, not mapped poroperty.
+        /// </summary>
+        [NotMapped]
+        public virtual ICollection<Specification> Specifications { get; set; }
     }
 }
