@@ -13,7 +13,7 @@ namespace MyLaptopShop.Data.Models
     /// <summary>
     /// This is the Model class of the specifications.
     /// </summary>
-    [Table("Specification")]
+    [Table("Specifications")]
     public class Specification
     {
         /// <summary>
@@ -53,26 +53,40 @@ namespace MyLaptopShop.Data.Models
         /// <summary>
         /// Gets or sets the name of the specification.
         /// </summary>
+        [Required]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the CPU.
         /// </summary>
+        [Required]
+        [MaxLength(100)]
         public string CPU { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the graphicscard.
         /// </summary>
+        [Required]
+        [MaxLength(100)]
         public string GraphicsCardName { get; set; }
 
         /// <summary>
         /// Gets or sets the multiplicity GigaByte of RAM.
         /// </summary>
+        [Required]
         public int RAMCapacity { get; set; }
 
         /// <summary>
         /// Gets or sets the additonac price of the specification.
         /// </summary>
+        [Required]
         public int Price { get; set; }
+
+        /// <summary>
+        /// Gets or sets the laptop of the specification, not mapped poroperty.
+        /// </summary>
+        [NotMapped]
+        public virtual Laptop Laptop { get; set; }
     }
 }
