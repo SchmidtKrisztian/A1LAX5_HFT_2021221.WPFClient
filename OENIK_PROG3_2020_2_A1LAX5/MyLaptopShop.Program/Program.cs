@@ -13,7 +13,8 @@ namespace MyLaptopShop.Program
     {
         private static void Main()
         {
-            Console.WriteLine("asd");
+            string a = "^^";
+            Console.WriteLine(a);
             Console.ReadLine();
         }
     }
