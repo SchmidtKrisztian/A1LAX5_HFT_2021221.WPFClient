@@ -14,7 +14,7 @@ namespace MyLaptopShop.Data.Models
     /// <summary>
     /// This is the Model class of the Brands.
     /// </summary>
-    [Table("Brand")]
+    [Table("Brands")]
     public class Brand
     {
         /// <summary>
@@ -44,21 +44,34 @@ namespace MyLaptopShop.Data.Models
         /// <summary>
         /// Gets or sets the name of the brand.
         /// </summary>
+        [Required]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the foundations yers of the brand.
         /// </summary>
+        [Required]
         public int FoundationYear { get; set; }
 
         /// <summary>
         /// Gets or sets the place of the brands headquarters.
         /// </summary>
+        [Required]
+        [MaxLength(100)]
         public string Headquarters { get; set; }
 
         /// <summary>
         /// Gets or Sets the name of the brands CEO.
         /// </summary>
+        [Required]
+        [MaxLength(100)]
         public string CEOName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the laptops of the brand, not mapped poroperty.
+        /// </summary>
+        [NotMapped]
+        public virtual ICollection<Laptop> Laptops { get; set; }
     }
 }
