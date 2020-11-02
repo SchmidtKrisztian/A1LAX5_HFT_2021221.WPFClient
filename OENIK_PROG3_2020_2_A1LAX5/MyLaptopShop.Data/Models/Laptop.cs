@@ -13,6 +13,7 @@ namespace MyLaptopShop.Data.Models
     /// <summary>
     /// This the Model class of the Brands.
     /// </summary>
+    [Table("Laptop")]
     public class Laptop
     {
         /// <summary>
