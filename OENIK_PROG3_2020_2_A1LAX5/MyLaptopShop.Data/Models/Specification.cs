@@ -9,6 +9,7 @@ namespace MyLaptopShop.Data.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
+
     /// <summary>
     /// This is the Model class of the specifications.
     /// </summary>
