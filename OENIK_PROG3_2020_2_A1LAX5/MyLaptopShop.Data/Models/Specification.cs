@@ -26,14 +26,14 @@ namespace MyLaptopShop.Data.Models
         /// <param name="graphicsCardName">The name of the graphicscard, that the specification includes.</param>
         /// <param name="ramcapacity">This is how many Gigabyte RAM, the specification has.</param>
         /// <param name="price">This is the additional price of the specification.</param>
-        public Specification(int id, int laptopId, string name, string cpu, string graphicsCardName, int ramcapacity, int price)
+        public Specification(int id, int laptopId, string name, string cpu, string graphicsCardName, int ram, int price)
         {
             this.Id = id;
             this.LaptopId = laptopId;
             this.Name = name;
             this.CPU = cpu;
             this.GraphicsCardName = graphicsCardName;
-            this.RAMCapacity = ramcapacity;
+            this.RAM = ram;
             this.Price = price;
         }
 
@@ -75,7 +75,7 @@ namespace MyLaptopShop.Data.Models
         /// Gets or sets the multiplicity GigaByte of RAM.
         /// </summary>
         [Required]
-        public int RAMCapacity { get; set; }
+        public int RAM { get; set; }
 
         /// <summary>
         /// Gets or sets the additonac price of the specification.
