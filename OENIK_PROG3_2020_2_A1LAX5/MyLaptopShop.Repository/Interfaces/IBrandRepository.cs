@@ -1,10 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// <copyright file="IBrandRepository.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MyLaptopShop.Repository.Interfaces
 {
-    interface IBrandRepository
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using MyLaptopShop.Data.Models;
+
+    /// <summary>
+    /// This is the interface of the BrandRepository.
+    /// </summary>
+    public interface IBrandRepository : IRepository<Brand>
     {
+        /// <summary>
+        /// Method signature, you can change the Name of a brand with it.
+        /// </summary>
+        /// <param name="id">Int, the brand with this ID, will have his name changed.</param>
+        /// <param name="name">String, the new name of a Brand.</param>
+        void ChangeName(int id, string name);
+
+        /// <summary>
+        /// Method signature, you can change the brands year of foundation.
+        /// </summary>
+        /// <param name="id">Int, the brand with this ID, will have his foundation year changed.</param>
+        /// <param name="year">Int, this will me the new foundation year.</param>
+        void ChangeFoundationYear(int id, int year);
+
+        /// <summary>
+        /// Method signature, you can change the brands headquarters place.
+        /// </summary>
+        /// <param name="id">Int, the brand headquarters with this id, will be changed.</param>
+        /// <param name="headquarters">String, this wis the new Headquarters.</param>
+        void ChangeHeadguarters(int id, string headquarters);
+
+        /// <summary>
+        /// Method signature, you can change the brands CEOs name.
+        /// </summary>
+        /// <param name="id">Int, the brand with this ID, will have his CEOs name changed.</param>
+        /// <param name="ceoname">String, the new CEO Name.</param>
+        void ChangeCEOName(int id, string ceoname);
     }
 }
