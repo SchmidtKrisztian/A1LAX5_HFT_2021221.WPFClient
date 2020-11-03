@@ -19,8 +19,4 @@
     <ProjectReference Include="..\MyLaptopShop.Data\MyLaptopShop.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
-
 </Project>
