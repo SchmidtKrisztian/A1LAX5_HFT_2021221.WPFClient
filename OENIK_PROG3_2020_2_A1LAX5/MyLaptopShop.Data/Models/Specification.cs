@@ -34,7 +34,7 @@ namespace MyLaptopShop.Data.Models
             this.CPU = cpu;
             this.GraphicsCardName = graphicsCardName;
             this.RAM = ram;
-            this.Price = price;
+            this.AdditionalPrice = price;
         }
 
         /// <summary>
@@ -78,10 +78,10 @@ namespace MyLaptopShop.Data.Models
         public int RAM { get; set; }
 
         /// <summary>
-        /// Gets or sets the additonac price of the specification.
+        /// Gets or sets the additonal price of the specification.
         /// </summary>
         [Required]
-        public int Price { get; set; }
+        public int AdditionalPrice { get; set; }
 
         /// <summary>
         /// Gets or sets the laptop of the specification, not mapped poroperty.
