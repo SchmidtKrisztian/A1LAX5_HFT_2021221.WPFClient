@@ -20,7 +20,7 @@ namespace MyLaptopShop.Repository.Classes
         /// <summary>
         /// DbContext field.
         /// </summary>
-        private DbContext ctx;
+        protected DbContext ctx;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Repository{T}"/> class.
@@ -61,10 +61,13 @@ namespace MyLaptopShop.Repository.Classes
         }
 
         /// <summary>
-        /// Abstract Function (not implemented here), you can get the instance which belong to the parameter ID.
+        /// Function, you can get the instance which belong to the parameter ID.
         /// </summary>
         /// <param name="id">We want the instance of this ID.</param>
         /// <returns>The instance with the parameter ID.</returns>
-        public abstract T GetOne(int id);
+        public T GetOne(int id)
+        {
+            return this.ctx.Find(typeof(T), id) as T;
+        }
     }
 }
