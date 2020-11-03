@@ -25,8 +25,8 @@ namespace MyLaptopShop.Repository.Interfaces
         /// Method signature, you can change the relese year of a laptop with it.
         /// </summary>
         /// <param name="id">Int, the laptop with this ID, will have his release year changed.</param>
-        /// <param name="newreleaseyear">int, the new release year of a Brand.</param>
-        void ChangeReleaseYear(int id, string newreleaseyear);
+        /// <param name="newreleaseyear">Int, the new release year of a Brand.</param>
+        void ChangeReleaseYear(int id, int newreleaseyear);
 
         /// <summary>
         /// Method signature, you can change the base price of a laptop with it.
