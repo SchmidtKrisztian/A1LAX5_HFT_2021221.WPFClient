@@ -6,6 +6,7 @@ namespace MyLaptopShop.Logic.Classes
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using MyLaptopShop.Data.Models;
     using MyLaptopShop.Logic.Interfaces;
@@ -36,38 +37,45 @@ namespace MyLaptopShop.Logic.Classes
         /// <summary>
         /// Add a new brand to the DB.
         /// </summary>
+        /// <param name="id">New ID.</param>
         /// <param name="name">Name of the brand.</param>
         /// <param name="foundationyear">Year of foundation.</param>
         /// <param name="headquarters">Headquarters place.</param>
         /// <param name="ceoname">Name of the companys CEO.</param>
-        public void AddBrand(string name, int foundationyear, string headquarters, string ceoname)
+        public void AddBrand(int id, string name, int foundationyear, string headquarters, string ceoname)
         {
-            throw new NotImplementedException();
+            Brand tmp = new Brand(id, name, foundationyear, headquarters, ceoname);
+            this.brandrepo.Add(tmp);
         }
 
         /// <summary>
         /// Add a new laptop to the DB.
         /// </summary>
+        /// <param name="id">Id of the laptop.</param>
         /// <param name="brandid">ID of the laptops brand.</param>
         /// <param name="name">Name of the laptop.</param>
         /// <param name="releaseyear">The year when the laptop was released.</param>
         /// <param name="baseprice">Base price.</param>
-        public void AddLaptop(int brandid, string name, int releaseyear, int baseprice)
+        public void AddLaptop(int id, int brandid, string name, int releaseyear, int baseprice)
         {
-            throw new NotImplementedException();
+            Laptop tmp = new Laptop(id, brandid, name, releaseyear, baseprice);
+            this.laptoprepo.Add(tmp);
         }
 
         /// <summary>
         /// Add a new specification to the DB.
         /// </summary>
+        /// <param name="id">Id of the specification.</param>
         /// <param name="laptopid">The id of the laptop witch has the specification.</param>
         /// <param name="name">Name of the specification.</param>
         /// <param name="cpu">Name of the cpu.</param>
         /// <param name="graphicscard">Nem of the Graphicscard.</param>
         /// <param name="ram">Gb of RAM.</param>
-        public void AddSpec(int laptopid, string name, string cpu, string graphicscard, int ram)
+        /// <param name="price">Additional price of the specification.</param>
+        public void AddSpec(int id, int laptopid, string name, string cpu, string graphicscard, int ram, int price)
         {
-            throw new NotImplementedException();
+            Specification tmp = new Specification(id, laptopid, name, cpu, graphicscard, ram, price);
+            this.specrepo.Add(tmp);
         }
 
         /// <summary>
@@ -76,7 +84,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="id">ID of the brand we want to delete.</param>
         public void DeleteBrand(int id)
         {
-            throw new NotImplementedException();
+            this.brandrepo.Delete(id);
         }
 
         /// <summary>
@@ -85,7 +93,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="id">ID of the laptop we want to delete.</param>
         public void DeleteLaptop(int id)
         {
-            throw new NotImplementedException();
+            this.laptoprepo.Delete(id);
         }
 
         /// <summary>
@@ -94,7 +102,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="id">ID of the laptop we want to delete.</param>
         public void DeleteSpec(int id)
         {
-            throw new NotImplementedException();
+            this.specrepo.Delete(id);
         }
 
         /// <summary>
@@ -104,7 +112,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>The instance with the parameter ID.</returns>
         public Brand BrandGetOne(int id)
         {
-            throw new NotImplementedException();
+            return this.brandrepo.GetOne(id);
         }
 
         /// <summary>
@@ -114,7 +122,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>The instance with the parameter ID.</returns>
         public Laptop LaptopGetOne(int id)
         {
-            throw new NotImplementedException();
+            return this.laptoprepo.GetOne(id);
         }
 
         /// <summary>
@@ -124,17 +132,18 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>The instance with the parameter ID.</returns>
         public Specification SpecGetOne(int id)
         {
-            throw new NotImplementedException();
+            return this.specrepo.GetOne(id);
         }
 
         /// <summary>
         /// Updating a brands parameters.
         /// </summary>
+        /// <param name="id">Id of the brand.</param>
         /// <param name="name">New name of the brand.</param>
         /// <param name="foundationyear">New year of foundation of the brand.</param>
         /// <param name="headquarters">New headquarters of the brand.</param>
         /// <param name="ceoname">New name of the brands CEO.</param>
-        public void BrandUpdate(string name, int foundationyear, string headquarters, string ceoname)
+        public void BrandUpdate(int id, string name, int foundationyear, string headquarters, string ceoname)
         {
             throw new NotImplementedException();
         }
@@ -142,11 +151,12 @@ namespace MyLaptopShop.Logic.Classes
         /// <summary>
         /// Updating a laptops parameters.
         /// </summary>
+        /// <param name="id">Id of the laptop.</param>
         /// <param name="brandid">The ID of the laptops brand.</param>
         /// <param name="name">The new name of the laptop.</param>
         /// <param name="releaseyear">The new year of the laptops release.</param>
         /// <param name="baseprice">The new price of the laptop.</param>
-        public void LaptopUpdate(int brandid, string name, int releaseyear, int baseprice)
+        public void LaptopUpdate(int id, int brandid, string name, int releaseyear, int baseprice)
         {
             throw new NotImplementedException();
         }
@@ -154,12 +164,14 @@ namespace MyLaptopShop.Logic.Classes
         /// <summary>
         /// Updating a specification parameters.
         /// </summary>
+        /// <param name="id">Id of the specification.</param>
         /// <param name="laptopid">Id of the specifications laptop.</param>
         /// <param name="name">New name of the specification.</param>
         /// <param name="cpu">New CPUs name.</param>
         /// <param name="graphicscard">New nameof the graphicscard.</param>
         /// <param name="ram">New Gb of RAMs.</param>
-        public void SpecUpdate(int laptopid, string name, string cpu, string graphicscard, int ram)
+        /// <param name="price">Additional price of the specification.</param>
+        public void SpecUpdate(int id, int laptopid, string name, string cpu, string graphicscard, int ram, int price)
         {
             throw new NotImplementedException();
         }
@@ -170,7 +182,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>List of all brands.</returns>
         public IList<Brand> GetAllBrand()
         {
-            throw new NotImplementedException();
+            return this.brandrepo.GetAll().ToList();
         }
 
         /// <summary>
@@ -179,7 +191,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>List of all laptops.</returns>
         public IList<Laptop> GetAllLaptop()
         {
-            throw new NotImplementedException();
+            return this.laptoprepo.GetAll().ToList();
         }
 
         /// <summary>
@@ -188,7 +200,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>List of all specifications.</returns>
         public IList<Specification> GetAllSpec()
         {
-            throw new NotImplementedException();
+            return this.specrepo.GetAll().ToList();
         }
 
         /// <summary>
