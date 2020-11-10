@@ -11,7 +11,7 @@ ConsoleApp Funkciólista
 -Márka listázása/ hozzáadás /módosítás/ törlés
 -Laptop listázása/ hozzáadása/ módosítása/ törlése
 -Specifikáció listázása/ hozzáadása/ módósítása/ törlése
--Legyen lehetőség kilistázni, hogy egy adott országban hány féle laptopot gyártottak
--Legyen lehetőség kiírni egy laptom modell és a hozzá választott specifikáció árát
+-Legyen lehetőség kilistázni, hogy egy adott országban hány laptopot gyártottak
 -Legyen lehetőség kiírni a laptopokhoz tartozó specifikációk átlag árát
+-Legyen lehetőség kilistázni hogy egy adott laptop teljes árát egy választott specifikációval.
 
