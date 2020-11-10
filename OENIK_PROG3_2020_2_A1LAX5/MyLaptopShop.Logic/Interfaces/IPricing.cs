@@ -14,27 +14,23 @@ namespace MyLaptopShop.Logic.Interfaces
     public interface IPricing
     {
         /// <summary>
-        /// Constructor of the brand name.
+        /// Gets or sets the brand name.
         /// </summary>
-        /// <returns>Get,Set.</returns>
-        string Brand();
+        string Brand { get; set; }
 
         /// <summary>
-        /// Constructor of the laptop name.
+        /// Gets or sets the laptops name.
         /// </summary>
-        /// <returns>Get,Set.</returns>
-        string Laptopname();
+        string Laptopname { get; set; }
 
         /// <summary>
-        /// Constructor of the specification name.
+        /// Gets or sets the specification name.
         /// </summary>
-        /// <returns>Get,Set.</returns>
-        string Specname();
+        string Specname { get; set; }
 
         /// <summary>
-        /// Constructor of the fullprice.
+        /// Gets or sets the full price.
         /// </summary>
-        /// <returns>Gets,Sets.</returns>
-        int Fullprice();
+        int Fullprice { get; set; }
     }
 }
