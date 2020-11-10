@@ -35,7 +35,7 @@ namespace MyLaptopShop.Logic.Interfaces
         void AddLaptop(int brandid, string name, int releaseyear, int baseprice);
 
         /// <summary>
-        /// Add a new specification.
+        /// Add a new specification to the DB.
         /// </summary>
         /// <param name="laptopid">The id of the laptop witch has the specification.</param>
         /// <param name="name">Name of the specification.</param>
