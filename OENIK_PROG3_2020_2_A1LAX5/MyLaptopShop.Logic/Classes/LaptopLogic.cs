@@ -10,6 +10,7 @@ namespace MyLaptopShop.Logic.Classes
     using System.Text;
     using MyLaptopShop.Data.Models;
     using MyLaptopShop.Logic.Interfaces;
+    using MyLaptopShop.Repository.Classes;
     using MyLaptopShop.Repository.Interfaces;
 
     /// <summary>
