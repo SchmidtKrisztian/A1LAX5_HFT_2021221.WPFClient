@@ -116,20 +116,24 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="ceoname">New name of the brands CEO.</param>
         public void BrandUpdate(int id, string name, int foundationyear, string headquarters, string ceoname)
         {
-            throw new NotImplementedException();
+            this.brandrepo.ChangeName(id, name);
+            this.brandrepo.ChangeFoundationYear(id, foundationyear);
+            this.brandrepo.ChangeHeadguarters(id, headquarters);
+            this.brandrepo.ChangeCEOName(id, ceoname);
         }
 
         /// <summary>
         /// Updating a laptops parameters.
         /// </summary>
         /// <param name="id">Id of the laptop.</param>
-        /// <param name="brandid">The ID of the laptops brand.</param>
         /// <param name="name">The new name of the laptop.</param>
         /// <param name="releaseyear">The new year of the laptops release.</param>
         /// <param name="baseprice">The new price of the laptop.</param>
-        public void LaptopUpdate(int id, int brandid, string name, int releaseyear, int baseprice)
+        public void LaptopUpdate(int id, string name, int releaseyear, int baseprice)
         {
-            throw new NotImplementedException();
+            this.laptoprepo.ChangeName(id, name);
+            this.laptoprepo.ChangeReleaseYear(id, releaseyear);
+            this.laptoprepo.ChangeBasePrice(id, baseprice);
         }
 
         /// <summary>
@@ -142,9 +146,13 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="graphicscard">New nameof the graphicscard.</param>
         /// <param name="ram">New Gb of RAMs.</param>
         /// <param name="price">Additional price of the specification.</param>
-        public void SpecUpdate(int id, int laptopid, string name, string cpu, string graphicscard, int ram, int price)
+        public void SpecUpdate(int id, string name, string cpu, string graphicscard, int ram, int price)
         {
-            throw new NotImplementedException();
+            this.specrepo.ChangeName(id, name);
+            this.specrepo.ChangeCPU(id, cpu);
+            this.specrepo.ChangeGraphicsCard(id, graphicscard);
+            this.specrepo.ChangeRAM(id, ram);
+            this.specrepo.ChangeAdditionalPrice(id, price);
         }
     }
 }

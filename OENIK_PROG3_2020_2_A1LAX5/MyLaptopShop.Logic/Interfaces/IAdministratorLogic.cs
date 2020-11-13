@@ -79,22 +79,20 @@ namespace MyLaptopShop.Logic.Interfaces
         /// Updating a laptops parameters.
         /// </summary>
         /// <param name="id">Id of the laptop.</param>
-        /// <param name="brandid">The ID of the laptops brand.</param>
         /// <param name="name">The new name of the laptop.</param>
         /// <param name="releaseyear">The new year of the laptops release.</param>
         /// <param name="baseprice">The new price of the laptop.</param>
-        void LaptopUpdate(int id, int brandid, string name, int releaseyear, int baseprice);
+        void LaptopUpdate(int id, string name, int releaseyear, int baseprice);
 
         /// <summary>
         /// Updating a specification parameters.
         /// </summary>
         /// <param name="id">Id of the specification.</param>
-        /// <param name="laptopid">Id of the specifications laptop.</param>
         /// <param name="name">New name of the specification.</param>
         /// <param name="cpu">New CPUs name.</param>
         /// <param name="graphicscard">New nameof the graphicscard.</param>
         /// <param name="ram">New Gb of RAMs.</param>
         /// <param name="price">Additional price of the specification.</param>
-        void SpecUpdate(int id, int laptopid, string name, string cpu, string graphicscard, int ram, int price);
+        void SpecUpdate(int id, string name, string cpu, string graphicscard, int ram, int price);
     }
 }
