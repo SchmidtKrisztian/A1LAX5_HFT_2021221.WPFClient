@@ -55,183 +55,231 @@ namespace MyLaptopShop.Program
         }
 
         private static void ListAllBrands(UserLogic userlogic)
-            {
-                Console.WriteLine("<< ALL BRANDS >>");
-                userlogic.GetAllBrand()
-                    .ToList()
-                    .ForEach(x => Console.WriteLine(x.ToString()));
-                Console.ReadLine();
-            }
+        {
+            Console.WriteLine("<< ALL BRANDS >>");
+            userlogic.GetAllBrand()
+                .ToList()
+                .ForEach(x => Console.WriteLine(x.ToString()));
+            Console.ReadKey();
+        }
 
         private static void ListAllLaptops(UserLogic userlogic)
-            {
-                Console.WriteLine("<< ALL LAPTOPS >>");
-                userlogic.GetAllLaptop()
-                    .ToList()
-                    .ForEach(x => Console.WriteLine(x.ToString()));
-            }
+        {
+            Console.WriteLine("<< ALL LAPTOPS >>");
+            userlogic.GetAllLaptop()
+                .ToList()
+                .ForEach(x => Console.WriteLine(x.ToString()));
+            Console.ReadKey();
+        }
 
         private static void ListAllSpecs(UserLogic userlogic)
-            {
-                Console.WriteLine("<< ALL SPECIFICATIONS >>");
-                userlogic.GetAllSpec()
-                    .ToList()
-                    .ForEach(x => Console.WriteLine(x.ToString()));
-            }
+        {
+            Console.WriteLine("<< ALL SPECIFICATIONS >>");
+            userlogic.GetAllSpec()
+                .ToList()
+                .ForEach(x => Console.WriteLine(x.ToString()));
+            Console.ReadKey();
+        }
 
-        private static void AddBrands(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the new brands ID");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new brands name");
-                string name = Console.ReadLine();
-                Console.WriteLine("Enter the new foundation year");
-                int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new headquarters");
-                string head = Console.ReadLine();
-                Console.WriteLine("Enter the new CEO name");
-                string ceo = Console.ReadLine();
-                laptoplogic.AddBrand(id, name, fyear, head, ceo);
-            }
+        private static void AddBrands(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the new brands ID" };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg1 = new { msg = "Enter the new brands name" };
+            Console.WriteLine(msg1.msg);
+            string name = Console.ReadLine();
+            var msg2 = new { msg = "Enter the new foundation year" };
+            Console.WriteLine(msg1.msg);
+            int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg3 = new { msg = "Enter the new headquarters" };
+            Console.WriteLine(msg1.msg);
+            string head = Console.ReadLine();
+            var msg4 = new { msg = "Enter the new CEO name" };
+            Console.WriteLine(msg1.msg);
+            string ceo = Console.ReadLine();
+            adminlogic.AddBrand(id, name, fyear, head, ceo);
+        }
 
-        private static void AddLaptops(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the new laptops ID");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new laptops brand ID");
-                int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new laptops name");
-                string name = Console.ReadLine();
-                Console.WriteLine("Enter the new release year");
-                int ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new price");
-                int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.AddLaptop(id, bid, name, ryear, price);
-            }
+        private static void AddLaptops(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the new laptops ID" };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg1 = new { msg = "Enter the new laptops brand ID" };
+            Console.WriteLine(msg1.msg);
+            int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg2 = new { msg = "Enter the new laptops name" };
+            Console.WriteLine(msg2.msg);
+            string name = Console.ReadLine();
+            var msg3 = new { msg = "Enter the new release year" };
+            Console.WriteLine(msg3.msg);
+            int ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg4 = new { msg = "Enter the new price" };
+            Console.WriteLine(msg4.msg);
+            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            adminlogic.AddLaptop(id, bid, name, ryear, price);
+        }
 
-        private static void AddSpecs(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the new specifications ID");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new specifications laptop ID");
-                int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new specifications name");
-                string name = Console.ReadLine();
-                Console.WriteLine("Enter the CPU name");
-                string cpu = Console.ReadLine();
-                Console.WriteLine("Enter the new graphicscard name");
-                string vga = Console.ReadLine();
-                Console.WriteLine("Enter the RAM in Gb");
-                int ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the specification price");
-                int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.AddSpec(id, lid, name, cpu, vga, ram, price);
-            }
+        private static void AddSpecs(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the new specifications ID" };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg1 = new { msg = "Enter the new specifications laptop ID" };
+            Console.WriteLine(msg1.msg);
+            int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg2 = new { msg = "Enter the new specifications name" };
+            Console.WriteLine(msg2.msg);
+            string name = Console.ReadLine();
+            var msg3 = new { msg = "Enter the CPU name" };
+            Console.WriteLine(msg3.msg);
+            string cpu = Console.ReadLine();
+            var msg4 = new { msg = "Enter the new graphicscard name" };
+            Console.WriteLine(msg4.msg);
+            string vga = Console.ReadLine();
+            var msg5 = new { msg = "Enter the RAM in Gb" };
+            Console.WriteLine(msg5.msg);
+            int ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg6 = new { msg = "Enter the specification price" };
+            Console.WriteLine(msg6.msg);
+            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            adminlogic.AddSpec(id, lid, name, cpu, vga, ram, price);
+        }
 
-        private static void DeleteBrand(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the brands ID, you want to delete.");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.DeleteBrand(id);
-            }
+        private static void DeleteBrand(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the brands ID, you want to delete." };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            adminlogic.DeleteBrand(id);
+        }
 
-        private static void DeleteLaptop(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the laptop ID, you want to delete.");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.DeleteLaptop(id);
-            }
+        private static void DeleteLaptop(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the laptop ID, you want to delete." };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            adminlogic.DeleteLaptop(id);
+        }
 
-        private static void DeleteSpec(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the specification ID, you want to delete.");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.DeleteSpec(id);
-            }
+        private static void DeleteSpec(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the specification ID, you want to delete." };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            adminlogic.DeleteSpec(id);
+        }
 
-        private static void UpdateBrand(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the brands ID, you want to update");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the brands new name");
-                string name = Console.ReadLine();
-                Console.WriteLine("Enter the foundation new  year");
-                int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new headquarters");
-                string head = Console.ReadLine();
-                Console.WriteLine("Enter the new CEO name");
-                string ceo = Console.ReadLine();
-                laptoplogic.BrandUpdate(id, name, fyear, head, ceo);
-            }
+        private static void UpdateBrand(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the brands ID, you want to update" };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg1 = new { msg = "Enter the brands new name" };
+            Console.WriteLine(msg1.msg);
+            string name = Console.ReadLine();
+            var msg2 = new { msg = "Enter the foundation new  year" };
+            Console.WriteLine(msg2.msg);
+            int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg3 = new { msg = "Enter the new headquarters" };
+            Console.WriteLine(msg3.msg);
+            string head = Console.ReadLine();
+            var msg4 = new { msg = "Enter the new CEO name" };
+            Console.WriteLine(msg4.msg);
+            string ceo = Console.ReadLine();
+            adminlogic.BrandUpdate(id, name, fyear, head, ceo);
+        }
 
-        private static void UpdateLaptop(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the laptops ID, you want to update");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the laptops  new  brand ID");
-                int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the laptops new name");
-                string name = Console.ReadLine();
-                Console.WriteLine("Enter the new release year");
-                int ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the new price");
-                int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.LaptopUpdate(id, name, ryear, price);
-            }
+        private static void UpdateLaptop(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the laptops ID, you want to update" };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg1 = new { msg = "Enter the laptops  new  brand ID" };
+            Console.WriteLine(msg1.msg);
+            int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg2 = new { msg = "Enter the laptops new name" };
+            Console.WriteLine(msg2.msg);
+            string name = Console.ReadLine();
+            var msg3 = new { msg = "Enter the new release year" };
+            Console.WriteLine(msg3.msg);
+            int ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg4 = new { msg = "Enter the new price" };
+            Console.WriteLine(msg4.msg);
+            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            adminlogic.LaptopUpdate(id, name, ryear, price);
+        }
 
-        private static void UpdateSpec(AdministratorLogic laptoplogic)
-            {
-                Console.WriteLine("Enter the specifications ID, you want to update");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the specifications new  laptop ID");
-                int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the specifications new  name");
-                string name = Console.ReadLine();
-                Console.WriteLine("Enter the CPU new name");
-                string cpu = Console.ReadLine();
-                Console.WriteLine("Enter the new graphicscard name");
-                string vga = Console.ReadLine();
-                Console.WriteLine("Enter the RAM in Gb");
-                int ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                Console.WriteLine("Enter the specification price");
-                int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.SpecUpdate(id, name, cpu, vga, ram, price);
-            }
+        private static void UpdateSpec(AdministratorLogic adminlogic)
+        {
+            var msg = new { msg = "Enter the specifications ID, you want to update" };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg1 = new { msg = "Enter the specifications new  laptop ID" };
+            Console.WriteLine(msg1.msg);
+            int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg2 = new { msg = "Enter the specifications new  name" };
+            Console.WriteLine(msg2.msg);
+            string name = Console.ReadLine();
+            var msg3 = new { msg = "Enter the CPU new name" };
+            Console.WriteLine(msg3.msg);
+            string cpu = Console.ReadLine();
+            var msg4 = new { msg = "Enter the new graphicscard name" };
+            Console.WriteLine(msg4.msg);
+            string vga = Console.ReadLine();
+            var msg5 = new { msg = "Enter the RAM in Gb" };
+            Console.WriteLine(msg5.msg);
+            int ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg6 = new { msg = "Enter the specification price" };
+            Console.WriteLine(msg6.msg);
+            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            adminlogic.SpecUpdate(id, name, cpu, vga, ram, price);
+        }
 
         private static void ListBrand(UserLogic userlogic)
-            {
-                Console.WriteLine("Enter the ID of a brand, you want to find.");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                userlogic.BrandGetOne(id);
-            }
+        {
+            var msg = new { msg = "Enter the ID of a brand, you want to find." };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg2 = new { msg = userlogic.BrandGetOne(id) };
+            Console.WriteLine(msg2.msg);
+            Console.ReadKey();
+        }
 
         private static void ListLaptop(UserLogic userlogic)
-            {
-                Console.WriteLine("Enter the ID of a laptop, you want to find.");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                userlogic.LaptopGetOne(id);
-            }
+        {
+            var msg = new { msg = "Enter the ID of a laptop, you want to find." };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg2 = new { msg = userlogic.LaptopGetOne(id) };
+            Console.WriteLine(msg2.msg);
+            Console.ReadKey();
+        }
 
         private static void ListSpec(UserLogic userlogic)
-            {
-                Console.WriteLine("Enter the ID of a specification, you want to find.");
-                int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                userlogic.SpecGetOne(id);
-            }
+        {
+            var msg = new { msg = "Enter the ID of a specification, you want to find." };
+            Console.WriteLine(msg.msg);
+            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            var msg2 = new { msg = userlogic.SpecGetOne(id) };
+            Console.WriteLine(msg2.msg);
+            Console.ReadKey();
+        }
 
         private static void CountLaptop(UserLogic userlogic)
-            {
-                Console.WriteLine("TODO");
-            }
+        {
+            Console.WriteLine("TODO");
+        }
 
         private static void AvgSpec(UserLogic userlogic)
-            {
-                Console.WriteLine("TODO");
-            }
+        {
+            Console.WriteLine("TODO");
+        }
 
         private static void HghLaptop(UserLogic userlogic)
-            {
-                Console.WriteLine("TODO");
-            }
+        {
+            Console.WriteLine("TODO");
+        }
     }
 }
