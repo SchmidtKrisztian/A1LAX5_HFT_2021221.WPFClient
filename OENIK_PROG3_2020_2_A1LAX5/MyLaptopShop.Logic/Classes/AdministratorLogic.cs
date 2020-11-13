@@ -14,7 +14,7 @@ namespace MyLaptopShop.Logic.Classes
     using MyLaptopShop.Repository.Interfaces;
 
     /// <summary>
-    /// Logic class.
+    /// AdministratorLogic class, has all the create delete or update methods.
     /// </summary>
     public class AdministratorLogic : IAdministratorLogic
     {
@@ -140,7 +140,6 @@ namespace MyLaptopShop.Logic.Classes
         /// Updating a specification parameters.
         /// </summary>
         /// <param name="id">Id of the specification.</param>
-        /// <param name="laptopid">Id of the specifications laptop.</param>
         /// <param name="name">New name of the specification.</param>
         /// <param name="cpu">New CPUs name.</param>
         /// <param name="graphicscard">New nameof the graphicscard.</param>
