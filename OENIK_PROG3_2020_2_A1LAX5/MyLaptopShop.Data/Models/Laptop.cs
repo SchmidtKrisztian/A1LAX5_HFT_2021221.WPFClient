@@ -82,5 +82,14 @@ namespace MyLaptopShop.Data.Models
         /// </summary>
         [NotMapped]
         public virtual ICollection<Specification> Specifications { get; set; }
+
+        /// <summary>
+        /// Overriding the ToString() method.
+        /// </summary>
+        /// <returns>Formed string.</returns>
+        public override string ToString()
+        {
+            return "NAME: " + this.Name + "RELEASE YEAR: " + this.ReleaseYear + "BASE PRICE: " + this.BasePrice;
+        }
     }
 }

@@ -37,6 +37,9 @@ namespace MyLaptopShop.Data.Models
             this.AdditionalPrice = price;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Specification"/> class.
+        /// </summary>
         public Specification()
         {
 
@@ -93,5 +96,14 @@ namespace MyLaptopShop.Data.Models
         /// </summary>
         [NotMapped]
         public virtual Laptop Laptop { get; set; }
+
+        /// <summary>
+        /// Overriding the ToString() method.
+        /// </summary>
+        /// <returns>Formed string.</returns>
+        public override string ToString()
+        {
+            return "NAME: " + this.Name + "CPU: " + this.CPU + "GRAPHICSCARD: " + this.GraphicsCardName + "RAM: " + this.RAM + "ADDITIONAL PRICE: " + this.AdditionalPrice;
+        }
     }
 }
