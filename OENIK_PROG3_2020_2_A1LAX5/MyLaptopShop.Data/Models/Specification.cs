@@ -37,6 +37,11 @@ namespace MyLaptopShop.Data.Models
             this.AdditionalPrice = price;
         }
 
+        public Specification()
+        {
+
+        }
+
         /// <summary>
         /// Gets or sets the ID of the specification, it is a key.
         /// </summary>

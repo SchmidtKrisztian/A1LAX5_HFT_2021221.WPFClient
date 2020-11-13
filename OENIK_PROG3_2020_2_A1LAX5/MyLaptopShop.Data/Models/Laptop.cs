@@ -33,6 +33,11 @@ namespace MyLaptopShop.Data.Models
             this.BasePrice = basePrice;
         }
 
+        public Laptop()
+        {
+            Specifications = new HashSet<Specification>();
+        }
+
         /// <summary>
         /// Gets or sets the ID of a instance laptop, its a key.
         /// </summary>

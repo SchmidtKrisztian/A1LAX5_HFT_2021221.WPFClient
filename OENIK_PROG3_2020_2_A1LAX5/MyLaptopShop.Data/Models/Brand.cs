@@ -34,6 +34,11 @@ namespace MyLaptopShop.Data.Models
             this.CEOName = ceoname;
         }
 
+        public Brand()
+        {
+            Laptops = new HashSet<Laptop>();
+        }
+
         /// <summary>
         /// Gets or sets the id of a brand, this is a key.
         /// </summary>
