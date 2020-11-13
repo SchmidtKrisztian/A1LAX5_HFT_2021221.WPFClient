@@ -26,13 +26,12 @@ namespace MyLaptopShop.Program
         /// </summary>
         public Factory()
         {
-            this.Laptoplogic = new LaptopLogic(brandrepo, laptoprepo, specrepo);
+            this.Laptoplogic = new AdministratorLogic(brandrepo, laptoprepo, specrepo);
         }
 
         /// <summary>
         /// Gets or sets the Laptoplogic instance.
         /// </summary>
-        public LaptopLogic Laptoplogic { get; set; }
-
+        public AdministratorLogic Laptoplogic { get; set; }
     }
 }

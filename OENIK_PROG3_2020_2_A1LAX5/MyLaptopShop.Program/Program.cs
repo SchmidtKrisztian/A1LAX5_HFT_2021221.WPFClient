@@ -28,55 +28,58 @@ namespace MyLaptopShop.Program
         BrandRepository brandrepo = new BrandRepository(ctx);
         LaptopRepository laptoprepo = new LaptopRepository(ctx);
         SpecificationRepository specrepo = new SpecificationRepository(ctx);
-        LaptopLogic laptoplogic = new LaptopLogic(brandrepo,laptoprepo,specrepo);
+        AdministratorLogic adminlogic = new AdministratorLogic(brandrepo, laptoprepo, specrepo);
+        UserLogic userlogic = new UserLogic(brandrepo, laptoprepo, specrepo);
 
         ConsoleMenu menu = new ConsoleMenu()
-                .Add(">> List all BRANDs", () => ListAllBrands(laptoplogic))
-                .Add(">> List all LAPTOPs", () => ListAllLaptops(laptoplogic))
-                .Add(">> List all SPECIFICATIONs", () => ListAllSpecs(laptoplogic))
-                .Add(">> Add new BRAND", () => AddBrands(laptoplogic))
-                .Add(">> Add new LAPTOP", () => AddLaptops(laptoplogic))
-                .Add(">> Add new SPECIFICATION", () => AddSpecs(laptoplogic))
-                .Add(">> Delete a BRAND", () => DeleteBrand(laptoplogic))
-                .Add(">> Delete a LAPTOP", () => DeleteLaptop(laptoplogic))
-                .Add(">> Delete a SPECIFICATION", () => DeleteSpec(laptoplogic))
-                .Add(">> Update a BRAND", () => UpdateBrand(laptoplogic))
-                .Add(">> Update a LAPTOP", () => UpdateLaptop(laptoplogic))
-                .Add(">> Update a SPECIFICATION", () => UpdateSpec(laptoplogic))
-                .Add(">> List a BRAND, by ID", () => ListBrand(laptoplogic))
-                .Add(">> List a LAPTOP, by ID", () => ListLaptop(laptoplogic))
-                .Add(">> List a SPECIFICATION, by ID", () => ListSpec(laptoplogic))
-                .Add(">> List countries with their laptop count", () => CountLaptop(laptoplogic))
-                .Add(">> List laptops with their average specification cost", () => AvgSpec(laptoplogic))
-                .Add(">> List Brand name, laptop name and average highest specification cost", () => HghLaptop(laptoplogic));
+                .Add(">> List all BRANDs", () => ListAllBrands(userlogic))
+                .Add(">> List all LAPTOPs", () => ListAllLaptops(userlogic))
+                .Add(">> List all SPECIFICATIONs", () => ListAllSpecs(userlogic))
+                .Add(">> Add new BRAND", () => AddBrands(adminlogic))
+                .Add(">> Add new LAPTOP", () => AddLaptops(adminlogic))
+                .Add(">> Add new SPECIFICATION", () => AddSpecs(adminlogic))
+                .Add(">> Delete a BRAND", () => DeleteBrand(adminlogic))
+                .Add(">> Delete a LAPTOP", () => DeleteLaptop(adminlogic))
+                .Add(">> Delete a SPECIFICATION", () => DeleteSpec(adminlogic))
+                .Add(">> Update a BRAND", () => UpdateBrand(adminlogic))
+                .Add(">> Update a LAPTOP", () => UpdateLaptop(adminlogic))
+                .Add(">> Update a SPECIFICATION", () => UpdateSpec(adminlogic))
+                .Add(">> List a BRAND, by ID", () => ListBrand(userlogic))
+                .Add(">> List a LAPTOP, by ID", () => ListLaptop(userlogic))
+                .Add(">> List a SPECIFICATION, by ID", () => ListSpec(userlogic))
+                .Add(">> List countries with their laptop count", () => CountLaptop(userlogic))
+                .Add(">> List laptops with their average specification cost", () => AvgSpec(userlogic))
+                .Add(">> List Brand name, laptop name and average highest specification cost", () => HghLaptop(userlogic));
 
+        menu.Show();
         }
 
-        private static void ListAllBrands(LaptopLogic laptoplogic)
+        private static void ListAllBrands(UserLogic userlogic)
             {
                 Console.WriteLine("<< ALL BRANDS >>");
-                laptoplogic.GetAllBrand()
+                userlogic.GetAllBrand()
                     .ToList()
                     .ForEach(x => Console.WriteLine(x.ToString()));
+                Console.ReadLine();
             }
 
-        private static void ListAllLaptops(LaptopLogic laptoplogic)
+        private static void ListAllLaptops(UserLogic userlogic)
             {
                 Console.WriteLine("<< ALL LAPTOPS >>");
-                laptoplogic.GetAllLaptop()
+                userlogic.GetAllLaptop()
                     .ToList()
                     .ForEach(x => Console.WriteLine(x.ToString()));
             }
 
-        private static void ListAllSpecs(LaptopLogic laptoplogic)
+        private static void ListAllSpecs(UserLogic userlogic)
             {
                 Console.WriteLine("<< ALL SPECIFICATIONS >>");
-                laptoplogic.GetAllSpec()
+                userlogic.GetAllSpec()
                     .ToList()
                     .ForEach(x => Console.WriteLine(x.ToString()));
             }
 
-        private static void AddBrands(LaptopLogic laptoplogic)
+        private static void AddBrands(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the new brands ID");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -91,7 +94,7 @@ namespace MyLaptopShop.Program
                 laptoplogic.AddBrand(id, name, fyear, head, ceo);
             }
 
-        private static void AddLaptops(LaptopLogic laptoplogic)
+        private static void AddLaptops(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the new laptops ID");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -106,7 +109,7 @@ namespace MyLaptopShop.Program
                 laptoplogic.AddLaptop(id, bid, name, ryear, price);
             }
 
-            private static void AddSpecs(LaptopLogic laptoplogic)
+        private static void AddSpecs(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the new specifications ID");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -125,28 +128,28 @@ namespace MyLaptopShop.Program
                 laptoplogic.AddSpec(id, lid, name, cpu, vga, ram, price);
             }
 
-        private static void DeleteBrand(LaptopLogic laptoplogic)
+        private static void DeleteBrand(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the brands ID, you want to delete.");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 laptoplogic.DeleteBrand(id);
             }
 
-        private static void DeleteLaptop(LaptopLogic laptoplogic)
+        private static void DeleteLaptop(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the laptop ID, you want to delete.");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 laptoplogic.DeleteLaptop(id);
             }
 
-        private static void DeleteSpec(LaptopLogic laptoplogic)
+        private static void DeleteSpec(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the specification ID, you want to delete.");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 laptoplogic.DeleteSpec(id);
             }
 
-        private static void UpdateBrand(LaptopLogic laptoplogic)
+        private static void UpdateBrand(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the brands ID, you want to update");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -161,7 +164,7 @@ namespace MyLaptopShop.Program
                 laptoplogic.BrandUpdate(id, name, fyear, head, ceo);
             }
 
-        private static void UpdateLaptop(LaptopLogic laptoplogic)
+        private static void UpdateLaptop(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the laptops ID, you want to update");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -176,7 +179,7 @@ namespace MyLaptopShop.Program
                 laptoplogic.LaptopUpdate(id, bid, name, ryear, price);
             }
 
-        private static void UpdateSpec(LaptopLogic laptoplogic)
+        private static void UpdateSpec(AdministratorLogic laptoplogic)
             {
                 Console.WriteLine("Enter the specifications ID, you want to update");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -195,41 +198,40 @@ namespace MyLaptopShop.Program
                 laptoplogic.SpecUpdate(id, lid, name, cpu, vga, ram, price);
             }
 
-        private static void ListBrand(LaptopLogic laptoplogic)
+        private static void ListBrand(UserLogic userlogic)
             {
                 Console.WriteLine("Enter the ID of a brand, you want to find.");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.BrandGetOne(id);
+                userlogic.BrandGetOne(id);
             }
 
-        private static void ListLaptop(LaptopLogic laptoplogic)
+        private static void ListLaptop(UserLogic userlogic)
             {
                 Console.WriteLine("Enter the ID of a laptop, you want to find.");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.LaptopGetOne(id);
+                userlogic.LaptopGetOne(id);
             }
 
-        private static void ListSpec(LaptopLogic laptoplogic)
+        private static void ListSpec(UserLogic userlogic)
             {
                 Console.WriteLine("Enter the ID of a specification, you want to find.");
                 int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.SpecGetOne(id);
+                userlogic.SpecGetOne(id);
             }
 
-        private static void CountLaptop(LaptopLogic laptoplogic)
+        private static void CountLaptop(UserLogic userlogic)
             {
                 Console.WriteLine("TODO");
             }
 
-        private static void AvgSpec(LaptopLogic laptoplogic)
+        private static void AvgSpec(UserLogic userlogic)
             {
                 Console.WriteLine("TODO");
             }
 
-        private static void HghLaptop(LaptopLogic laptoplogic)
+        private static void HghLaptop(UserLogic userlogic)
             {
                 Console.WriteLine("TODO");
             }
-      
     }
 }
