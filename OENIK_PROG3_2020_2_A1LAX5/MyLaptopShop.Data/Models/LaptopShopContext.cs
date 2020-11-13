@@ -66,32 +66,51 @@ namespace MyLaptopShop.Data.Models
         /// <param name="modelBuilder">Modelbuilder instance.</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            Brand brand0 = new Brand(0, "Samsung", 1990, "place0", "name0");
-            Brand brand1 = new Brand(1, "Dell", 1990, "place1", "name1");
-            Brand brand2 = new Brand(2, "Acer", 1990, "place2", "name2");
-            Brand brand3 = new Brand(3, "Asus", 1990, "place3", "name3");
-            Brand brand4 = new Brand(4, "Apple", 1990, "place4", "name4");
-            Brand brand5 = new Brand(5, "Lenovo", 1990, "place5", "name5");
-            Brand brand6 = new Brand(6, "HP", 1990, "place6", "name6");
+            Brand brand1 = new Brand() { Id = 1, Name = "Samsung", FoundationYear = 1990, Headquarters = "Place1", CEOName = "name" };
+            Brand brand2 = new Brand() { Id = 2, Name = "Dell", FoundationYear = 1990, Headquarters = "Place2", CEOName = "name" };
+            Brand brand3 = new Brand() { Id = 3, Name = "Acer", FoundationYear = 1990, Headquarters = "Place3", CEOName = "name" };
+            Brand brand4 = new Brand() { Id = 4, Name = "Asus", FoundationYear = 1990, Headquarters = "Place4", CEOName = "name" };
+            Brand brand5 = new Brand() { Id = 5, Name = "Apple", FoundationYear = 1990, Headquarters = "Place5", CEOName = "name" };
+            Brand brand6 = new Brand() { Id = 6, Name = "Lenovo", FoundationYear = 1990, Headquarters = "Place6", CEOName = "name" };
+            Brand brand7 = new Brand() { Id = 7, Name = "HP", FoundationYear = 1990, Headquarters = "Place7", CEOName = "name" };
 
-            Laptop laptop0 = new Laptop(0, 5, "YogaBook", 2010, 500);
-            Laptop laptop1 = new Laptop(1, 1, "AlienWare 700", 2014, 5000);
-            Laptop laptop2 = new Laptop(2, 3, "ROG-G51", 2015, 1000);
-            Laptop laptop3 = new Laptop(3, 4, "Mac Book G11", 2019, 6000);
-            Laptop laptop4 = new Laptop(4, 2, "Predator Helios 500", 2016, 2000);
-            Laptop laptop5 = new Laptop(5, 5, "Legion 400", 2012, 1500);
-            Laptop laptop6 = new Laptop(6, 5, "IdeaPad 2300", 2008, 700);
+            Laptop laptop1 = new Laptop() { Id = 1, BrandId = 6, Name = "YogaBook", ReleaseYear = 2010, BasePrice = 500 };
+            Laptop laptop2 = new Laptop() { Id = 2, BrandId = 2, Name = "AlienWare 700", ReleaseYear = 2014, BasePrice = 5000 };
+            Laptop laptop3 = new Laptop() { Id = 3, BrandId = 4, Name = "ROG-G51", ReleaseYear = 2015, BasePrice = 1000 };
+            Laptop laptop4 = new Laptop() { Id = 4, BrandId = 5, Name = "Mac Book G11", ReleaseYear = 2019, BasePrice = 6000 };
+            Laptop laptop5 = new Laptop() { Id = 5, BrandId = 3, Name = "Predator Helios 500", ReleaseYear = 2016, BasePrice = 2000 };
+            Laptop laptop6 = new Laptop() { Id = 6, BrandId = 6, Name = "Legion 400", ReleaseYear = 2012, BasePrice = 1500 };
+            Laptop laptop7 = new Laptop() { Id = 7, BrandId = 6, Name = "IdeaPad 2300", ReleaseYear = 2008, BasePrice = 700 };
 
-            Specification spec0 = new Specification(0, 1, "Gamer", "i7-6460", "GTX2060Ti", 32, 20);
-            Specification spec1 = new Specification(1, 3, "Work", "i3-8450", "GTX1050Ti", 8, 50);
-            Specification spec2 = new Specification(2, 5, "Consumer", "i5-4460", "GTX150Ti", 8, 30);
-            Specification spec3 = new Specification(3, 2, "EverydayUse", "i5-10020", "Radeon R7", 8, 200);
-            Specification spec4 = new Specification(4, 1, "Editor", "i9-9990K", "Radeon R9", 32, 400);
-            Specification spec5 = new Specification(5, 4, "Gamer", "Ryzen 4450", "Radeon R7", 16, 150);
-            Specification spec6 = new Specification(6, 6, "Consumer", "i5-6720", "none", 4, 10);
-            Specification spec7 = new Specification(7, 2, "Work", "i5-9050M", "GT750", 8, 100);
-            Specification spec8 = new Specification(8, 3, "Gamer", "5-4460", "GTX150Ti", 8, 110);
-            Specification spec9 = new Specification(9, 5, "Server", "Xeon 10990", "none", 64, 400);
+            Specification spec1 = new Specification() { Id = 1, LaptopId = 1, Name = "Gamer", CPU = "i7-6460", GraphicsCardName = "GTX2060Ti", RAM = 32, AdditionalPrice = 20 };
+            Specification spec2 = new Specification() { Id = 2, LaptopId = 4, Name = "Work", CPU = "i3-8450", GraphicsCardName = "GTX1050Ti", RAM = 8, AdditionalPrice = 50 };
+            Specification spec3 = new Specification() { Id = 3, LaptopId = 6, Name = "Consumer", CPU = "i5-4460", GraphicsCardName = "GTX1050Ti", RAM = 8, AdditionalPrice = 30 };
+            Specification spec4 = new Specification() { Id = 4, LaptopId = 3, Name = "EverydayUse", CPU = "i5-10020", GraphicsCardName = "Radeon R7", RAM = 8, AdditionalPrice = 200 };
+            Specification spec5 = new Specification() { Id = 5, LaptopId = 2, Name = "Editor", CPU = "i9-9990K", GraphicsCardName = "Radeon R)", RAM = 32, AdditionalPrice = 400 };
+            Specification spec6 = new Specification() { Id = 6, LaptopId = 5, Name = "Gamer", CPU = "Ryzen 4450", GraphicsCardName = "Radeon R7", RAM = 16, AdditionalPrice = 150 };
+            Specification spec7 = new Specification() { Id = 7, LaptopId = 6, Name = "Consumer", CPU = "i5-6720", GraphicsCardName = "none", RAM = 4, AdditionalPrice = 10 };
+            Specification spec8 = new Specification() { Id = 8, LaptopId = 7, Name = "Work", CPU = "i5-9050M", GraphicsCardName = "GT750", RAM = 8, AdditionalPrice = 100 };
+            Specification spec9 = new Specification() { Id = 9, LaptopId = 2, Name = "Gamer", CPU = "i5-4460", GraphicsCardName = "GTX1050Ti", RAM = 8, AdditionalPrice = 110 };
+            Specification spec10 = new Specification() { Id = 10, LaptopId = 1, Name = "Server", CPU = "Xeon 10990", GraphicsCardName = "none", RAM = 64, AdditionalPrice = 400 };
+
+            laptop1.BrandId = brand6.Id;
+            laptop2.BrandId = brand2.Id;
+            laptop3.BrandId = brand4.Id;
+            laptop4.BrandId = brand5.Id;
+            laptop5.BrandId = brand3.Id;
+            laptop6.BrandId = brand6.Id;
+            laptop7.BrandId = brand6.Id;
+
+            spec1.LaptopId = laptop1.Id;
+            spec2.LaptopId = laptop4.Id;
+            spec3.LaptopId = laptop6.Id;
+            spec4.LaptopId = laptop3.Id;
+            spec5.LaptopId = laptop2.Id;
+            spec6.LaptopId = laptop5.Id;
+            spec7.LaptopId = laptop6.Id;
+            spec8.LaptopId = laptop7.Id;
+            spec9.LaptopId = laptop2.Id;
+            spec10.LaptopId = laptop1.Id;
 
             modelBuilder.Entity<Brand>(entity =>
             {
