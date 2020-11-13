@@ -176,7 +176,7 @@ namespace MyLaptopShop.Program
                 int ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 Console.WriteLine("Enter the new price");
                 int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.LaptopUpdate(id, bid, name, ryear, price);
+                laptoplogic.LaptopUpdate(id, name, ryear, price);
             }
 
         private static void UpdateSpec(AdministratorLogic laptoplogic)
@@ -195,7 +195,7 @@ namespace MyLaptopShop.Program
                 int ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
                 Console.WriteLine("Enter the specification price");
                 int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-                laptoplogic.SpecUpdate(id, lid, name, cpu, vga, ram, price);
+                laptoplogic.SpecUpdate(id, name, cpu, vga, ram, price);
             }
 
         private static void ListBrand(UserLogic userlogic)
