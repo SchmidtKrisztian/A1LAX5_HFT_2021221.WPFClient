@@ -89,7 +89,7 @@ namespace MyLaptopShop.Data.Models
         /// <returns>Formed string.</returns>
         public override string ToString()
         {
-            return "NAME: " + this.Name + "RELEASE YEAR: " + this.ReleaseYear + "BASE PRICE: " + this.BasePrice;
+            return this.Id + " NAME: " + this.Name + "\t \t RELEASE YEAR: " + this.ReleaseYear + "\t BASE PRICE: " + this.BasePrice;
         }
     }
 }

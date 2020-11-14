@@ -85,7 +85,7 @@ namespace MyLaptopShop.Data.Models
         /// <returns>Formed string.</returns>
         public override string ToString()
         {
-            return "NAME: " + this.Name + "FOUNDATION YEAR: " + this.FoundationYear + "HEADQUARTERS: " + this.Headquarters + "CEO NAME: " + this.CEOName;
+            return this.Id + " NAME: " + this.Name + "\t FOUNDATION YEAR: " + this.FoundationYear + "\t HEADQUARTERS: " + this.Headquarters + "\t CEO NAME: " + this.CEOName;
         }
     }
 }

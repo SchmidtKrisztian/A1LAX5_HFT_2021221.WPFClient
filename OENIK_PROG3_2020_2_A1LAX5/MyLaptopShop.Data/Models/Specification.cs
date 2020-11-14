@@ -42,7 +42,6 @@ namespace MyLaptopShop.Data.Models
         /// </summary>
         public Specification()
         {
-
         }
 
         /// <summary>
@@ -103,7 +102,7 @@ namespace MyLaptopShop.Data.Models
         /// <returns>Formed string.</returns>
         public override string ToString()
         {
-            return "NAME: " + this.Name + "CPU: " + this.CPU + "GRAPHICSCARD: " + this.GraphicsCardName + "RAM: " + this.RAM + "ADDITIONAL PRICE: " + this.AdditionalPrice;
+            return this.Id + " NAME: " + this.Name + "\t CPU: " + this.CPU + "\t GRAPHICSCARD: " + this.GraphicsCardName + "\t RAM: " + this.RAM + "\t ADDITIONAL PRICE: " + this.AdditionalPrice;
         }
     }
 }
