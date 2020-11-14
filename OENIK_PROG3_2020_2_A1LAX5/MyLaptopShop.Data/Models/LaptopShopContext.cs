@@ -52,11 +52,18 @@ namespace MyLaptopShop.Data.Models
         /// <param name="optionsBuilder">DbContextOptionBuilder instance.</param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
+            if (optionsBuilder == null)
             {
-                optionsBuilder
-                    .UseLazyLoadingProxies()
-                    .UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MyLaptopShopDatabase.mdf;Integrated Security=True");
+                throw new ArgumentNullException(nameof(optionsBuilder));
+            }
+            else
+            {
+                if (!optionsBuilder.IsConfigured)
+                {
+                    optionsBuilder
+                        .UseLazyLoadingProxies()
+                        .UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MyLaptopShopDatabase.mdf;Integrated Security=True");
+                }
             }
         }
 
@@ -112,25 +119,32 @@ namespace MyLaptopShop.Data.Models
             spec9.LaptopId = laptop2.Id;
             spec10.LaptopId = laptop1.Id;
 
-            modelBuilder.Entity<Brand>(entity =>
+            if (modelBuilder == null)
             {
-                entity.HasMany(l => l.Laptops)
-                .WithOne(b => b.Brand)
-                .HasForeignKey(l => l.BrandId)
-                .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            modelBuilder.Entity<Specification>(entity =>
+                throw new ArgumentNullException(nameof(modelBuilder));
+            }
+            else
             {
-                entity.HasOne(l => l.Laptop)
-                .WithMany(s => s.Specifications)
-                .HasForeignKey(l => l.LaptopId)
-                .OnDelete(DeleteBehavior.Cascade);
-            });
+                modelBuilder.Entity<Brand>(entity =>
+                {
+                    entity.HasMany(l => l.Laptops)
+                    .WithOne(b => b.Brand)
+                    .HasForeignKey(l => l.BrandId)
+                    .OnDelete(DeleteBehavior.Cascade);
+                });
 
-            modelBuilder.Entity<Brand>().HasData(brand1, brand2, brand3, brand4, brand5, brand6);
-            modelBuilder.Entity<Laptop>().HasData(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6, laptop7);
-            modelBuilder.Entity<Specification>().HasData(spec1, spec2, spec3, spec4, spec5, spec6, spec7, spec8, spec9, spec10);
+                modelBuilder.Entity<Specification>(entity =>
+                {
+                    entity.HasOne(l => l.Laptop)
+                    .WithMany(s => s.Specifications)
+                    .HasForeignKey(l => l.LaptopId)
+                    .OnDelete(DeleteBehavior.Cascade);
+                });
+
+                modelBuilder.Entity<Brand>().HasData(brand1, brand2, brand3, brand4, brand5, brand6);
+                modelBuilder.Entity<Laptop>().HasData(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6, laptop7);
+                modelBuilder.Entity<Specification>().HasData(spec1, spec2, spec3, spec4, spec5, spec6, spec7, spec8, spec9, spec10);
+            }
         }
     }
 }

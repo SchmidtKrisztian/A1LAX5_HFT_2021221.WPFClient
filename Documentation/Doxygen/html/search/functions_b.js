@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['specgetone_165',['SpecGetOne',['../class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic.html#a0387794e13978f0411ce15bb190b0905',1,'MyLaptopShop.Logic.Classes.UserLogic.SpecGetOne()'],['../interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic.html#a05f10faa0d314904b5baaa2d6b289e9b',1,'MyLaptopShop.Logic.Interfaces.IUserLogic.SpecGetOne()']]],
+  ['specification_166',['Specification',['../class_my_laptop_shop_1_1_data_1_1_models_1_1_specification.html#aa6d22a872470dc87e93eb9d6a764e8c3',1,'MyLaptopShop.Data.Models.Specification.Specification(int id, int laptopId, string name, string cpu, string graphicsCardName, int ram, int price)'],['../class_my_laptop_shop_1_1_data_1_1_models_1_1_specification.html#ac292f5919796733e90bf22057650562c',1,'MyLaptopShop.Data.Models.Specification.Specification()']]],
+  ['specificationrepository_167',['SpecificationRepository',['../class_my_laptop_shop_1_1_repository_1_1_classes_1_1_specification_repository.html#a3e3348303a73974584adb5f86af94e6f',1,'MyLaptopShop::Repository::Classes::SpecificationRepository']]],
+  ['specupdate_168',['SpecUpdate',['../class_my_laptop_shop_1_1_logic_1_1_classes_1_1_administrator_logic.html#a9240fdc87be4902c53d1503ae1e1fa0f',1,'MyLaptopShop.Logic.Classes.AdministratorLogic.SpecUpdate()'],['../interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_administrator_logic.html#add27025b63b80b27ce30e911a64d138e',1,'MyLaptopShop.Logic.Interfaces.IAdministratorLogic.SpecUpdate()']]]
+];

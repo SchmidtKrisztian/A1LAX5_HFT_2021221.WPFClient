@@ -1,0 +1,219 @@
+\hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic}{}\doxysection{My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic Interface Reference}
+\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic}\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+
+
+Interface of the User\+Logic class.  
+
+
+Inheritance diagram for My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_brand}{Brand}} \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_ab3095acf61c2c00cb172549a1dadb287}{Brand\+Get\+One}} (int id)
+\begin{DoxyCompactList}\small\item\em Gives back the istance witch belongs to the parameter ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_laptop}{Laptop}} \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_afe9e3d04248204db6069daa9e4c2f59a}{Laptop\+Get\+One}} (int id)
+\begin{DoxyCompactList}\small\item\em Gives back the istance witch belongs to the parameter ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_specification}{Specification}} \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a05f10faa0d314904b5baaa2d6b289e9b}{Spec\+Get\+One}} (int id)
+\begin{DoxyCompactList}\small\item\em Gives back the istance witch belongs to the parameter ID. \end{DoxyCompactList}\item 
+I\+List$<$ \mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_brand}{Brand}} $>$ \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a6c24bc8a1ae35a9dd8f004b86bcead41}{Get\+All\+Brand}} ()
+\begin{DoxyCompactList}\small\item\em Gives back all the brands. \end{DoxyCompactList}\item 
+I\+List$<$ \mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_laptop}{Laptop}} $>$ \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a709896d8f0139af45c6a018836ceef9a}{Get\+All\+Laptop}} ()
+\begin{DoxyCompactList}\small\item\em Gives back all the laptops. \end{DoxyCompactList}\item 
+I\+List$<$ \mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_specification}{Specification}} $>$ \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a7c94e129ffc52c376eb8936a4a0094e0}{Get\+All\+Spec}} ()
+\begin{DoxyCompactList}\small\item\em Gives back all the specifications. \end{DoxyCompactList}\item 
+I\+List$<$ string $>$ \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a1172ecc2d879d2f35627ed71771f94b1}{Laptop\+Count}} ()
+\begin{DoxyCompactList}\small\item\em List the number of laptops group by brands. \end{DoxyCompactList}\item 
+I\+List$<$ string $>$ \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_accbb276ff957f0f27746f2a75e8d0a33}{Avg\+Spec\+Price}} ()
+\begin{DoxyCompactList}\small\item\em Lists laptops with average specification prices. \end{DoxyCompactList}\item 
+I\+List$<$ string $>$ \mbox{\hyperlink{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a34fbce6adcdf41e24452b6955b08f079}{Hgh\+Spec\+Brand}} ()
+\begin{DoxyCompactList}\small\item\em List Brands with the highest specification price. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface of the User\+Logic class. 
+
+
+
+Definition at line 15 of file I\+User\+Logic.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_accbb276ff957f0f27746f2a75e8d0a33}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_accbb276ff957f0f27746f2a75e8d0a33}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!AvgSpecPrice@{AvgSpecPrice}}
+\index{AvgSpecPrice@{AvgSpecPrice}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{AvgSpecPrice()}{AvgSpecPrice()}}
+{\footnotesize\ttfamily I\+List$<$string$>$ My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Avg\+Spec\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lists laptops with average specification prices. 
+
+\begin{DoxyReturn}{Returns}
+List of fromed strings of the results.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_a7c3c0183c4422f2ef4e135f43cdfbda0}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_ab3095acf61c2c00cb172549a1dadb287}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_ab3095acf61c2c00cb172549a1dadb287}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!BrandGetOne@{BrandGetOne}}
+\index{BrandGetOne@{BrandGetOne}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{BrandGetOne()}{BrandGetOne()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_brand}{Brand}} My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Brand\+Get\+One (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gives back the istance witch belongs to the parameter ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the parameter we want to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The instance with the parameter ID.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_a4ce11e4ff37a0e843ad42f37a86baa91}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a6c24bc8a1ae35a9dd8f004b86bcead41}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a6c24bc8a1ae35a9dd8f004b86bcead41}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!GetAllBrand@{GetAllBrand}}
+\index{GetAllBrand@{GetAllBrand}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{GetAllBrand()}{GetAllBrand()}}
+{\footnotesize\ttfamily I\+List$<$\mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_brand}{Brand}}$>$ My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Get\+All\+Brand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gives back all the brands. 
+
+\begin{DoxyReturn}{Returns}
+List of all brands.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_a52d9fb0235c25efc8c8d84ccb902a86d}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a709896d8f0139af45c6a018836ceef9a}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a709896d8f0139af45c6a018836ceef9a}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!GetAllLaptop@{GetAllLaptop}}
+\index{GetAllLaptop@{GetAllLaptop}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{GetAllLaptop()}{GetAllLaptop()}}
+{\footnotesize\ttfamily I\+List$<$\mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_laptop}{Laptop}}$>$ My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Get\+All\+Laptop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gives back all the laptops. 
+
+\begin{DoxyReturn}{Returns}
+List of all laptops.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_acead824b4ee5fa2ef563650ea778b9be}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a7c94e129ffc52c376eb8936a4a0094e0}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a7c94e129ffc52c376eb8936a4a0094e0}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!GetAllSpec@{GetAllSpec}}
+\index{GetAllSpec@{GetAllSpec}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{GetAllSpec()}{GetAllSpec()}}
+{\footnotesize\ttfamily I\+List$<$\mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_specification}{Specification}}$>$ My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Get\+All\+Spec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gives back all the specifications. 
+
+\begin{DoxyReturn}{Returns}
+List of all specifications.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_a871595f5928d689a4e42294b5dc12f8e}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a34fbce6adcdf41e24452b6955b08f079}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a34fbce6adcdf41e24452b6955b08f079}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!HghSpecBrand@{HghSpecBrand}}
+\index{HghSpecBrand@{HghSpecBrand}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{HghSpecBrand()}{HghSpecBrand()}}
+{\footnotesize\ttfamily I\+List$<$string$>$ My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Hgh\+Spec\+Brand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+List Brands with the highest specification price. 
+
+\begin{DoxyReturn}{Returns}
+List of formed string of the result.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_a1f3c6efd6e18a7dc2327947f3084ec35}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a1172ecc2d879d2f35627ed71771f94b1}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a1172ecc2d879d2f35627ed71771f94b1}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!LaptopCount@{LaptopCount}}
+\index{LaptopCount@{LaptopCount}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{LaptopCount()}{LaptopCount()}}
+{\footnotesize\ttfamily I\+List$<$string$>$ My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Laptop\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+List the number of laptops group by brands. 
+
+\begin{DoxyReturn}{Returns}
+List of strings.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_a89338e2bea08865baf9aa97c0638409b}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_afe9e3d04248204db6069daa9e4c2f59a}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_afe9e3d04248204db6069daa9e4c2f59a}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!LaptopGetOne@{LaptopGetOne}}
+\index{LaptopGetOne@{LaptopGetOne}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{LaptopGetOne()}{LaptopGetOne()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_laptop}{Laptop}} My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Laptop\+Get\+One (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gives back the istance witch belongs to the parameter ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the parameter we want to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The instance with the parameter ID.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_ac0087ba0ab88744e33cd112a81301768}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+\mbox{\Hypertarget{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a05f10faa0d314904b5baaa2d6b289e9b}\label{interface_my_laptop_shop_1_1_logic_1_1_interfaces_1_1_i_user_logic_a05f10faa0d314904b5baaa2d6b289e9b}} 
+\index{MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}!SpecGetOne@{SpecGetOne}}
+\index{SpecGetOne@{SpecGetOne}!MyLaptopShop.Logic.Interfaces.IUserLogic@{MyLaptopShop.Logic.Interfaces.IUserLogic}}
+\doxysubsubsection{\texorpdfstring{SpecGetOne()}{SpecGetOne()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_laptop_shop_1_1_data_1_1_models_1_1_specification}{Specification}} My\+Laptop\+Shop.\+Logic.\+Interfaces.\+I\+User\+Logic.\+Spec\+Get\+One (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gives back the istance witch belongs to the parameter ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the parameter we want to get.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The instance with the parameter ID.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_my_laptop_shop_1_1_logic_1_1_classes_1_1_user_logic_a0387794e13978f0411ce15bb190b0905}{My\+Laptop\+Shop.\+Logic.\+Classes.\+User\+Logic}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Schmidt Krisztián/\+Documents/oenik\+\_\+prog3\+\_\+2020\+\_\+2\+\_\+a1lax5/\+O\+E\+N\+I\+K\+\_\+\+P\+R\+O\+G3\+\_\+2020\+\_\+2\+\_\+\+A1\+L\+A\+X5/\+My\+Laptop\+Shop.\+Logic/\+Interfaces/I\+User\+Logic.\+cs\end{DoxyCompactItemize}
