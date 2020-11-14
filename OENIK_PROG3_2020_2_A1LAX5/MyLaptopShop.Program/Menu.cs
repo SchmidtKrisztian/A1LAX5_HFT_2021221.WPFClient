@@ -34,8 +34,6 @@ namespace MyLaptopShop.Program
             this.userlogic = userlogic;
         }
 
-       
-
         /// <summary>
         /// Te main menu method.
         /// </summary>

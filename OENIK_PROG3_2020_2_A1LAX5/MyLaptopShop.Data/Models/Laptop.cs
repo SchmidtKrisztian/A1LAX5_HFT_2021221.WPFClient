@@ -33,9 +33,12 @@ namespace MyLaptopShop.Data.Models
             this.BasePrice = basePrice;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Laptop"/> class.
+        /// </summary>
         public Laptop()
         {
-            Specifications = new HashSet<Specification>();
+            this.Specifications = new HashSet<Specification>();
         }
 
         /// <summary>

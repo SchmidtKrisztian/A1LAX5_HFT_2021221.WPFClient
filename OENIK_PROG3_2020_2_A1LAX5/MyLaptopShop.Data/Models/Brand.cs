@@ -34,9 +34,12 @@ namespace MyLaptopShop.Data.Models
             this.CEOName = ceoname;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Brand"/> class.
+        /// </summary>
         public Brand()
         {
-            Laptops = new HashSet<Laptop>();
+            this.Laptops = new HashSet<Laptop>();
         }
 
         /// <summary>

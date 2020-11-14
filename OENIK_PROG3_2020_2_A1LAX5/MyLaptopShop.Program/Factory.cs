@@ -28,7 +28,7 @@ namespace MyLaptopShop.Program
         {
             this.Adminlogic = new AdministratorLogic(brandrepo, laptoprepo, specrepo);
             this.Userlogic = new UserLogic(brandrepo, laptoprepo, specrepo);
-            this.ConsoleMenu = new Menu(this.Adminlogic,this.Userlogic);
+            this.ConsoleMenu = new Menu(this.Adminlogic, this.Userlogic);
         }
 
         /// <summary>

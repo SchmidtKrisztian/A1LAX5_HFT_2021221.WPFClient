@@ -1,4 +1,4 @@
-﻿// <copyright file="Program.cs" company="PlaceholderCompany">
+﻿// <copyright file="MainProgram.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -17,7 +17,7 @@ namespace MyLaptopShop.Program
     /// <summary>
     /// This is the main class.
     /// </summary>
-    public class Program
+    public static class MainProgram
     {
         /// <summary>
         /// Main method.
