@@ -127,6 +127,10 @@ namespace MyLaptopShop.Data.Models
                 .HasForeignKey(l => l.LaptopId)
                 .OnDelete(DeleteBehavior.Cascade);
             });
+
+            modelBuilder.Entity<Brand>().HasData(brand1, brand2, brand3, brand4, brand5, brand6);
+            modelBuilder.Entity<Laptop>().HasData(laptop1, laptop2, laptop3, laptop4, laptop5, laptop6, laptop7);
+            modelBuilder.Entity<Specification>().HasData(spec1, spec2, spec3, spec4, spec5, spec6, spec7, spec8, spec9, spec10);
         }
     }
 }
