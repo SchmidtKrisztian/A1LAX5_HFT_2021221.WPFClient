@@ -97,7 +97,16 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>List of strings.</returns>
         public IList<string> LaptopCount()
         {
-            throw new NotImplementedException();
+            var q = from brand in this.brandrepo.GetAll()
+                    join laptop in this.laptoprepo.GetAll() on brand.Id equals laptop.BrandId
+                    let item = new { BrandName = brand.Name, LaptopName = laptop.Id }
+                    group item by item.BrandName into brandres
+                    select new
+                    {
+                        COUNTRY = brandres.Key,
+                        Count = brandres.LaptopId.Count(),
+                    };
+            return q.ToList();
         }
 
         /// <summary>
@@ -106,7 +115,34 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>List of fromed strings of the results.</returns>
         public IList<string> AvgSpecPrice()
         {
-            throw new NotImplementedException();
+            var q = from laptop in this.laptoprepo.GetAll()
+                    join spec in this.specrepo.GetAll() on laptop.Id equals spec.LaptopId
+                    let avg = 
+                    select new
+                    {
+                        LaptopName = item.LaptopName,
+                        AveragePrice = item.Average(item => item.Price) ?? 0
+                    };
+            return q.ToList();
+        }
+
+        /// <summary>
+        /// List Brands with the highest specification price.
+        /// </summary>
+        /// <returns>List of formed string of the result.</returns>
+        public IList<string> HghSpecBrand()
+        {
+            var q = from brand in this.brandrepo.GetAll()
+                    join laptop in this.laptoprepo.GetAll() on brand.Id equals laptop.BrandId
+                    join spec in this.specrepo.GetAll() on laptop.Id equals spec.LaptopId
+                    let item = new { BrandName = brand.Name, SpecPrice = spec.AdditionalPrice }
+                    orderby item.SpecPrice
+                    select new
+                    {
+                        BrandName= item.BrandName.Value,
+                        SpecPrice =item.SpecPrice,
+                    };
+            return q.ToList();
         }
     }
 }

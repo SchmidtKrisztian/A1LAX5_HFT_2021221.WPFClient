@@ -64,5 +64,11 @@ namespace MyLaptopShop.Logic.Interfaces
         /// </summary>
         /// <returns>List of fromed strings of the results.</returns>
         IList<string> AvgSpecPrice();
+
+        /// <summary>
+        /// List Brands with the highest specification price.
+        /// </summary>
+        /// <returns>List of formed string of the result.</returns>
+        IList<string> HghSpecBrand();
     }
 }
