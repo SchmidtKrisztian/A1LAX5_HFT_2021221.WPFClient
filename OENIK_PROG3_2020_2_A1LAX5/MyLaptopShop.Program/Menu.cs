@@ -63,6 +63,10 @@ namespace MyLaptopShop.Program
             menu.Show();
         }
 
+        /// <summary>
+        /// Lists all brands.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
         private static void ListAllBrands(UserLogic userlogic)
         {
             Console.WriteLine("<< ALL BRANDS >>");
@@ -72,6 +76,10 @@ namespace MyLaptopShop.Program
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Lists all laptops.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
         private static void ListAllLaptops(UserLogic userlogic)
         {
             Console.WriteLine("<< ALL LAPTOPS >>");
@@ -81,6 +89,10 @@ namespace MyLaptopShop.Program
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Lists all specifications.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
         private static void ListAllSpecs(UserLogic userlogic)
         {
             Console.WriteLine("<< ALL SPECIFICATIONS >>");
@@ -90,6 +102,10 @@ namespace MyLaptopShop.Program
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Asks for the new brands parameters and adds it to the DB.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void AddBrands(AdministratorLogic adminlogic)
         {
             var msg1 = new { msg = "Enter the new brands name" };
@@ -107,6 +123,10 @@ namespace MyLaptopShop.Program
             adminlogic.AddBrand(name, fyear, head, ceo);
         }
 
+        /// <summary>
+        /// Asks for the new laptops parameters and adds it to the DB.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void AddLaptops(AdministratorLogic adminlogic)
         {
             var msg1 = new { msg = "Enter the new laptops brand ID" };
@@ -124,6 +144,10 @@ namespace MyLaptopShop.Program
             adminlogic.AddLaptop(bid, name, ryear, price);
         }
 
+        /// <summary>
+        /// Asks for the new specifications parameters and adds it to the DB.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void AddSpecs(AdministratorLogic adminlogic)
         {
             var msg1 = new { msg = "Enter the new specifications laptop ID" };
@@ -147,6 +171,10 @@ namespace MyLaptopShop.Program
             adminlogic.AddSpec(lid, name, cpu, vga, ram, price);
         }
 
+        /// <summary>
+        /// Asks for a brands ID you want to delet from the DB and Delets it.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void DeleteBrand(AdministratorLogic adminlogic)
         {
             var msg = new { msg = "Enter the brands ID, you want to delete." };
@@ -155,6 +183,10 @@ namespace MyLaptopShop.Program
             adminlogic.DeleteBrand(id);
         }
 
+        /// <summary>
+        /// Asks for a laptops ID you want to delet from the DB and Delets it.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void DeleteLaptop(AdministratorLogic adminlogic)
         {
             var msg = new { msg = "Enter the laptop ID, you want to delete." };
@@ -163,6 +195,10 @@ namespace MyLaptopShop.Program
             adminlogic.DeleteLaptop(id);
         }
 
+        /// <summary>
+        /// Asks for a specifications ID you want to delet from the DB and Delets it.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void DeleteSpec(AdministratorLogic adminlogic)
         {
             var msg = new { msg = "Enter the specification ID, you want to delete." };
@@ -171,6 +207,10 @@ namespace MyLaptopShop.Program
             adminlogic.DeleteSpec(id);
         }
 
+        /// <summary>
+        /// Asks for the id of the brand you want to update, than asks for the new parameters, than upedates is.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void UpdateBrand(AdministratorLogic adminlogic)
         {
             var msg = new { msg = "Enter the brands ID, you want to update" };
@@ -191,6 +231,10 @@ namespace MyLaptopShop.Program
             adminlogic.BrandUpdate(id, name, fyear, head, ceo);
         }
 
+        /// <summary>
+        /// Asks for the id of the laptops you want to update, than asks for the new parameters, than upedates is.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void UpdateLaptop(AdministratorLogic adminlogic)
         {
             var msg = new { msg = "Enter the laptops ID, you want to update" };
@@ -211,6 +255,10 @@ namespace MyLaptopShop.Program
             adminlogic.LaptopUpdate(id, name, ryear, price);
         }
 
+        /// <summary>
+        /// Asks for the id of the specifications you want to update, than asks for the new parameters, than upedates is.
+        /// </summary>
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
         private static void UpdateSpec(AdministratorLogic adminlogic)
         {
             var msg = new { msg = "Enter the specifications ID, you want to update" };
@@ -237,6 +285,10 @@ namespace MyLaptopShop.Program
             adminlogic.SpecUpdate(id, name, cpu, vga, ram, price);
         }
 
+        /// <summary>
+        /// Asks for an ID of the brand you want to see, and lists it.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
         private static void ListBrand(UserLogic userlogic)
         {
             var msg = new { msg = "Enter the ID of a brand, you want to find." };
@@ -247,6 +299,10 @@ namespace MyLaptopShop.Program
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Asks for an ID of the laptop you want to see, and lists it.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
         private static void ListLaptop(UserLogic userlogic)
         {
             var msg = new { msg = "Enter the ID of a laptop, you want to find." };
@@ -257,6 +313,10 @@ namespace MyLaptopShop.Program
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Asks for an ID of the specification you want to see, and lists it.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
         private static void ListSpec(UserLogic userlogic)
         {
             var msg = new { msg = "Enter the ID of a specification, you want to find." };
