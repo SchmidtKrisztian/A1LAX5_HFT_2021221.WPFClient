@@ -18,34 +18,31 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <summary>
         /// Add a new brand to the DB.
         /// </summary>
-        /// <param name="id">ID of the new brand.</param>
         /// <param name="name">Name of the brand.</param>
         /// <param name="foundationyear">Year of foundation.</param>
         /// <param name="headquarters">Headquarters place.</param>
         /// <param name="ceoname">Name of the companys CEO.</param>
-        void AddBrand(int id, string name, int foundationyear, string headquarters, string ceoname);
+        void AddBrand(string name, int foundationyear, string headquarters, string ceoname);
 
         /// <summary>
         /// Add a new laptop to the DB.
         /// </summary>
-        /// <param name="id">Id of the laptop.</param>
         /// <param name="brandid">ID of the laptops brand.</param>
         /// <param name="name">Name of the laptop.</param>
         /// <param name="releaseyear">The year when the laptop was released.</param>
         /// <param name="baseprice">Base price.</param>
-        void AddLaptop(int id, int brandid, string name, int releaseyear, int baseprice);
+        void AddLaptop(int brandid, string name, int releaseyear, int baseprice);
 
         /// <summary>
         /// Add a new specification to the DB.
         /// </summary>
-        /// <param name="id">Id of the specification.</param>
         /// <param name="laptopid">The id of the laptop witch has the specification.</param>
         /// <param name="name">Name of the specification.</param>
         /// <param name="cpu">Name of the cpu.</param>
         /// <param name="graphicscard">Nem of the Graphicscard.</param>
         /// <param name="ram">Gb of RAM.</param>
         /// <param name="price">Additional price of the specification.</param>
-        void AddSpec(int id, int laptopid, string name, string cpu, string graphicscard, int ram, int price);
+        void AddSpec(int laptopid, string name, string cpu, string graphicscard, int ram, int price);
 
         /// <summary>
         /// Deleting the brand with the given ID.

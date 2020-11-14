@@ -51,7 +51,7 @@ namespace MyLaptopShop.Program
                 .Add(">> List laptops with their average specification cost", () => AvgSpec(userlogic))
                 .Add(">> List Brand name, laptop name and average highest specification cost", () => HghLaptop(userlogic));
 
-        menu.Show();
+       menu.Show();
         }
 
         private static void ListAllBrands(UserLogic userlogic)
@@ -83,29 +83,23 @@ namespace MyLaptopShop.Program
 
         private static void AddBrands(AdministratorLogic adminlogic)
         {
-            var msg = new { msg = "Enter the new brands ID" };
-            Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             var msg1 = new { msg = "Enter the new brands name" };
             Console.WriteLine(msg1.msg);
             string name = Console.ReadLine();
             var msg2 = new { msg = "Enter the new foundation year" };
-            Console.WriteLine(msg1.msg);
+            Console.WriteLine(msg2.msg);
             int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             var msg3 = new { msg = "Enter the new headquarters" };
-            Console.WriteLine(msg1.msg);
+            Console.WriteLine(msg3.msg);
             string head = Console.ReadLine();
             var msg4 = new { msg = "Enter the new CEO name" };
-            Console.WriteLine(msg1.msg);
+            Console.WriteLine(msg4.msg);
             string ceo = Console.ReadLine();
-            adminlogic.AddBrand(id, name, fyear, head, ceo);
+            adminlogic.AddBrand(name, fyear, head, ceo);
         }
 
         private static void AddLaptops(AdministratorLogic adminlogic)
         {
-            var msg = new { msg = "Enter the new laptops ID" };
-            Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             var msg1 = new { msg = "Enter the new laptops brand ID" };
             Console.WriteLine(msg1.msg);
             int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -118,14 +112,11 @@ namespace MyLaptopShop.Program
             var msg4 = new { msg = "Enter the new price" };
             Console.WriteLine(msg4.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.AddLaptop(id, bid, name, ryear, price);
+            adminlogic.AddLaptop(bid, name, ryear, price);
         }
 
         private static void AddSpecs(AdministratorLogic adminlogic)
         {
-            var msg = new { msg = "Enter the new specifications ID" };
-            Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             var msg1 = new { msg = "Enter the new specifications laptop ID" };
             Console.WriteLine(msg1.msg);
             int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -144,7 +135,7 @@ namespace MyLaptopShop.Program
             var msg6 = new { msg = "Enter the specification price" };
             Console.WriteLine(msg6.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.AddSpec(id, lid, name, cpu, vga, ram, price);
+            adminlogic.AddSpec(lid, name, cpu, vga, ram, price);
         }
 
         private static void DeleteBrand(AdministratorLogic adminlogic)

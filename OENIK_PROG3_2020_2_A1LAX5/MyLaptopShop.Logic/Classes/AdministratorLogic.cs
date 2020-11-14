@@ -38,44 +38,61 @@ namespace MyLaptopShop.Logic.Classes
         /// <summary>
         /// Add a new brand to the DB.
         /// </summary>
-        /// <param name="id">New ID.</param>
         /// <param name="name">Name of the brand.</param>
         /// <param name="foundationyear">Year of foundation.</param>
         /// <param name="headquarters">Headquarters place.</param>
         /// <param name="ceoname">Name of the companys CEO.</param>
-        public void AddBrand(int id, string name, int foundationyear, string headquarters, string ceoname)
+        public void AddBrand(string name, int foundationyear, string headquarters, string ceoname)
         {
-            Brand tmp = new Brand(id, name, foundationyear, headquarters, ceoname);
+            Brand tmp = new Brand()
+            {
+                Name = name,
+                FoundationYear = foundationyear,
+                Headquarters = headquarters,
+                CEOName = ceoname,
+            };
             this.brandrepo.Add(tmp);
         }
 
         /// <summary>
         /// Add a new laptop to the DB.
         /// </summary>
-        /// <param name="id">Id of the laptop.</param>
         /// <param name="brandid">ID of the laptops brand.</param>
         /// <param name="name">Name of the laptop.</param>
         /// <param name="releaseyear">The year when the laptop was released.</param>
         /// <param name="baseprice">Base price.</param>
-        public void AddLaptop(int id, int brandid, string name, int releaseyear, int baseprice)
+        public void AddLaptop(int brandid, string name, int releaseyear, int baseprice)
         {
-            Laptop tmp = new Laptop(id, brandid, name, releaseyear, baseprice);
+            Laptop tmp = new Laptop()
+            {
+                BrandId = brandid,
+                Name = name,
+                ReleaseYear = releaseyear,
+                BasePrice = baseprice,
+            };
             this.laptoprepo.Add(tmp);
         }
 
         /// <summary>
         /// Add a new specification to the DB.
         /// </summary>
-        /// <param name="id">Id of the specification.</param>
         /// <param name="laptopid">The id of the laptop witch has the specification.</param>
         /// <param name="name">Name of the specification.</param>
         /// <param name="cpu">Name of the cpu.</param>
         /// <param name="graphicscard">Nem of the Graphicscard.</param>
         /// <param name="ram">Gb of RAM.</param>
         /// <param name="price">Additional price of the specification.</param>
-        public void AddSpec(int id, int laptopid, string name, string cpu, string graphicscard, int ram, int price)
+        public void AddSpec(int laptopid, string name, string cpu, string graphicscard, int ram, int price)
         {
-            Specification tmp = new Specification(id, laptopid, name, cpu, graphicscard, ram, price);
+            Specification tmp = new Specification()
+            {
+                LaptopId = laptopid,
+                Name = name,
+                CPU = cpu,
+                GraphicsCardName = graphicscard,
+                RAM = ram,
+                AdditionalPrice = price,
+            };
             this.specrepo.Add(tmp);
         }
 

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyLaptopShop.Logic\MyLaptopShop.Logic.csproj" />
+    <ProjectReference Include="..\MyLaptopShop.Repository\MyLaptopShop.Repository.csproj" />
   </ItemGroup>
 
 </Project>
