@@ -20,42 +20,49 @@ namespace MyLaptopShop.Program
     /// </summary>
     public class Menu
     {
-        private Factory factory;
+        private AdministratorLogic adminlogic;
+        private UserLogic userlogic;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Menu"/> class.
         /// </summary>
-        public Menu()
+        /// <param name="adminlogic">AdministratorLogic instance.</param>
+        /// <param name="userlogic">UserLogic istance.</param>
+        public Menu(AdministratorLogic adminlogic, UserLogic userlogic)
         {
-            this.factory = new Factory();
+            this.adminlogic = adminlogic;
+            this.userlogic = userlogic;
         }
+
+       
 
         /// <summary>
         /// Te main menu method.
         /// </summary>
         /// <param name="adminlogic">AdministratorLogic instance.</param>
         /// <param name="userlogic">UserLogic instance.</param>
-        public static void MainMenu(AdministratorLogic adminlogic, UserLogic userlogic)
+        public void MainMenu()
         {
             var menu = new ConsoleMenu()
-                .Add(">> List all BRANDs", () => ListAllBrands(userlogic))
-                .Add(">> List all LAPTOPs", () => ListAllLaptops(userlogic))
-                .Add(">> List all SPECIFICATIONs", () => ListAllSpecs(userlogic))
-                .Add(">> Add new BRAND", () => AddBrands(adminlogic))
-                .Add(">> Add new LAPTOP", () => AddLaptops(adminlogic))
-                .Add(">> Add new SPECIFICATION", () => AddSpecs(adminlogic))
-                .Add(">> Delete a BRAND", () => DeleteBrand(adminlogic))
-                .Add(">> Delete a LAPTOP", () => DeleteLaptop(adminlogic))
-                .Add(">> Delete a SPECIFICATION", () => DeleteSpec(adminlogic))
-                .Add(">> Update a BRAND", () => UpdateBrand(adminlogic))
-                .Add(">> Update a LAPTOP", () => UpdateLaptop(adminlogic))
-                .Add(">> Update a SPECIFICATION", () => UpdateSpec(adminlogic))
-                .Add(">> List a BRAND, by ID", () => ListBrand(userlogic))
-                .Add(">> List a LAPTOP, by ID", () => ListLaptop(userlogic))
-                .Add(">> List a SPECIFICATION, by ID", () => ListSpec(userlogic))
-                .Add(">> List countries with their laptop count", () => CountLaptop(userlogic))
-                .Add(">> List laptops with their average specification cost", () => AvgSpec(userlogic))
-                .Add(">> List Brand name, laptop name and average highest specification cost", () => HghLaptop(userlogic));
+                .Add(">> List all BRANDs", () => ListAllBrands(this.userlogic))
+                .Add(">> List all LAPTOPs", () => ListAllLaptops(this.userlogic))
+                .Add(">> List all SPECIFICATIONs", () => ListAllSpecs(this.userlogic))
+                .Add(">> Add new BRAND", () => AddBrands(this.adminlogic))
+                .Add(">> Add new LAPTOP", () => AddLaptops(this.adminlogic))
+                .Add(">> Add new SPECIFICATION", () => AddSpecs(this.adminlogic))
+                .Add(">> Delete a BRAND", () => DeleteBrand(this.adminlogic))
+                .Add(">> Delete a LAPTOP", () => DeleteLaptop(this.adminlogic))
+                .Add(">> Delete a SPECIFICATION", () => DeleteSpec(this.adminlogic))
+                .Add(">> Update a BRAND", () => UpdateBrand(this.adminlogic))
+                .Add(">> Update a LAPTOP", () => UpdateLaptop(this.adminlogic))
+                .Add(">> Update a SPECIFICATION", () => UpdateSpec(this.adminlogic))
+                .Add(">> List a BRAND, by ID", () => ListBrand(this.userlogic))
+                .Add(">> List a LAPTOP, by ID", () => ListLaptop(this.userlogic))
+                .Add(">> List a SPECIFICATION, by ID", () => ListSpec(this.userlogic))
+                .Add(">> List countries with their laptop count", () => CountLaptop(this.userlogic))
+                .Add(">> List laptops with their average specification cost", () => AvgSpec(this.userlogic))
+                .Add(">> List Brand name, laptop name and average highest specification cost", () => HghLaptop(this.userlogic));
+            menu.Show();
         }
 
         private static void ListAllBrands(UserLogic userlogic)
