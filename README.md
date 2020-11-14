@@ -13,5 +13,6 @@ ConsoleApp Funkciólista
 -Specifikáció listázása/ hozzáadása/ módósítása/ törlése
 -Legyen lehetőség kilistázni, hogy egy adott országban hány laptopot gyártottak
 -Legyen lehetőség kiírni a laptopokhoz tartozó specifikációk átlag árát
--Legyen lehetőség kilistázni hogy egy adott laptop teljes árát egy választott specifikációval.
+-Legyen lehetőség kilistázni azokat a márkákat akiknek van Gamer specifikációjuk
+
 

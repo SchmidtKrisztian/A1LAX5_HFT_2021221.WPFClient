@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyLaptopShop.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:MyLaptopShop.Logic.Classes.AdministratorLogic">
+            <summary>
+            AdministratorLogic class, has all the create delete or update methods.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.#ctor(MyLaptopShop.Repository.Interfaces.IBrandRepository,MyLaptopShop.Repository.Interfaces.ILaptopRepository,MyLaptopShop.Repository.Interfaces.ISpecificationRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Logic.Classes.AdministratorLogic"/> class.
+            </summary>
+            <param name="brandrepo">Brand repository instance.</param>
+            <param name="laptoprepo">Laptop repository instance.</param>
+            <param name="specrepo">Specification repository instance.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddBrand(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Add a new brand to the DB.
+            </summary>
+            <param name="name">Name of the brand.</param>
+            <param name="foundationyear">Year of foundation.</param>
+            <param name="headquarters">Headquarters place.</param>
+            <param name="ceoname">Name of the companys CEO.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddLaptop(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Add a new laptop to the DB.
+            </summary>
+            <param name="brandid">ID of the laptops brand.</param>
+            <param name="name">Name of the laptop.</param>
+            <param name="releaseyear">The year when the laptop was released.</param>
+            <param name="baseprice">Base price.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddSpec(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Add a new specification to the DB.
+            </summary>
+            <param name="laptopid">The id of the laptop witch has the specification.</param>
+            <param name="name">Name of the specification.</param>
+            <param name="cpu">Name of the cpu.</param>
+            <param name="graphicscard">Nem of the Graphicscard.</param>
+            <param name="ram">Gb of RAM.</param>
+            <param name="price">Additional price of the specification.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.DeleteBrand(System.Int32)">
+            <summary>
+            Deleting the brand with the given ID.
+            </summary>
+            <param name="id">ID of the brand we want to delete.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.DeleteLaptop(System.Int32)">
+            <summary>
+            Deleting the laptop with the given ID.
+            </summary>
+            <param name="id">ID of the laptop we want to delete.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.DeleteSpec(System.Int32)">
+            <summary>
+            Deleting the laptop with the given ID.
+            </summary>
+            <param name="id">ID of the laptop we want to delete.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.BrandUpdate(System.Int32,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Updating a brands parameters.
+            </summary>
+            <param name="id">Id of the brand.</param>
+            <param name="name">New name of the brand.</param>
+            <param name="foundationyear">New year of foundation of the brand.</param>
+            <param name="headquarters">New headquarters of the brand.</param>
+            <param name="ceoname">New name of the brands CEO.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.LaptopUpdate(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Updating a laptops parameters.
+            </summary>
+            <param name="id">Id of the laptop.</param>
+            <param name="name">The new name of the laptop.</param>
+            <param name="releaseyear">The new year of the laptops release.</param>
+            <param name="baseprice">The new price of the laptop.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.SpecUpdate(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Updating a specification parameters.
+            </summary>
+            <param name="id">Id of the specification.</param>
+            <param name="name">New name of the specification.</param>
+            <param name="cpu">New CPUs name.</param>
+            <param name="graphicscard">New nameof the graphicscard.</param>
+            <param name="ram">New Gb of RAMs.</param>
+            <param name="price">Additional price of the specification.</param>
+        </member>
+        <member name="T:MyLaptopShop.Logic.Classes.UserLogic">
+            <summary>
+            Class that does the listing methods.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.#ctor(MyLaptopShop.Repository.Interfaces.IBrandRepository,MyLaptopShop.Repository.Interfaces.ILaptopRepository,MyLaptopShop.Repository.Interfaces.ISpecificationRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Logic.Classes.UserLogic"/> class.
+            </summary>
+            <param name="brandrepo">Brand repository instance.</param>
+            <param name="laptoprepo">Laptop repository instance.</param>
+            <param name="specrepo">Specification repository instance.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.BrandGetOne(System.Int32)">
+            <summary>
+            Gives back the istance witch belongs to the parameter ID.
+            </summary>
+            <param name="id">ID of the parameter we want to get.</param>
+            <returns>The instance with the parameter ID.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.LaptopGetOne(System.Int32)">
+            <summary>
+            Gives back the istance witch belongs to the parameter ID.
+            </summary>
+            <param name="id">ID of the parameter we want to get.</param>
+            <returns>The instance with the parameter ID.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.SpecGetOne(System.Int32)">
+            <summary>
+            Gives back the istance witch belongs to the parameter ID.
+            </summary>
+            <param name="id">ID of the parameter we want to get.</param>
+            <returns>The instance with the parameter ID.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.GetAllBrand">
+            <summary>
+            Gives back all the brands.
+            </summary>
+            <returns>List of all brands.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.GetAllLaptop">
+            <summary>
+            Gives back all the laptops.
+            </summary>
+            <returns>List of all laptops.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.GetAllSpec">
+            <summary>
+            Gives back all the specifications.
+            </summary>
+            <returns>List of all specifications.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.LaptopCount">
+            <summary>
+            List the number of laptops group by countries.
+            </summary>
+            <returns>List of strings.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.AvgSpecPrice">
+            <summary>
+            Lists laptops with average specification prices.
+            </summary>
+            <returns>List of fromed strings of the results.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.GamerBrand">
+            <summary>
+            List Brands with the highest specification price.
+            </summary>
+            <returns>List of formed string of the result.</returns>
+        </member>
+        <member name="T:MyLaptopShop.Logic.Interfaces.IAdministratorLogic">
+            <summary>
+            This is the Laptoplogic interface.
+            </summary>
+            <typeparam name="T">Genreic parameter, class type.</typeparam>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddBrand(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Add a new brand to the DB.
+            </summary>
+            <param name="name">Name of the brand.</param>
+            <param name="foundationyear">Year of foundation.</param>
+            <param name="headquarters">Headquarters place.</param>
+            <param name="ceoname">Name of the companys CEO.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddLaptop(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Add a new laptop to the DB.
+            </summary>
+            <param name="brandid">ID of the laptops brand.</param>
+            <param name="name">Name of the laptop.</param>
+            <param name="releaseyear">The year when the laptop was released.</param>
+            <param name="baseprice">Base price.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddSpec(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Add a new specification to the DB.
+            </summary>
+            <param name="laptopid">The id of the laptop witch has the specification.</param>
+            <param name="name">Name of the specification.</param>
+            <param name="cpu">Name of the cpu.</param>
+            <param name="graphicscard">Nem of the Graphicscard.</param>
+            <param name="ram">Gb of RAM.</param>
+            <param name="price">Additional price of the specification.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.DeleteBrand(System.Int32)">
+            <summary>
+            Deleting the brand with the given ID.
+            </summary>
+            <param name="id">ID of the brand we want to delete.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.DeleteLaptop(System.Int32)">
+            <summary>
+            Deleting the laptop with the given ID.
+            </summary>
+            <param name="id">ID of the laptop we want to delete.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.DeleteSpec(System.Int32)">
+            <summary>
+            Deleting the laptop with the given ID.
+            </summary>
+            <param name="id">ID of the laptop we want to delete.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.BrandUpdate(System.Int32,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Updating a brands parameters.
+            </summary>
+            <param name="id">Id of the brand.</param>
+            <param name="name">New name of the brand.</param>
+            <param name="foundationyear">New year of foundation of the brand.</param>
+            <param name="headquarters">New headquarters of the brand.</param>
+            <param name="ceoname">New name of the brands CEO.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.LaptopUpdate(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Updating a laptops parameters.
+            </summary>
+            <param name="id">Id of the laptop.</param>
+            <param name="name">The new name of the laptop.</param>
+            <param name="releaseyear">The new year of the laptops release.</param>
+            <param name="baseprice">The new price of the laptop.</param>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.SpecUpdate(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Updating a specification parameters.
+            </summary>
+            <param name="id">Id of the specification.</param>
+            <param name="name">New name of the specification.</param>
+            <param name="cpu">New CPUs name.</param>
+            <param name="graphicscard">New nameof the graphicscard.</param>
+            <param name="ram">New Gb of RAMs.</param>
+            <param name="price">Additional price of the specification.</param>
+        </member>
+        <member name="T:MyLaptopShop.Logic.Interfaces.IUserLogic">
+            <summary>
+            Interface of the UserLogic class.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.BrandGetOne(System.Int32)">
+            <summary>
+            Gives back the istance witch belongs to the parameter ID.
+            </summary>
+            <param name="id">ID of the parameter we want to get.</param>
+            <returns>The instance with the parameter ID.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.LaptopGetOne(System.Int32)">
+            <summary>
+            Gives back the istance witch belongs to the parameter ID.
+            </summary>
+            <param name="id">ID of the parameter we want to get.</param>
+            <returns>The instance with the parameter ID.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.SpecGetOne(System.Int32)">
+            <summary>
+            Gives back the istance witch belongs to the parameter ID.
+            </summary>
+            <param name="id">ID of the parameter we want to get.</param>
+            <returns>The instance with the parameter ID.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.GetAllBrand">
+            <summary>
+            Gives back all the brands.
+            </summary>
+            <returns>List of all brands.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.GetAllLaptop">
+            <summary>
+            Gives back all the laptops.
+            </summary>
+            <returns>List of all laptops.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.GetAllSpec">
+            <summary>
+            Gives back all the specifications.
+            </summary>
+            <returns>List of all specifications.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.LaptopCount">
+            <summary>
+            List the number of laptops group by brands.
+            </summary>
+            <returns>List of strings.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.AvgSpecPrice">
+            <summary>
+            Lists laptops with average specification prices.
+            </summary>
+            <returns>List of fromed strings of the results.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Interfaces.IUserLogic.GamerBrand">
+            <summary>
+            List brands names who has Gamer specifications.
+            </summary>
+            <returns>List of formed string of the result.</returns>
+        </member>
+    </members>
+</doc>

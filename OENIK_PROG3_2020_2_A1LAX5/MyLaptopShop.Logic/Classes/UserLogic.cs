@@ -92,21 +92,35 @@ namespace MyLaptopShop.Logic.Classes
         }
 
         /// <summary>
-        /// List the number of laptops group by brands.
+        /// List the number of laptops group by countries.
         /// </summary>
         /// <returns>List of strings.</returns>
         public IList<string> LaptopCount()
         {
-            var q = from brand in this.brandrepo.GetAll()
-                    join laptop in this.laptoprepo.GetAll() on brand.Id equals laptop.BrandId
-                    let item = new { BrandName = brand.Name, LaptopName = laptop.Id }
-                    group item by item.BrandName into brandres
+            List<string> list = new List<string>();
+            var q = from x in this.laptoprepo.GetAll()
+                    group x by x.BrandId into g
                     select new
                     {
-                        COUNTRY = brandres.Key,
-                        Count = brandres.LaptopId.Count(),
+                        BRAND_ID = g.Key,
+                        COUNT = g.Count(),
                     };
-            return q.ToList();
+            var q2 = from x in this.brandrepo.GetAll()
+                     join y in q on x.Id equals y.BRAND_ID
+                     let item = new { x.Headquarters, y.COUNT }
+                     group item by item.Headquarters into grp
+                     select new
+                     {
+                         Place = grp.Key,
+                         Count = grp.Sum(x => x.COUNT),
+                     };
+            foreach (var item in q2)
+            {
+                string tmp = "COUNTRY: " + item.Place + "\t LAPTOPS COUNT: " + item.Count;
+                list.Add(tmp);
+            }
+
+            return list;
         }
 
         /// <summary>
@@ -115,34 +129,55 @@ namespace MyLaptopShop.Logic.Classes
         /// <returns>List of fromed strings of the results.</returns>
         public IList<string> AvgSpecPrice()
         {
-            var q = from laptop in this.laptoprepo.GetAll()
-                    join spec in this.specrepo.GetAll() on laptop.Id equals spec.LaptopId
-                    let avg = 
+            List<string> list = new List<string>();
+            var q = from x in this.specrepo.GetAll()
+                    group x by x.LaptopId into g
                     select new
                     {
-                        LaptopName = item.LaptopName,
-                        AveragePrice = item.Average(item => item.Price) ?? 0
+                        LaptopId = g.Key,
+                        Avg = g.Average(a => a.AdditionalPrice),
                     };
-            return q.ToList();
+            var q2 = from x in this.laptoprepo.GetAll()
+                     join y in q on x.Id equals y.LaptopId
+                     let item = new { x.Id, x.Name, y.Avg }
+                     group item by item.Name into grp
+                     select new
+                     {
+                         Name = grp.Key,
+                         Avg = grp.Average(x => x.Avg),
+                     };
+            foreach (var item in q2)
+            {
+                string tmp = "LAPTOP: " + item.Name + "\t AVERAGE PRICE: " + item.Avg;
+                list.Add(tmp);
+            }
+
+            return list;
         }
 
         /// <summary>
         /// List Brands with the highest specification price.
         /// </summary>
         /// <returns>List of formed string of the result.</returns>
-        public IList<string> HghSpecBrand()
+        public IList<string> GamerBrand()
         {
-            var q = from brand in this.brandrepo.GetAll()
-                    join laptop in this.laptoprepo.GetAll() on brand.Id equals laptop.BrandId
-                    join spec in this.specrepo.GetAll() on laptop.Id equals spec.LaptopId
-                    let item = new { BrandName = brand.Name, SpecPrice = spec.AdditionalPrice }
-                    orderby item.SpecPrice
+            List<string> list = new List<string>();
+            var q = from x in this.specrepo.GetAll()
+                    join y in this.laptoprepo.GetAll() on x.LaptopId equals y.Id
+                    join z in this.brandrepo.GetAll() on y.BrandId equals z.Id
+                    let item = new { Brand=z.Name, Spec =x.Name }
+                    where item.Spec.Equals("Gamer", StringComparison.Ordinal)
                     select new
                     {
-                        BrandName= item.BrandName.Value,
-                        SpecPrice =item.SpecPrice,
+                        Name = item.Brand,
                     };
-            return q.ToList();
+            foreach (var item in q)
+            {
+                string tmp = item.ToString();
+                list.Add(tmp);
+            }
+
+            return list;
         }
     }
 }

@@ -34,24 +34,22 @@ namespace MyLaptopShop.Program
             this.userlogic = userlogic;
         }
 
-        /// <summary>
-        /// Te main menu method.
-        /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        /// <param name="userlogic">UserLogic instance.</param>
+       /// <summary>
+       /// The maithod that runs the menu.
+       /// </summary>
         public void MainMenu()
         {
             var menu = new ConsoleMenu()
-                .Add(">> List all BRANDs", () => ListAllBrands(this.userlogic))
-                .Add(">> List all LAPTOPs", () => ListAllLaptops(this.userlogic))
-                .Add(">> List all SPECIFICATIONs", () => ListAllSpecs(this.userlogic))
-                .Add(">> Add new BRAND", () => AddBrands(this.adminlogic))
-                .Add(">> Add new LAPTOP", () => AddLaptops(this.adminlogic))
-                .Add(">> Add new SPECIFICATION", () => AddSpecs(this.adminlogic))
-                .Add(">> Delete a BRAND", () => DeleteBrand(this.adminlogic))
-                .Add(">> Delete a LAPTOP", () => DeleteLaptop(this.adminlogic))
-                .Add(">> Delete a SPECIFICATION", () => DeleteSpec(this.adminlogic))
-                .Add(">> Update a BRAND", () => UpdateBrand(this.adminlogic))
+                .Add(" >> List all BRANDs", () => ListAllBrands(this.userlogic))
+                .Add(" >> List all LAPTOPs", () => ListAllLaptops(this.userlogic))
+                .Add(" >> List all SPECIFICATIONs", () => ListAllSpecs(this.userlogic))
+                .Add(" >> Add new BRAND", () => AddBrands(this.adminlogic))
+                .Add(" >> Add new LAPTOP", () => AddLaptops(this.adminlogic))
+                .Add(" >> Add new SPECIFICATION", () => AddSpecs(this.adminlogic))
+                .Add(" >> Delete a BRAND", () => DeleteBrand(this.adminlogic))
+                .Add(" >> Delete a LAPTOP", () => DeleteLaptop(this.adminlogic))
+                .Add(" >> Delete a SPECIFICATION", () => DeleteSpec(this.adminlogic))
+                .Add(" >> Update a BRAND", () => UpdateBrand(this.adminlogic))
                 .Add(">> Update a LAPTOP", () => UpdateLaptop(this.adminlogic))
                 .Add(">> Update a SPECIFICATION", () => UpdateSpec(this.adminlogic))
                 .Add(">> List a BRAND, by ID", () => ListBrand(this.userlogic))
@@ -59,7 +57,7 @@ namespace MyLaptopShop.Program
                 .Add(">> List a SPECIFICATION, by ID", () => ListSpec(this.userlogic))
                 .Add(">> List countries with their laptop count", () => CountLaptop(this.userlogic))
                 .Add(">> List laptops with their average specification cost", () => AvgSpec(this.userlogic))
-                .Add(">> List Brand name, laptop name and average highest specification cost", () => HghLaptop(this.userlogic));
+                .Add(">> List the brands names who has Gamer specifications", () => GamerBrand(this.userlogic));
             menu.Show();
         }
 
@@ -327,19 +325,56 @@ namespace MyLaptopShop.Program
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Lists countries and their laptop counts.
+        /// </summary>
+        /// <param name="userlogic">Userlogic instance.</param>
         private static void CountLaptop(UserLogic userlogic)
         {
-            Console.WriteLine("TODO");
+            var msg = new { msg = "<<Countries and their laptop counts>>" };
+            Console.WriteLine(msg.msg);
+            foreach (var item in userlogic.LaptopCount())
+            {
+                var msg2 = new { msg = item };
+                Console.WriteLine(msg2.msg);
+            }
+
+            Console.ReadKey();
         }
 
+        /// <summary>
+        /// Lists laptops and their average specification price.
+        /// </summary>
+        /// <param name="userlogic">Userlogic instance.</param>
         private static void AvgSpec(UserLogic userlogic)
         {
-            Console.WriteLine("TODO");
+            var msg = new { msg = "<<Laptops and their average specification price>>" };
+            Console.WriteLine(msg.msg);
+            IList<string> list = userlogic.AvgSpecPrice();
+            foreach (var item in list)
+            {
+                var msg2 = new { msg = item };
+                Console.WriteLine(msg2.msg);
+            }
+
+            Console.ReadKey();
         }
 
-        private static void HghLaptop(UserLogic userlogic)
+        /// <summary>
+        /// Lists the brands names who has Gamer specifications.
+        /// </summary>
+        /// <param name="userlogic">Userlogic instance.</param>
+        private static void GamerBrand(UserLogic userlogic)
         {
-            Console.WriteLine("TODO");
+            var msg = new { msg = "<<Brands names who has Gamer specifications>>" };
+            Console.WriteLine(msg.msg);
+            foreach (var item in userlogic.GamerBrand())
+            {
+                var msg2 = new { msg = item };
+                Console.WriteLine(msg2.msg);
+            }
+
+            Console.ReadKey();
         }
     }
 }

@@ -66,9 +66,9 @@ namespace MyLaptopShop.Logic.Interfaces
         IList<string> AvgSpecPrice();
 
         /// <summary>
-        /// List Brands with the highest specification price.
+        /// List brands names who has Gamer specifications.
         /// </summary>
         /// <returns>List of formed string of the result.</returns>
-        IList<string> HghSpecBrand();
+        IList<string> GamerBrand();
     }
 }

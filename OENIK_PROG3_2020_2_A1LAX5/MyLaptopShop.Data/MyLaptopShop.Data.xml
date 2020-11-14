@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyLaptopShop.Data</name>
+    </assembly>
+    <members>
+        <member name="T:MyLaptopShop.Data.Models.Brand">
+            <summary>
+            This is the Model class of the Brands.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Brand.#ctor(System.Int32,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.Brand"/> class.
+            </summary>
+            <param name="id">The ID of the brand.</param>
+            <param name="name">The name of the brand.</param>
+            <param name="foundationYear">The foundation year of the brand.</param>
+            <param name="headquarters">The headquarters place of the brand.</param>
+            <param name="ceoname">The name of the CEO of the brand.</param>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Brand.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.Brand"/> class.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Brand.Id">
+            <summary>
+            Gets or sets the id of a brand, this is a key.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Brand.Name">
+            <summary>
+            Gets or sets the name of the brand.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Brand.FoundationYear">
+            <summary>
+            Gets or sets the foundations yers of the brand.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Brand.Headquarters">
+            <summary>
+            Gets or sets the place of the brands headquarters.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Brand.CEOName">
+            <summary>
+            Gets or Sets the name of the brands CEO.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Brand.Laptops">
+            <summary>
+            Gets or sets the laptops of the brand, not mapped poroperty.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Brand.ToString">
+            <summary>
+            Overriding the ToString() method.
+            </summary>
+            <returns>Formed string.</returns>
+        </member>
+        <member name="T:MyLaptopShop.Data.Models.Laptop">
+            <summary>
+            This the Model class of the Brands.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Laptop.#ctor(System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.Laptop"/> class.
+            </summary>
+            <param name="id">ID of the laptop.</param>
+            <param name="brandId">ID of the laptops brand.</param>
+            <param name="name">Name of the laptop.</param>
+            <param name="releaseYear">The release year of the laptop.</param>
+            <param name="basePrice">The base price of the laptop.</param>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Laptop.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.Laptop"/> class.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Laptop.Id">
+            <summary>
+            Gets or sets the ID of a instance laptop, its a key.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Laptop.BrandId">
+            <summary>
+            Gets or sets the ID of the laptos brand, it's a foreignkey.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Laptop.Name">
+            <summary>
+            Gets or sets the Name of a instance laptop.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Laptop.ReleaseYear">
+            <summary>
+            Gets or sets the release Year of a instance laptop.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Laptop.BasePrice">
+            <summary>
+            Gets or sets the base price of a instance laptop.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Laptop.Brand">
+            <summary>
+            Gets or Sets the brand of the laptop, not mapped poroperty.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Laptop.Specifications">
+            <summary>
+            Gets or sets the specifications of the laptop, not mapped poroperty.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Laptop.ToString">
+            <summary>
+            Overriding the ToString() method.
+            </summary>
+            <returns>Formed string.</returns>
+        </member>
+        <member name="T:MyLaptopShop.Data.Models.LaptopShopContext">
+            <summary>
+            This is The Context class of the database.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.LaptopShopContext"/> class.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MyLaptopShop.Data.Models.LaptopShopContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.LaptopShopContext"/> class.
+            </summary>
+            <param name="options">options.</param>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.LaptopShopContext.Brands">
+            <summary>
+            Gets or sets the Brands table.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.LaptopShopContext.Laptops">
+            <summary>
+            Gets or sets the Laptops table.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.LaptopShopContext.Specifications">
+            <summary>
+            Gets or sets the Specifications table.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Overrideing the original OnConfiguring method.
+            </summary>
+            <param name="optionsBuilder">DbContextOptionBuilder instance.</param>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Overriding the original OnModelCreating method. Creating instances and setting connections between the tables.
+            </summary>
+            <param name="modelBuilder">Modelbuilder instance.</param>
+        </member>
+        <member name="T:MyLaptopShop.Data.Models.Specification">
+            <summary>
+            This is the Model class of the specifications.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Specification.#ctor(System.Int32,System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.Specification"/> class.
+            </summary>
+            <param name="id">ID of the specification.</param>
+            <param name="laptopId">ID of the laptop which has the instance specification.</param>
+            <param name="name">Name of the specification.</param>
+            <param name="cpu">The name of the CPU, that the specification includes.</param>
+            <param name="graphicsCardName">The name of the graphicscard, that the specification includes.</param>
+            <param name="ram">This is how many Gigabyte RAM, the specification has.</param>
+            <param name="price">This is the additional price of the specification.</param>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Specification.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.Specification"/> class.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.Id">
+            <summary>
+            Gets or sets the ID of the specification, it is a key.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.LaptopId">
+            <summary>
+            Gets or sets the laptops ID, which has the instance specification, it is a forignkey.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.Name">
+            <summary>
+            Gets or sets the name of the specification.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.CPU">
+            <summary>
+            Gets or sets the name of the CPU.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.GraphicsCardName">
+            <summary>
+            Gets or sets the name of the graphicscard.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.RAM">
+            <summary>
+            Gets or sets the multiplicity GigaByte of RAM.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.AdditionalPrice">
+            <summary>
+            Gets or sets the additonal price of the specification.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Data.Models.Specification.Laptop">
+            <summary>
+            Gets or sets the laptop of the specification, not mapped poroperty.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Data.Models.Specification.ToString">
+            <summary>
+            Overriding the ToString() method.
+            </summary>
+            <returns>Formed string.</returns>
+        </member>
+    </members>
+</doc>
