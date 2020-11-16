@@ -73,13 +73,13 @@ namespace MyLaptopShop.Data.Models
         /// <param name="modelBuilder">Modelbuilder instance.</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            Brand brand1 = new Brand() { Id = 1, Name = "Samsung", FoundationYear = 1990, Headquarters = "Place1", CEOName = "name" };
-            Brand brand2 = new Brand() { Id = 2, Name = "Dell", FoundationYear = 1990, Headquarters = "Place2", CEOName = "name" };
-            Brand brand3 = new Brand() { Id = 3, Name = "Acer", FoundationYear = 1990, Headquarters = "Place3", CEOName = "name" };
-            Brand brand4 = new Brand() { Id = 4, Name = "Asus", FoundationYear = 1990, Headquarters = "Place4", CEOName = "name" };
-            Brand brand5 = new Brand() { Id = 5, Name = "Apple", FoundationYear = 1990, Headquarters = "Place5", CEOName = "name" };
-            Brand brand6 = new Brand() { Id = 6, Name = "Lenovo", FoundationYear = 1990, Headquarters = "Place6", CEOName = "name" };
-            Brand brand7 = new Brand() { Id = 7, Name = "HP", FoundationYear = 1990, Headquarters = "Place7", CEOName = "name" };
+            Brand brand1 = new Brand() { Id = 1, Name = "Samsung", FoundationYear = 1939, Headquarters = "Seoul", CEOName = "Kim Ki Nam" };
+            Brand brand2 = new Brand() { Id = 2, Name = "Dell", FoundationYear = 1984, Headquarters = "Round Rock", CEOName = "Michael Dell" };
+            Brand brand3 = new Brand() { Id = 3, Name = "Acer", FoundationYear = 1976, Headquarters = "Xinbei", CEOName = "Jason Chen" };
+            Brand brand4 = new Brand() { Id = 4, Name = "Asus", FoundationYear = 1989, Headquarters = "Beitou", CEOName = "Samson Hu" };
+            Brand brand5 = new Brand() { Id = 5, Name = "Apple", FoundationYear = 1976, Headquarters = "Cupertino", CEOName = "Tim Cook" };
+            Brand brand6 = new Brand() { Id = 6, Name = "Lenovo", FoundationYear = 1984, Headquarters = "Hong Kong", CEOName = "Yang Yuanqing" };
+            Brand brand7 = new Brand() { Id = 7, Name = "HP", FoundationYear = 1939, Headquarters = "Palo Alto", CEOName = "Michael Holston" };
 
             Laptop laptop1 = new Laptop() { Id = 1, BrandId = 6, Name = "YogaBook", ReleaseYear = 2010, BasePrice = 500 };
             Laptop laptop2 = new Laptop() { Id = 2, BrandId = 2, Name = "AlienWare 700", ReleaseYear = 2014, BasePrice = 5000 };
