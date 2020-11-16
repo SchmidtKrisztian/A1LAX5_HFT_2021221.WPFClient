@@ -162,16 +162,34 @@ namespace MyLaptopShop.Logic.Classes
         public IList<string> GamerBrand()
         {
             List<string> list = new List<string>();
-            var q = from x in this.specrepo.GetAll()
-                    join y in this.laptoprepo.GetAll() on x.LaptopId equals y.Id
-                    join z in this.brandrepo.GetAll() on y.BrandId equals z.Id
-                    let item = new { Brand=z.Name, Spec =x.Name }
-                    where item.Spec.Equals("Gamer", StringComparison.Ordinal)
+            var q = from spec in this.specrepo.GetAll()
+                    join laptop in this.laptoprepo.GetAll() on spec.LaptopId equals laptop.Id
+                    let item = new { LaptopId = laptop.Id, Name = spec.Name }
+                    where item.Name.Equals("Gamer", StringComparison.Ordinal)
                     select new
                     {
-                        Name = item.Brand,
+                        item.LaptopId,
                     };
-            foreach (var item in q)
+            var q2 = from laptop in this.laptoprepo.GetAll()
+                     join x in q on laptop.Id equals x.LaptopId
+                     let item = new { BrandId = laptop.BrandId, LaptopId = x.LaptopId }
+                     select new
+                     {
+                         BrandID = item.BrandId,
+                     };
+            var q3 = from brand in this.brandrepo.GetAll()
+                     join y in q2 on brand.Id equals y.BrandID
+                     let item = new { BrandName = brand.Name, BrandId = y.BrandID }
+                     select new
+                     {
+                        item.BrandName,
+                     };
+            /*var q5 = from x in this.specrepo.GetAll()
+                    join y in this.laptoprepo.GetAll() on x.LaptopId equals y.Id
+                    join z in this.brandrepo.GetAll() on y.BrandId equals z.Id
+                    where x.Name.Equals("Gamer", StringComparison.Ordinal)
+                    select z.Name;*/
+            foreach (var item in q3)
             {
                 string tmp = item.ToString();
                 list.Add(tmp);

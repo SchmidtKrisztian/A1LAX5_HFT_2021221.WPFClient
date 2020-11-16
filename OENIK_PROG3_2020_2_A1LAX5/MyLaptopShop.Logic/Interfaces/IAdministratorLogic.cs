@@ -12,7 +12,6 @@ namespace MyLaptopShop.Logic.Interfaces
     /// <summary>
     /// This is the Laptoplogic interface.
     /// </summary>
-    /// <typeparam name="T">Genreic parameter, class type.</typeparam>
     public interface IAdministratorLogic
     {
         /// <summary>

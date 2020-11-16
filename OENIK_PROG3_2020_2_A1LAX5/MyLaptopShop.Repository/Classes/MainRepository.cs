@@ -1,4 +1,4 @@
-﻿// <copyright file="Repository.cs" company="PlaceholderCompany">
+﻿// <copyright file="MainRepository.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -11,10 +11,10 @@ namespace MyLaptopShop.Repository.Classes
     using Microsoft.EntityFrameworkCore;
 
     /// <summary>
-    /// Abstract Repository class.
+    /// Abstract MainRepository class.
     /// </summary>
     /// <typeparam name="T">Generic parameter, class type.</typeparam>
-    public abstract class Repository<T> : IRepository<T>
+    public abstract class MainRepository<T> : IRepository<T>
         where T : class
     {
         /// <summary>
@@ -23,10 +23,10 @@ namespace MyLaptopShop.Repository.Classes
         protected DbContext ctx;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Repository{T}"/> class.
+        /// Initializes a new instance of the <see cref="MainRepository{T}"/> class.
         /// </summary>
         /// <param name="ctx">BdContext parameter.</param>
-        protected Repository(DbContext ctx)
+        protected MainRepository(DbContext ctx)
         {
             this.ctx = ctx;
         }

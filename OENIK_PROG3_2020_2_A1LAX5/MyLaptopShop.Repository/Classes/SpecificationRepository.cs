@@ -14,7 +14,7 @@ namespace MyLaptopShop.Repository.Classes
     /// <summary>
     /// This is the repository class of the specifications.
     /// </summary>
-    public class SpecificationRepository : Repository<Specification>, ISpecificationRepository
+    public class SpecificationRepository : MainRepository<Specification>, ISpecificationRepository
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SpecificationRepository"/> class.

@@ -202,7 +202,6 @@
             <summary>
             This is the Laptoplogic interface.
             </summary>
-            <typeparam name="T">Genreic parameter, class type.</typeparam>
         </member>
         <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddBrand(System.String,System.Int32,System.String,System.String)">
             <summary>

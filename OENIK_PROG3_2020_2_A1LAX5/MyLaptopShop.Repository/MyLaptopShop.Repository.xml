@@ -75,42 +75,42 @@
             <param name="id">Int, the laptop with this ID, will have his release year changed.</param>
             <param name="newreleaseyear">Int, the new release year of a Brand.</param>
         </member>
-        <member name="T:MyLaptopShop.Repository.Classes.Repository`1">
+        <member name="T:MyLaptopShop.Repository.Classes.MainRepository`1">
             <summary>
-            Abstract Repository class.
+            Abstract MainRepository class.
             </summary>
             <typeparam name="T">Generic parameter, class type.</typeparam>
         </member>
-        <member name="F:MyLaptopShop.Repository.Classes.Repository`1.ctx">
+        <member name="F:MyLaptopShop.Repository.Classes.MainRepository`1.ctx">
             <summary>
             DbContext field.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.Repository`1"/> class.
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.MainRepository`1"/> class.
             </summary>
             <param name="ctx">BdContext parameter.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.Add(`0)">
+        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.Add(`0)">
             <summary>
             Method, you can add instances to the context.
             </summary>
             <param name="newInstance">The instance we want to add.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.Delete(System.Int32)">
+        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.Delete(System.Int32)">
             <summary>
             Method, youn can delete instances to the context.
             </summary>
             <param name="id">The id of the instance we want to delete.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.GetAll">
+        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.GetAll">
             <summary>
             Function, you can get a set of the instances in the context.
             </summary>
             <returns>A set of instances.</returns>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.GetOne(System.Int32)">
+        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.GetOne(System.Int32)">
             <summary>
             Function, you can get the instance which belong to the parameter ID.
             </summary>

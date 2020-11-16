@@ -110,13 +110,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg1.msg);
             string name = Console.ReadLine();
             var msg2 = new { msg = "Enter the new foundation year" };
-            Console.WriteLine(msg1.msg);
+            Console.WriteLine(msg2.msg);
             int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             var msg3 = new { msg = "Enter the new headquarters" };
-            Console.WriteLine(msg1.msg);
+            Console.WriteLine(msg3.msg);
             string head = Console.ReadLine();
             var msg4 = new { msg = "Enter the new CEO name" };
-            Console.WriteLine(msg1.msg);
+            Console.WriteLine(msg4.msg);
             string ceo = Console.ReadLine();
             adminlogic.AddBrand(name, fyear, head, ceo);
         }

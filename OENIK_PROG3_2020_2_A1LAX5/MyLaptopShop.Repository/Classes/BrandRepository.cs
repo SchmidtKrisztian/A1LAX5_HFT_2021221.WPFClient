@@ -14,7 +14,7 @@ namespace MyLaptopShop.Repository.Classes
     /// <summary>
     /// This is the Brands reposotory class.
     /// </summary>
-    public class BrandRepository : Repository<Brand>, IBrandRepository
+    public class BrandRepository : MainRepository<Brand>, IBrandRepository
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandRepository"/> class.

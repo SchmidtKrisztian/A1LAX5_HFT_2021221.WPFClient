@@ -15,7 +15,7 @@ namespace MyLaptopShop.Repository.Classes
     /// <summary>
     /// This is the Laptop repository class.
     /// </summary>
-    public class LaptopRepository : Repository<Laptop>, ILaptopRepository
+    public class LaptopRepository : MainRepository<Laptop>, ILaptopRepository
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LaptopRepository"/> class.
