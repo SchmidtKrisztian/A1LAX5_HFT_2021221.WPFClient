@@ -94,6 +94,40 @@
             <param name="ram">New Gb of RAMs.</param>
             <param name="price">Additional price of the specification.</param>
         </member>
+        <member name="T:MyLaptopShop.Logic.Classes.Average">
+            <summary>
+            Average class.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Logic.Classes.Average.Name">
+            <summary>
+            Gets or sets the name of the instance.
+            </summary>
+        </member>
+        <member name="P:MyLaptopShop.Logic.Classes.Average.Avg">
+            <summary>
+            Gets or sets the name of the instance.
+            </summary>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.Average.ToString">
+            <summary>
+            Overriding the base ToString method.
+            </summary>
+            <returns>Formed string og the properties.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.Average.Equals(System.Object)">
+            <summary>
+            Overriding the base Equals function.
+            </summary>
+            <param name="obj">An instance of a given class.</param>
+            <returns>A boolean.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.Average.GetHashCode">
+            <summary>
+            Overriding the base GetHasCode() function.
+            </summary>
+            <returns>Hash code.</returns>
+        </member>
         <member name="T:MyLaptopShop.Logic.Classes.UserLogic">
             <summary>
             Class that does the listing methods.

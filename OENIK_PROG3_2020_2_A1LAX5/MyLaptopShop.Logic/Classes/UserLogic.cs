@@ -148,7 +148,7 @@ namespace MyLaptopShop.Logic.Classes
                      };
             foreach (var item in q2)
             {
-                string tmp = "LAPTOP: " + item.Name + "\t AVERAGE PRICE: " + item.Avg;
+                string tmp = "LAPTOP: " + item.Name + "\t\t AVERAGE PRICE: " + item.Avg;
                 list.Add(tmp);
             }
 

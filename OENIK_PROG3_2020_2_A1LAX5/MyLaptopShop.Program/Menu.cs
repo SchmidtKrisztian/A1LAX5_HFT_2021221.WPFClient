@@ -353,7 +353,7 @@ namespace MyLaptopShop.Program
             IList<string> list = userlogic.AvgSpecPrice();
             foreach (var item in list)
             {
-                var msg2 = new { msg = item };
+                var msg2 = new { msg = item.ToString() };
                 Console.WriteLine(msg2.msg);
             }
 

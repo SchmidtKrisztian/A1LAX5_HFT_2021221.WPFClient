@@ -8,6 +8,7 @@ namespace MyLaptopShop.Logic.Interfaces
     using System.Collections.Generic;
     using System.Text;
     using MyLaptopShop.Data.Models;
+    using MyLaptopShop.Logic.Classes;
 
     /// <summary>
     /// Interface of the UserLogic class.
