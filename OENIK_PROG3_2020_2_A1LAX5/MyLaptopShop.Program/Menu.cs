@@ -119,6 +119,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg4.msg);
             string ceo = Console.ReadLine();
             adminlogic.AddBrand(name, fyear, head, ceo);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg5 = new { msg = "Adding a BRAND was successfull! ^^" };
+            Console.WriteLine(msg5.msg);
+            Console.ResetColor();
+            var msg6 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg6.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -140,6 +147,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg4.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             adminlogic.AddLaptop(bid, name, ryear, price);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg5 = new { msg = "Adding a LAPTOP was successfull! ^^" };
+            Console.WriteLine(msg5.msg);
+            Console.ResetColor();
+            var msg6 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg6.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -167,6 +181,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg6.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             adminlogic.AddSpec(lid, name, cpu, vga, ram, price);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg7 = new { msg = "Adding a SPECIFICATION was successfull! ^^" };
+            Console.WriteLine(msg7.msg);
+            Console.ResetColor();
+            var msg8 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg8.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -179,6 +200,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             adminlogic.DeleteBrand(id);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg5 = new { msg = "Deleting a BRAND was successfull! ^^" };
+            Console.WriteLine(msg5.msg);
+            Console.ResetColor();
+            var msg6 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg6.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -191,6 +219,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             adminlogic.DeleteLaptop(id);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg5 = new { msg = "Deleting a lAPTOP was successfull! ^^" };
+            Console.WriteLine(msg5.msg);
+            Console.ResetColor();
+            var msg6 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg6.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -203,6 +238,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             adminlogic.DeleteSpec(id);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg5 = new { msg = "Deleting a SPECIFICATION was successfull! ^^" };
+            Console.WriteLine(msg5.msg);
+            Console.ResetColor();
+            var msg6 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg6.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -227,6 +269,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg4.msg);
             string ceo = Console.ReadLine();
             adminlogic.BrandUpdate(id, name, fyear, head, ceo);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg5 = new { msg = "Updating a BRAND was successfull! ^^" };
+            Console.WriteLine(msg5.msg);
+            Console.ResetColor();
+            var msg6 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg6.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -251,6 +300,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg4.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             adminlogic.LaptopUpdate(id, name, ryear, price);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg5 = new { msg = "Updating a LAPTOP was successfull! ^^" };
+            Console.WriteLine(msg5.msg);
+            Console.ResetColor();
+            var msg6 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg6.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -281,6 +337,13 @@ namespace MyLaptopShop.Program
             Console.WriteLine(msg6.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             adminlogic.SpecUpdate(id, name, cpu, vga, ram, price);
+            Console.ForegroundColor = ConsoleColor.Green;
+            var msg7 = new { msg = "Updating a LAPTOP was successfull! ^^" };
+            Console.WriteLine(msg7.msg);
+            Console.ResetColor();
+            var msg8 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg8.msg);
+            Console.ReadKey();
         }
 
         /// <summary>
