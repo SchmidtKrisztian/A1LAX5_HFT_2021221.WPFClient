@@ -8,6 +8,7 @@ namespace MyLaptopShop.Logic.Classes
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using Microsoft.EntityFrameworkCore;
     using MyLaptopShop.Data.Models;
     using MyLaptopShop.Logic.Interfaces;
     using MyLaptopShop.Repository.Interfaces;
@@ -163,16 +164,12 @@ namespace MyLaptopShop.Logic.Classes
         {
             List<string> list = new List<string>();
             var q = from spec in this.specrepo.GetAll()
-                    join laptop in this.laptoprepo.GetAll() on spec.LaptopId equals laptop.Id
-                    let item = new { LaptopId = laptop.Id, Name = spec.Name }
-                    where item.Name.Equals("Gamer", StringComparison.Ordinal)
-                    select new
-                    {
-                        item.LaptopId,
-                    };
+                    where EF.Functions.Like(spec.Name, "Gamer")
+                    select spec;
+
             var q2 = from laptop in this.laptoprepo.GetAll()
-                     join x in q on laptop.Id equals x.LaptopId
-                     let item = new { BrandId = laptop.BrandId, LaptopId = x.LaptopId }
+                     join spec in q on laptop.Id equals spec.LaptopId
+                     let item = new { BrandId = laptop.BrandId, LaptopId = spec.LaptopId }
                      select new
                      {
                          BrandID = item.BrandId,
