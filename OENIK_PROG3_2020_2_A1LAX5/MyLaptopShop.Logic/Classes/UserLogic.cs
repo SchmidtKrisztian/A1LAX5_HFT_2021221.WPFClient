@@ -181,14 +181,9 @@ namespace MyLaptopShop.Logic.Classes
                      {
                         item.BrandName,
                      };
-            /*var q5 = from x in this.specrepo.GetAll()
-                    join y in this.laptoprepo.GetAll() on x.LaptopId equals y.Id
-                    join z in this.brandrepo.GetAll() on y.BrandId equals z.Id
-                    where x.Name.Equals("Gamer", StringComparison.Ordinal)
-                    select z.Name;*/
             foreach (var item in q3)
             {
-                string tmp = item.ToString();
+                string tmp = item.BrandName;
                 list.Add(tmp);
             }
 
