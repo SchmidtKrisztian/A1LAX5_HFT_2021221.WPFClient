@@ -15,6 +15,17 @@ namespace MyLaptopShop.Repository.Interfaces
     public interface ISpecificationRepository : IRepository<Specification>
     {
         /// <summary>
+        /// Add a new specification to the DB.
+        /// </summary>
+        /// <param name="laptopid">The id of the laptop witch has the specification.</param>
+        /// <param name="name">Name of the specification.</param>
+        /// <param name="cpu">Name of the cpu.</param>
+        /// <param name="graphicscard">Nem of the Graphicscard.</param>
+        /// <param name="ram">Gb of RAM.</param>
+        /// <param name="price">Additional price of the specification.</param>
+        void Add(int laptopid, string name, string cpu, string graphicscard, int ram, int price);
+
+        /// <summary>
         /// Method signature, you can change the name of a specification with it.
         /// </summary>
         /// <param name="id">Int, the specification with this ID, will have his name changed.</param>

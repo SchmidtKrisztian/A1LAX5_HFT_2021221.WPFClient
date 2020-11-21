@@ -27,6 +27,26 @@ namespace MyLaptopShop.Repository.Classes
         }
 
         /// <summary>
+        /// Add a new brand to the DB.
+        /// </summary>
+        /// <param name="name">Name of the new brand.</param>
+        /// <param name="foundationyear">Foundation year of the new brand.</param>
+        /// <param name="headquarters">Headquarters of the new brand.</param>
+        /// <param name="ceoname">The CEOs name of the new brand.</param>
+        public void Add(string name, int foundationyear, string headquarters, string ceoname)
+        {
+            Brand tmp = new Brand
+            {
+                Name = name,
+                FoundationYear = foundationyear,
+                Headquarters = headquarters,
+                CEOName = ceoname,
+            };
+            this.ctx.Add(tmp);
+            this.ctx.SaveChanges();
+        }
+
+        /// <summary>
         /// Method, you can change the brands CEOs name.
         /// </summary>
         /// <param name="id">Int, the brand with this ID, will have his CEOs name changed.</param>
@@ -55,7 +75,7 @@ namespace MyLaptopShop.Repository.Classes
         /// </summary>
         /// <param name="id">Int, the brand headquarters with this id, will be changed.</param>
         /// <param name="newheadquarters">String, this wis the new Headquarters.</param>
-        public void ChangeHeadguarters(int id, string newheadquarters)
+        public void ChangeHeadquarters(int id, string newheadquarters)
         {
             var brand = this.GetOne(id);
             brand.Headquarters = newheadquarters;

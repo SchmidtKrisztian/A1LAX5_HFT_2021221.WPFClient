@@ -27,6 +27,30 @@ namespace MyLaptopShop.Repository.Classes
         }
 
         /// <summary>
+        /// Add a new specification to the DB.
+        /// </summary>
+        /// <param name="laptopid">The id of the laptop witch has the specification.</param>
+        /// <param name="name">Name of the specification.</param>
+        /// <param name="cpu">Name of the cpu.</param>
+        /// <param name="graphicscard">Nem of the Graphicscard.</param>
+        /// <param name="ram">Gb of RAM.</param>
+        /// <param name="price">Additional price of the specification.</param>
+        public void Add(int laptopid, string name, string cpu, string graphicscard, int ram, int price)
+        {
+            Specification tmp = new Specification
+            {
+                LaptopId = laptopid,
+                Name = name,
+                CPU = cpu,
+                GraphicsCardName = graphicscard,
+                RAM = ram,
+                AdditionalPrice = price,
+            };
+            this.ctx.Add(tmp);
+            this.ctx.SaveChanges();
+        }
+
+        /// <summary>
         /// Method signature, you can change the newadditionalprice of a specification with it.
         /// </summary>
         /// <param name="id">Int, the specification with this ID, will have his newadditionalprice changed.</param>

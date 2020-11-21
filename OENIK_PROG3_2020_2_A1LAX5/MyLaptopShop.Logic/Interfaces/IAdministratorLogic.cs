@@ -17,10 +17,10 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <summary>
         /// Add a new brand to the DB.
         /// </summary>
-        /// <param name="name">Name of the brand.</param>
-        /// <param name="foundationyear">Year of foundation.</param>
-        /// <param name="headquarters">Headquarters place.</param>
-        /// <param name="ceoname">Name of the companys CEO.</param>
+        /// <param name="name">Name of the new brand.</param>
+        /// <param name="foundationyear">Foundation year of the new brand.</param>
+        /// <param name="headquarters">Headquarters of the new brand.</param>
+        /// <param name="ceoname">The CEOs name of the new brand.</param>
         void AddBrand(string name, int foundationyear, string headquarters, string ceoname);
 
         /// <summary>

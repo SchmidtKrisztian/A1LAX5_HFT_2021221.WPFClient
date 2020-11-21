@@ -15,6 +15,15 @@ namespace MyLaptopShop.Repository.Interfaces
     public interface IBrandRepository : IRepository<Brand>
     {
         /// <summary>
+        /// Add a new brand to the DB.
+        /// </summary>
+        /// <param name="name">Name of the new brand.</param>
+        /// <param name="foundationyear">Foundation year of the new brand.</param>
+        /// <param name="headquarters">Headquarters of the new brand.</param>
+        /// <param name="ceoname">The CEOs name of the new brand.</param>
+        void Add(string name, int foundationyear, string headquarters, string ceoname);
+
+        /// <summary>
         /// Method signature, you can change the Name of a brand with it.
         /// </summary>
         /// <param name="id">Int, the brand with this ID, will have his name changed.</param>
@@ -33,7 +42,7 @@ namespace MyLaptopShop.Repository.Interfaces
         /// </summary>
         /// <param name="id">Int, the brand headquarters with this id, will be changed.</param>
         /// <param name="newheadquarters">String, this wis the new Headquarters.</param>
-        void ChangeHeadguarters(int id, string newheadquarters);
+        void ChangeHeadquarters(int id, string newheadquarters);
 
         /// <summary>
         /// Method signature, you can change the brands CEOs name.

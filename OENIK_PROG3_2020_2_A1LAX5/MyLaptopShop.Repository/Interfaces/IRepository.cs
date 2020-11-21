@@ -17,12 +17,6 @@ namespace MyLaptopShop.Repository
          where T : class
      {
         /// <summary>
-        /// Method that can add a new instance to the datebase.
-        /// </summary>
-        /// <param name="newInstance">A Laptop instance.</param>
-        void Add(T newInstance);
-
-        /// <summary>
         /// A method that can delete from the database.
         /// </summary>
         /// <param name="id">The ID of the instance we want to delete.</param>

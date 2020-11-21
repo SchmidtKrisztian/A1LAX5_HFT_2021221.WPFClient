@@ -32,16 +32,6 @@ namespace MyLaptopShop.Repository.Classes
         }
 
         /// <summary>
-        /// Method, you can add instances to the context.
-        /// </summary>
-        /// <param name="newInstance">The instance we want to add.</param>
-        public void Add(T newInstance)
-        {
-            this.ctx.Set<T>().Add(newInstance);
-            this.ctx.SaveChanges();
-        }
-
-        /// <summary>
         /// Method, youn can delete instances to the context.
         /// </summary>
         /// <param name="id">The id of the instance we want to delete.</param>
