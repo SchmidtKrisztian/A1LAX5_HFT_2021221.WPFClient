@@ -24,24 +24,12 @@ namespace MyLaptopShop.Repository.Interfaces
         void Add(int brandid, string name, int releaseyear, int baseprice);
 
         /// <summary>
-        /// Method signature, you can change the name of a laptop with it.
+        /// Updating a laptops parameters.
         /// </summary>
-        /// <param name="id">Int, the laptop with this ID, will have his name changed.</param>
-        /// <param name="newname">String, the new name of a laptop.</param>
-        void ChangeName(int id, string newname);
-
-        /// <summary>
-        /// Method signature, you can change the relese year of a laptop with it.
-        /// </summary>
-        /// <param name="id">Int, the laptop with this ID, will have his release year changed.</param>
-        /// <param name="newreleaseyear">Int, the new release year of a Brand.</param>
-        void ChangeReleaseYear(int id, int newreleaseyear);
-
-        /// <summary>
-        /// Method signature, you can change the base price of a laptop with it.
-        /// </summary>
-        /// <param name="id">Int, the laptop with this ID, will have his base price changed.</param>
-        /// <param name="newbaseprice">Int, the new base price of a laptop.</param>
-        void ChangeBasePrice(int id, int newbaseprice);
+        /// <param name="id">Id of the laptop.</param>
+        /// <param name="name">The new name of the laptop.</param>
+        /// <param name="releaseyear">The new year of the laptops release.</param>
+        /// <param name="baseprice">The new price of the laptop.</param>
+        void Update(int id, string name, int releaseyear, int baseprice);
     }
 }

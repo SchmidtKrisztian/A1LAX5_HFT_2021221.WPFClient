@@ -24,31 +24,13 @@ namespace MyLaptopShop.Repository.Interfaces
         void Add(string name, int foundationyear, string headquarters, string ceoname);
 
         /// <summary>
-        /// Method signature, you can change the Name of a brand with it.
+        /// Updating a brands parameters.
         /// </summary>
-        /// <param name="id">Int, the brand with this ID, will have his name changed.</param>
-        /// <param name="newname">String, the new name of a Brand.</param>
-        void ChangeName(int id, string newname);
-
-        /// <summary>
-        /// Method signature, you can change the brands year of foundation.
-        /// </summary>
-        /// <param name="id">Int, the brand with this ID, will have his foundation year changed.</param>
-        /// <param name="newyear">Int, this will me the new foundation year.</param>
-        void ChangeFoundationYear(int id, int newyear);
-
-        /// <summary>
-        /// Method signature, you can change the brands headquarters place.
-        /// </summary>
-        /// <param name="id">Int, the brand headquarters with this id, will be changed.</param>
-        /// <param name="newheadquarters">String, this wis the new Headquarters.</param>
-        void ChangeHeadquarters(int id, string newheadquarters);
-
-        /// <summary>
-        /// Method signature, you can change the brands CEOs name.
-        /// </summary>
-        /// <param name="id">Int, the brand with this ID, will have his CEOs name changed.</param>
-        /// <param name="newceoname">String, the new CEO Name.</param>
-        void ChangeCEOName(int id, string newceoname);
+        /// <param name="id">Id of the brand.</param>
+        /// <param name="name">New name of the brand.</param>
+        /// <param name="foundationyear">New year of foundation of the brand.</param>
+        /// <param name="headquarters">New headquarters of the brand.</param>
+        /// <param name="ceoname">New name of the brands CEO.</param>
+        void Update(int id, string name, int foundationyear, string headquarters, string ceoname);
     }
 }

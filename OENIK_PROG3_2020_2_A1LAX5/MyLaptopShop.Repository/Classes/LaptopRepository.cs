@@ -45,6 +45,22 @@ namespace MyLaptopShop.Repository.Classes
         }
 
         /// <summary>
+        /// Updating a laptops parameters.
+        /// </summary>
+        /// <param name="id">Id of the laptop.</param>
+        /// <param name="name">The new name of the laptop.</param>
+        /// <param name="releaseyear">The new year of the laptops release.</param>
+        /// <param name="baseprice">The new price of the laptop.</param>
+        public void Update(int id, string name, int releaseyear, int baseprice)
+        {
+            var laptop = this.GetOne(id);
+            laptop.Name = name;
+            laptop.BasePrice = baseprice;
+            laptop.ReleaseYear = releaseyear;
+            this.ctx.SaveChanges();
+        }
+
+        /// <summary>
         /// Method, you can change the base price of a laptop with it.
         /// </summary>
         /// <param name="id">Int, the laptop with this ID, will have his base price changed.</param>

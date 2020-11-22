@@ -26,38 +26,14 @@ namespace MyLaptopShop.Repository.Interfaces
         void Add(int laptopid, string name, string cpu, string graphicscard, int ram, int price);
 
         /// <summary>
-        /// Method signature, you can change the name of a specification with it.
+        /// Updating a specification parameters.
         /// </summary>
-        /// <param name="id">Int, the specification with this ID, will have his name changed.</param>
-        /// <param name="newname">String, the new name of a specification.</param>
-        void ChangeName(int id, string newname);
-
-        /// <summary>
-        /// Method signature, you can change the CPU of a specification with it.
-        /// </summary>
-        /// <param name="id">Int, thespecification with this ID, will have his CPU changed.</param>
-        /// <param name="newcpu">String, the new CPU of a specification.</param>
-        void ChangeCPU(int id, string newcpu);
-
-        /// <summary>
-        /// Method signature, you can change the graphicscard of a specification with it.
-        /// </summary>
-        /// <param name="id">Int, the specification with this ID, will have his graphicscard changed.</param>
-        /// <param name="newgraphicscard">String, the new graphicscard of a specification.</param>
-        void ChangeGraphicsCard(int id, string newgraphicscard);
-
-        /// <summary>
-        /// Method signature, you can change the RAM of a specification with it.
-        /// </summary>
-        /// <param name="id">Int, the specification with this ID, will have his RAM changed.</param>
-        /// <param name="newram">String, the new RAM of a specification.</param>
-        void ChangeRAM(int id, int newram);
-
-        /// <summary>
-        /// Method signature, you can change the newadditionalprice of a specification with it.
-        /// </summary>
-        /// <param name="id">Int, the specification with this ID, will have his newadditionalprice changed.</param>
-        /// <param name="newadditionalprice">String, the new newadditionalprice of a specification.</param>
-        void ChangeAdditionalPrice(int id, int newadditionalprice);
+        /// <param name="id">Id of the specification.</param>
+        /// <param name="name">New name of the specification.</param>
+        /// <param name="cpu">New CPUs name.</param>
+        /// <param name="graphicscard">New nameof the graphicscard.</param>
+        /// <param name="ram">New Gb of RAMs.</param>
+        /// <param name="price">Additional price of the specification.</param>
+        void Update(int id, string name, string cpu, string graphicscard, int ram, int price);
     }
 }

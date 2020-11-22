@@ -47,50 +47,20 @@ namespace MyLaptopShop.Repository.Classes
         }
 
         /// <summary>
-        /// Method, you can change the brands CEOs name.
+        /// Updating a brands parameters.
         /// </summary>
-        /// <param name="id">Int, the brand with this ID, will have his CEOs name changed.</param>
-        /// <param name="newceoname">String, the new CEO Name.</param>
-        public void ChangeCEOName(int id, string newceoname)
+        /// <param name="id">Id of the brand.</param>
+        /// <param name="name">New name of the brand.</param>
+        /// <param name="foundationyear">New year of foundation of the brand.</param>
+        /// <param name="headquarters">New headquarters of the brand.</param>
+        /// <param name="ceoname">New name of the brands CEO.</param>
+        public void Update(int id, string name, int foundationyear, string headquarters, string ceoname)
         {
             var brand = this.GetOne(id);
-            brand.CEOName = newceoname;
-            this.ctx.SaveChanges();
-        }
-
-        /// <summary>
-        /// Method, you can change the brands year of foundation.
-        /// </summary>
-        /// <param name="id">Int, the brand with this ID, will have his foundation year changed.</param>
-        /// <param name="newyear">Int, this will me the new foundation year.</param>
-        public void ChangeFoundationYear(int id, int newyear)
-        {
-            var brand = this.GetOne(id);
-            brand.FoundationYear = newyear;
-            this.ctx.SaveChanges();
-        }
-
-        /// <summary>
-        /// Method, you can change the brands headquarters place.
-        /// </summary>
-        /// <param name="id">Int, the brand headquarters with this id, will be changed.</param>
-        /// <param name="newheadquarters">String, this wis the new Headquarters.</param>
-        public void ChangeHeadquarters(int id, string newheadquarters)
-        {
-            var brand = this.GetOne(id);
-            brand.Headquarters = newheadquarters;
-            this.ctx.SaveChanges();
-        }
-
-        /// <summary>
-        /// Method, you can change the Name of a brand with it.
-        /// </summary>
-        /// <param name="id">Int, the brand with this ID, will have his name changed.</param>
-        /// <param name="newname">String, the new name of a Brand.</param>
-        public void ChangeName(int id, string newname)
-        {
-            var brand = this.GetOne(id);
-            brand.Name = newname;
+            brand.Name = name;
+            brand.Headquarters = headquarters;
+            brand.FoundationYear = foundationyear;
+            brand.CEOName = ceoname;
             this.ctx.SaveChanges();
         }
     }

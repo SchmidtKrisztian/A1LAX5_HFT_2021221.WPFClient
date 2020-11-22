@@ -110,10 +110,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="ceoname">New name of the brands CEO.</param>
         public void BrandUpdate(int id, string name, int foundationyear, string headquarters, string ceoname)
         {
-            this.brandrepo.ChangeName(id, name);
-            this.brandrepo.ChangeFoundationYear(id, foundationyear);
-            this.brandrepo.ChangeHeadguarters(id, headquarters);
-            this.brandrepo.ChangeCEOName(id, ceoname);
+            this.brandrepo.Update(id, name, foundationyear, headquarters, ceoname);
         }
 
         /// <summary>
@@ -125,9 +122,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="baseprice">The new price of the laptop.</param>
         public void LaptopUpdate(int id, string name, int releaseyear, int baseprice)
         {
-            this.laptoprepo.ChangeName(id, name);
-            this.laptoprepo.ChangeReleaseYear(id, releaseyear);
-            this.laptoprepo.ChangeBasePrice(id, baseprice);
+            this.laptoprepo.Update(id, name, releaseyear, baseprice);
         }
 
         /// <summary>
@@ -141,11 +136,7 @@ namespace MyLaptopShop.Logic.Classes
         /// <param name="price">Additional price of the specification.</param>
         public void SpecUpdate(int id, string name, string cpu, string graphicscard, int ram, int price)
         {
-            this.specrepo.ChangeName(id, name);
-            this.specrepo.ChangeCPU(id, cpu);
-            this.specrepo.ChangeGraphicsCard(id, graphicscard);
-            this.specrepo.ChangeRAM(id, ram);
-            this.specrepo.ChangeAdditionalPrice(id, price);
+            this.specrepo.Update(id, name, cpu, graphicscard, ram, price);
         }
     }
 }

@@ -24,33 +24,15 @@
             <param name="headquarters">Headquarters of the new brand.</param>
             <param name="ceoname">The CEOs name of the new brand.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.ChangeCEOName(System.Int32,System.String)">
+        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.Update(System.Int32,System.String,System.Int32,System.String,System.String)">
             <summary>
-            Method, you can change the brands CEOs name.
+            Updating a brands parameters.
             </summary>
-            <param name="id">Int, the brand with this ID, will have his CEOs name changed.</param>
-            <param name="newceoname">String, the new CEO Name.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.ChangeFoundationYear(System.Int32,System.Int32)">
-            <summary>
-            Method, you can change the brands year of foundation.
-            </summary>
-            <param name="id">Int, the brand with this ID, will have his foundation year changed.</param>
-            <param name="newyear">Int, this will me the new foundation year.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.ChangeHeadquarters(System.Int32,System.String)">
-            <summary>
-            Method, you can change the brands headquarters place.
-            </summary>
-            <param name="id">Int, the brand headquarters with this id, will be changed.</param>
-            <param name="newheadquarters">String, this wis the new Headquarters.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.ChangeName(System.Int32,System.String)">
-            <summary>
-            Method, you can change the Name of a brand with it.
-            </summary>
-            <param name="id">Int, the brand with this ID, will have his name changed.</param>
-            <param name="newname">String, the new name of a Brand.</param>
+            <param name="id">Id of the brand.</param>
+            <param name="name">New name of the brand.</param>
+            <param name="foundationyear">New year of foundation of the brand.</param>
+            <param name="headquarters">New headquarters of the brand.</param>
+            <param name="ceoname">New name of the brands CEO.</param>
         </member>
         <member name="T:MyLaptopShop.Repository.Classes.LaptopRepository">
             <summary>
@@ -71,6 +53,15 @@
             <param name="name">Name of the laptop.</param>
             <param name="releaseyear">The year when the laptop was released.</param>
             <param name="baseprice">Base price.</param>
+        </member>
+        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.Update(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Updating a laptops parameters.
+            </summary>
+            <param name="id">Id of the laptop.</param>
+            <param name="name">The new name of the laptop.</param>
+            <param name="releaseyear">The new year of the laptops release.</param>
+            <param name="baseprice">The new price of the laptop.</param>
         </member>
         <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.ChangeBasePrice(System.Int32,System.Int32)">
             <summary>
@@ -151,40 +142,16 @@
             <param name="ram">Gb of RAM.</param>
             <param name="price">Additional price of the specification.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.ChangeAdditionalPrice(System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.Update(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
             <summary>
-            Method signature, you can change the newadditionalprice of a specification with it.
+            Updating a specification parameters.
             </summary>
-            <param name="id">Int, the specification with this ID, will have his newadditionalprice changed.</param>
-            <param name="newadditionalprice">String, the new newadditionalprice of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.ChangeCPU(System.Int32,System.String)">
-            <summary>
-            Method, you can change the CPU of a specification with it.
-            </summary>
-            <param name="id">Int, thespecification with this ID, will have his CPU changed.</param>
-            <param name="newcpu">String, the new CPU of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.ChangeGraphicsCard(System.Int32,System.String)">
-            <summary>
-            Method, you can change the graphicscard of a specification with it.
-            </summary>
-            <param name="id">Int, the specification with this ID, will have his graphicscard changed.</param>
-            <param name="newgraphicscard">String, the new graphicscard of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.ChangeName(System.Int32,System.String)">
-            <summary>
-            Method, you can change the name of a specification with it.
-            </summary>
-            <param name="id">Int, the specification with this ID, will have his name changed.</param>
-            <param name="newname">String, the new name of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.ChangeRAM(System.Int32,System.Int32)">
-            <summary>
-            Method signature, you can change the RAM of a specification with it.
-            </summary>
-            <param name="id">Int, the specification with this ID, will have his RAM changed.</param>
-            <param name="newram">String, the new RAM of a specification.</param>
+            <param name="id">Id of the specification.</param>
+            <param name="name">New name of the specification.</param>
+            <param name="cpu">New CPUs name.</param>
+            <param name="graphicscard">New nameof the graphicscard.</param>
+            <param name="ram">New Gb of RAMs.</param>
+            <param name="price">Additional price of the specification.</param>
         </member>
         <member name="T:MyLaptopShop.Repository.Interfaces.IBrandRepository">
             <summary>
@@ -200,33 +167,15 @@
             <param name="headquarters">Headquarters of the new brand.</param>
             <param name="ceoname">The CEOs name of the new brand.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.IBrandRepository.ChangeName(System.Int32,System.String)">
+        <member name="M:MyLaptopShop.Repository.Interfaces.IBrandRepository.Update(System.Int32,System.String,System.Int32,System.String,System.String)">
             <summary>
-            Method signature, you can change the Name of a brand with it.
+            Updating a brands parameters.
             </summary>
-            <param name="id">Int, the brand with this ID, will have his name changed.</param>
-            <param name="newname">String, the new name of a Brand.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.IBrandRepository.ChangeFoundationYear(System.Int32,System.Int32)">
-            <summary>
-            Method signature, you can change the brands year of foundation.
-            </summary>
-            <param name="id">Int, the brand with this ID, will have his foundation year changed.</param>
-            <param name="newyear">Int, this will me the new foundation year.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.IBrandRepository.ChangeHeadquarters(System.Int32,System.String)">
-            <summary>
-            Method signature, you can change the brands headquarters place.
-            </summary>
-            <param name="id">Int, the brand headquarters with this id, will be changed.</param>
-            <param name="newheadquarters">String, this wis the new Headquarters.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.IBrandRepository.ChangeCEOName(System.Int32,System.String)">
-            <summary>
-            Method signature, you can change the brands CEOs name.
-            </summary>
-            <param name="id">Int, the brand with this ID, will have his CEOs name changed.</param>
-            <param name="newceoname">String, the new CEO Name.</param>
+            <param name="id">Id of the brand.</param>
+            <param name="name">New name of the brand.</param>
+            <param name="foundationyear">New year of foundation of the brand.</param>
+            <param name="headquarters">New headquarters of the brand.</param>
+            <param name="ceoname">New name of the brands CEO.</param>
         </member>
         <member name="T:MyLaptopShop.Repository.Interfaces.ILaptopRepository">
             <summary>
@@ -242,26 +191,14 @@
             <param name="releaseyear">The year when the laptop was released.</param>
             <param name="baseprice">Base price.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ILaptopRepository.ChangeName(System.Int32,System.String)">
+        <member name="M:MyLaptopShop.Repository.Interfaces.ILaptopRepository.Update(System.Int32,System.String,System.Int32,System.Int32)">
             <summary>
-            Method signature, you can change the name of a laptop with it.
+            Updating a laptops parameters.
             </summary>
-            <param name="id">Int, the laptop with this ID, will have his name changed.</param>
-            <param name="newname">String, the new name of a laptop.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ILaptopRepository.ChangeReleaseYear(System.Int32,System.Int32)">
-            <summary>
-            Method signature, you can change the relese year of a laptop with it.
-            </summary>
-            <param name="id">Int, the laptop with this ID, will have his release year changed.</param>
-            <param name="newreleaseyear">Int, the new release year of a Brand.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ILaptopRepository.ChangeBasePrice(System.Int32,System.Int32)">
-            <summary>
-            Method signature, you can change the base price of a laptop with it.
-            </summary>
-            <param name="id">Int, the laptop with this ID, will have his base price changed.</param>
-            <param name="newbaseprice">Int, the new base price of a laptop.</param>
+            <param name="id">Id of the laptop.</param>
+            <param name="name">The new name of the laptop.</param>
+            <param name="releaseyear">The new year of the laptops release.</param>
+            <param name="baseprice">The new price of the laptop.</param>
         </member>
         <member name="T:MyLaptopShop.Repository.Interfaces.ISpecificationRepository">
             <summary>
@@ -279,40 +216,16 @@
             <param name="ram">Gb of RAM.</param>
             <param name="price">Additional price of the specification.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.ChangeName(System.Int32,System.String)">
+        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.Update(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
             <summary>
-            Method signature, you can change the name of a specification with it.
+            Updating a specification parameters.
             </summary>
-            <param name="id">Int, the specification with this ID, will have his name changed.</param>
-            <param name="newname">String, the new name of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.ChangeCPU(System.Int32,System.String)">
-            <summary>
-            Method signature, you can change the CPU of a specification with it.
-            </summary>
-            <param name="id">Int, thespecification with this ID, will have his CPU changed.</param>
-            <param name="newcpu">String, the new CPU of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.ChangeGraphicsCard(System.Int32,System.String)">
-            <summary>
-            Method signature, you can change the graphicscard of a specification with it.
-            </summary>
-            <param name="id">Int, the specification with this ID, will have his graphicscard changed.</param>
-            <param name="newgraphicscard">String, the new graphicscard of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.ChangeRAM(System.Int32,System.Int32)">
-            <summary>
-            Method signature, you can change the RAM of a specification with it.
-            </summary>
-            <param name="id">Int, the specification with this ID, will have his RAM changed.</param>
-            <param name="newram">String, the new RAM of a specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.ChangeAdditionalPrice(System.Int32,System.Int32)">
-            <summary>
-            Method signature, you can change the newadditionalprice of a specification with it.
-            </summary>
-            <param name="id">Int, the specification with this ID, will have his newadditionalprice changed.</param>
-            <param name="newadditionalprice">String, the new newadditionalprice of a specification.</param>
+            <param name="id">Id of the specification.</param>
+            <param name="name">New name of the specification.</param>
+            <param name="cpu">New CPUs name.</param>
+            <param name="graphicscard">New nameof the graphicscard.</param>
+            <param name="ram">New Gb of RAMs.</param>
+            <param name="price">Additional price of the specification.</param>
         </member>
         <member name="T:MyLaptopShop.Repository.IRepository`1">
             <summary>
