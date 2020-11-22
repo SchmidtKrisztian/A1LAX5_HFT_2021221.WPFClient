@@ -153,7 +153,7 @@ namespace MyLaptopShop.Logic.Tests
         /// <param name="vga">The VGA of the specification, we want to add.</param>
         /// <param name="ram">Ram of the specification, we want to add.</param>
         /// <param name="price">Price of the specification, we want to add.</param>
-        [TestCase(1 , "name3", "cpu3", "VGA3", 8, 20)]
+        [TestCase(1, "name3", "cpu3", "VGA3", 8, 20)]
         public void TestAddSpec(int lid, string name, string cpu, string vga, int ram, int price)
         {
             this.specRepoMock.Setup(r => r.Add(lid, name, cpu, vga, ram, price)).Verifiable();
@@ -162,28 +162,23 @@ namespace MyLaptopShop.Logic.Tests
 
             this.specRepoMock.Verify(b => b.Add(lid, name, cpu, vga, ram, price));
         }
+
         /// <summary>
         /// Test the BrandUpdate() method.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <param name="fyear"></param>
-        /// <param name="headquarters"></param>
-        /// <param name="ceo"></param>
+        /// <param name="id">The ID of the brand we want to update.</param>
+        /// <param name="name">The new name.</param>
+        /// <param name="fyear">The new foundation year.</param>
+        /// <param name="headquarters">The new Headquarters.</param>
+        /// <param name="ceo">The new CEOs name.</param>
         [TestCase(1, "newname", 2020, "newplace", "newceo")]
         public void TestBrandUpdate(int id, string name, int fyear, string headquarters, string ceo)
         {
-            this.brandRepoMock.Setup(r => r.ChangeName(id, name)).Verifiable();
-            this.brandRepoMock.Setup(r => r.ChangeFoundationYear(id, fyear)).Verifiable();
-            this.brandRepoMock.Setup(r => r.ChangeHeadquarters(id, headquarters)).Verifiable();
-            this.brandRepoMock.Setup(r => r.ChangeCEOName(id, ceo)).Verifiable();
+            this.brandRepoMock.Setup(r => r.Update(id, name, fyear, headquarters, ceo)).Verifiable();
 
             this.adminlogic.BrandUpdate(id, name, fyear, headquarters, ceo);
 
-            this.brandRepoMock.Verify(b => b.ChangeName(id, name));
-            this.brandRepoMock.Verify(b => b.ChangeFoundationYear(id, fyear));
-            this.brandRepoMock.Verify(b => b.ChangeHeadquarters(id, headquarters));
-            this.brandRepoMock.Verify(b => b.ChangeCEOName(id, ceo));
+            this.brandRepoMock.Verify(b => b.Update(id, name, fyear, headquarters, ceo));
         }
     }
 }

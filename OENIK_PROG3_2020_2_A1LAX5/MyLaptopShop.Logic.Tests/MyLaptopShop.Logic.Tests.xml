@@ -65,11 +65,11 @@
             <summary>
             Test the BrandUpdate() method.
             </summary>
-            <param name="id"></param>
-            <param name="name"></param>
-            <param name="fyear"></param>
-            <param name="headquarters"></param>
-            <param name="ceo"></param>
+            <param name="id">The ID of the brand we want to update.</param>
+            <param name="name">The new name.</param>
+            <param name="fyear">The new foundation year.</param>
+            <param name="headquarters">The new Headquarters.</param>
+            <param name="ceo">The new CEOs name.</param>
         </member>
         <member name="T:MyLaptopShop.Logic.Tests.UserLogicTest">
             <summary>
