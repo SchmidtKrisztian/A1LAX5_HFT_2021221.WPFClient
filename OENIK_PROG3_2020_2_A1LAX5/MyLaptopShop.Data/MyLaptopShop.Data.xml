@@ -121,44 +121,44 @@
             </summary>
             <returns>Formed string.</returns>
         </member>
-        <member name="T:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext">
+        <member name="T:MyLaptopShop.Data.Models.LaptopShopContext">
             <summary>
             This is The Context class of the database.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext.#ctor">
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext"/> class.
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.LaptopShopContext"/> class.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext})">
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MyLaptopShop.Data.Models.LaptopShopContext})">
             <summary>
-            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext"/> class.
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Data.Models.LaptopShopContext"/> class.
             </summary>
             <param name="options">options.</param>
         </member>
-        <member name="P:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext.Brands">
+        <member name="P:MyLaptopShop.Data.Models.LaptopShopContext.Brands">
             <summary>
             Gets or sets the Brands table.
             </summary>
         </member>
-        <member name="P:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext.Laptops">
+        <member name="P:MyLaptopShop.Data.Models.LaptopShopContext.Laptops">
             <summary>
             Gets or sets the Laptops table.
             </summary>
         </member>
-        <member name="P:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext.Specifications">
+        <member name="P:MyLaptopShop.Data.Models.LaptopShopContext.Specifications">
             <summary>
             Gets or sets the Specifications table.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
             <summary>
             Overrideing the original OnConfiguring method.
             </summary>
             <param name="optionsBuilder">DbContextOptionBuilder instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Data.Models.MyLaptopShop.Data.Models.LaptopShopContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:MyLaptopShop.Data.Models.LaptopShopContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary>
             Overriding the original OnModelCreating method. Creating instances and setting connections between the tables.
             </summary>
