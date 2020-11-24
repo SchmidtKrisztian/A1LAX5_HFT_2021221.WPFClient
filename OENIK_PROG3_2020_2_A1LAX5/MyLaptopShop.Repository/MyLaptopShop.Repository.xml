@@ -63,43 +63,22 @@
             <param name="releaseyear">The new year of the laptops release.</param>
             <param name="baseprice">The new price of the laptop.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.ChangeBasePrice(System.Int32,System.Int32)">
-            <summary>
-            Method, you can change the base price of a laptop with it.
-            </summary>
-            <param name="id">Int, the laptop with this ID, will have his base price changed.</param>
-            <param name="newbaseprice">Int, the new base price of a laptop.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.ChangeName(System.Int32,System.String)">
-            <summary>
-            Method, you can change the name of a laptop with it.
-            </summary>
-            <param name="id">Int, the laptop with this ID, will have his name changed.</param>
-            <param name="newname">String, the new name of a laptop.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.ChangeReleaseYear(System.Int32,System.Int32)">
-            <summary>
-            Method, you can change the relese year of a laptop with it.
-            </summary>
-            <param name="id">Int, the laptop with this ID, will have his release year changed.</param>
-            <param name="newreleaseyear">Int, the new release year of a Brand.</param>
-        </member>
         <member name="T:MyLaptopShop.Repository.Classes.MainRepository`1">
             <summary>
             Abstract MainRepository class.
             </summary>
             <typeparam name="T">Generic parameter, class type.</typeparam>
         </member>
-        <member name="F:MyLaptopShop.Repository.Classes.MainRepository`1.ctx">
-            <summary>
-            DbContext field.
-            </summary>
-        </member>
         <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
             Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.MainRepository`1"/> class.
             </summary>
             <param name="ctx">BdContext parameter.</param>
+        </member>
+        <member name="P:MyLaptopShop.Repository.Classes.MainRepository`1.Ctx">
+            <summary>
+            Gets or sets DbContext property.
+            </summary>
         </member>
         <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.Delete(System.Int32)">
             <summary>

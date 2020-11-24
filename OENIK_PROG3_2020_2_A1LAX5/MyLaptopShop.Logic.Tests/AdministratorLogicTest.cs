@@ -22,7 +22,6 @@ namespace MyLaptopShop.Logic.Tests
     public class AdministratorLogicTest
     {
         private AdministratorLogic adminlogic;
-        private UserLogic userlogic;
 
         private List<Brand> brandList;
         private List<Laptop> laptopList;
@@ -65,7 +64,6 @@ namespace MyLaptopShop.Logic.Tests
             this.specRepoMock.Setup(x => x.GetAll()).Returns(this.specList.AsQueryable());
 
             this.adminlogic = new AdministratorLogic(this.brandRepoMock.Object, this.laptopRepoMock.Object, this.specRepoMock.Object);
-            this.userlogic = new UserLogic(this.brandRepoMock.Object, this.laptopRepoMock.Object, this.specRepoMock.Object);
         }
 
         /// <summary>

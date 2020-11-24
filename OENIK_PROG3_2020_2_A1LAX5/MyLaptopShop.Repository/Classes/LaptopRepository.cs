@@ -22,7 +22,7 @@ namespace MyLaptopShop.Repository.Classes
         /// </summary>
         /// <param name="ctx">DbContext from the original class.</param>
         public LaptopRepository(DbContext ctx)
-            : base(ctx) => this.ctx = ctx;
+            : base(ctx) => this.Ctx = ctx;
 
         /// <summary>
         /// Add a new laptop to the DB.
@@ -40,8 +40,8 @@ namespace MyLaptopShop.Repository.Classes
                 ReleaseYear = releaseyear,
                 BasePrice = baseprice,
             };
-            this.ctx.Add(tmp);
-            this.ctx.SaveChanges();
+            this.Ctx.Add(tmp);
+            this.Ctx.SaveChanges();
         }
 
         /// <summary>
@@ -57,43 +57,7 @@ namespace MyLaptopShop.Repository.Classes
             laptop.Name = name;
             laptop.BasePrice = baseprice;
             laptop.ReleaseYear = releaseyear;
-            this.ctx.SaveChanges();
-        }
-
-        /// <summary>
-        /// Method, you can change the base price of a laptop with it.
-        /// </summary>
-        /// <param name="id">Int, the laptop with this ID, will have his base price changed.</param>
-        /// <param name="newbaseprice">Int, the new base price of a laptop.</param>
-        public void ChangeBasePrice(int id, int newbaseprice)
-        {
-            var laptop = this.GetOne(id);
-            laptop.BasePrice = newbaseprice;
-            this.ctx.SaveChanges();
-        }
-
-        /// <summary>
-        /// Method, you can change the name of a laptop with it.
-        /// </summary>
-        /// <param name="id">Int, the laptop with this ID, will have his name changed.</param>
-        /// <param name="newname">String, the new name of a laptop.</param>
-        public void ChangeName(int id, string newname)
-        {
-            var laptop = this.GetOne(id);
-            laptop.Name = newname;
-            this.ctx.SaveChanges();
-        }
-
-        /// <summary>
-        /// Method, you can change the relese year of a laptop with it.
-        /// </summary>
-        /// <param name="id">Int, the laptop with this ID, will have his release year changed.</param>
-        /// <param name="newreleaseyear">Int, the new release year of a Brand.</param>
-        public void ChangeReleaseYear(int id, int newreleaseyear)
-        {
-            var laptop = this.GetOne(id);
-            laptop.ReleaseYear = newreleaseyear;
-            this.ctx.SaveChanges();
+            this.Ctx.SaveChanges();
         }
     }
 }

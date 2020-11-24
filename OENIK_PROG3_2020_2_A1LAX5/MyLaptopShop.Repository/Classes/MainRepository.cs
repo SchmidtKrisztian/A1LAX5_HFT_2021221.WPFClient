@@ -18,18 +18,18 @@ namespace MyLaptopShop.Repository.Classes
         where T : class
     {
         /// <summary>
-        /// DbContext field.
-        /// </summary>
-        protected DbContext ctx;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="MainRepository{T}"/> class.
         /// </summary>
         /// <param name="ctx">BdContext parameter.</param>
         protected MainRepository(DbContext ctx)
         {
-            this.ctx = ctx;
+            this.Ctx = ctx;
         }
+
+        /// <summary>
+        /// Gets or sets DbContext property.
+        /// </summary>
+        protected DbContext Ctx { get; set; }
 
         /// <summary>
         /// Method, youn can delete instances to the context.
@@ -37,8 +37,8 @@ namespace MyLaptopShop.Repository.Classes
         /// <param name="id">The id of the instance we want to delete.</param>
         public void Delete(int id)
         {
-            this.ctx.Set<T>().Remove(this.GetOne(id));
-            this.ctx.SaveChanges();
+            this.Ctx.Set<T>().Remove(this.GetOne(id));
+            this.Ctx.SaveChanges();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace MyLaptopShop.Repository.Classes
         /// <returns>A set of instances.</returns>
         public IQueryable<T> GetAll()
         {
-            return this.ctx.Set<T>();
+            return this.Ctx.Set<T>();
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace MyLaptopShop.Repository.Classes
         /// <returns>The instance with the parameter ID.</returns>
         public T GetOne(int id)
         {
-            return this.ctx.Find(typeof(T), id) as T;
+            return this.Ctx.Find(typeof(T), id) as T;
         }
     }
 }

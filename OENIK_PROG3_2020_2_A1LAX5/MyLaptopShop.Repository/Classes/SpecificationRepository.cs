@@ -23,7 +23,7 @@ namespace MyLaptopShop.Repository.Classes
         public SpecificationRepository(DbContext ctx)
             : base(ctx)
         {
-            this.ctx = ctx;
+            this.Ctx = ctx;
         }
 
         /// <summary>
@@ -46,8 +46,8 @@ namespace MyLaptopShop.Repository.Classes
                 RAM = ram,
                 AdditionalPrice = price,
             };
-            this.ctx.Add(tmp);
-            this.ctx.SaveChanges();
+            this.Ctx.Add(tmp);
+            this.Ctx.SaveChanges();
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace MyLaptopShop.Repository.Classes
             spec.GraphicsCardName = graphicscard;
             spec.Name = name;
             spec.RAM = ram;
-            this.ctx.SaveChanges();
+            this.Ctx.SaveChanges();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace MyLaptopShop.Repository.Classes
         public BrandRepository(DbContext ctx)
             : base(ctx)
         {
-            this.ctx = ctx;
+            this.Ctx = ctx;
         }
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace MyLaptopShop.Repository.Classes
                 Headquarters = headquarters,
                 CEOName = ceoname,
             };
-            this.ctx.Add(tmp);
-            this.ctx.SaveChanges();
+            this.Ctx.Add(tmp);
+            this.Ctx.SaveChanges();
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace MyLaptopShop.Repository.Classes
             brand.Headquarters = headquarters;
             brand.FoundationYear = foundationyear;
             brand.CEOName = ceoname;
-            this.ctx.SaveChanges();
+            this.Ctx.SaveChanges();
         }
     }
 }
