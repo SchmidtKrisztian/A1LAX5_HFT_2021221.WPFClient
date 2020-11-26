@@ -95,7 +95,21 @@ namespace MyLaptopShop.Logic.Tests
         [Test]
         public void TestAvgSpecPrice()
         {
-            Assert.That(this.userlogic.AvgSpecPrice().First() == "LAPTOP: laptopname1\t\t AVERAGE PRICE: 10");
+            // Arrange
+            this.laptopRepoMock.Setup(x => x.GetAll()).Returns(this.laptopList.AsQueryable());
+            this.specRepoMock.Setup(x => x.GetAll()).Returns(this.specList.AsQueryable());
+
+            // Act
+            List<string> expected = new List<string>();
+            expected.Add("LAPTOP: laptopname1\t\t AVERAGE PRICE: 10");
+            expected.Add("LAPTOP: laptopname2\t\t AVERAGE PRICE: 20");
+
+            // Assert
+            List<string> result = this.userlogic.AvgSpecPrice().ToList<string>();
+            Assert.That(result, Is.Not.Empty);
+            Assert.That(result.First(), Is.EqualTo(expected.First()));
+            Assert.That(result.Last(), Is.EqualTo(expected.Last()));
+            Assert.That(result, Is.EquivalentTo(expected));
         }
 
         /// <summary>
@@ -104,16 +118,17 @@ namespace MyLaptopShop.Logic.Tests
         [Test]
         public void TestGamerBrand()
         {
+            // Arrange
             this.brandRepoMock.Setup(x => x.GetAll()).Returns(this.brandList.AsQueryable());
             this.laptopRepoMock.Setup(x => x.GetAll()).Returns(this.laptopList.AsQueryable());
             this.specRepoMock.Setup(x => x.GetAll()).Returns(this.specList.AsQueryable());
 
+            // Act
             List<string> lista = new List<string>();
             lista.Add("brandname1");
-            List<string> result = new List<string>();
 
-            result = this.userlogic.GamerBrand().ToList<string>();
-
+            // Assert
+            List<string> result = this.userlogic.GamerBrand().ToList<string>();
             Assert.That(result, Is.Not.Empty);
             Assert.That(result.First(), Is.EqualTo(lista.First()));
             Assert.That(result.Last(), Is.EqualTo(lista.Last()));
@@ -121,36 +136,20 @@ namespace MyLaptopShop.Logic.Tests
         }
 
         /// <summary>
-        /// Tests the BrandGetOne() method.
-        /// </summary>
-        [Test]
-        public void TestBrandGetOne()
-        {
-            this.brandRepoMock.Setup(r => r.GetOne(1)).Verifiable();
-            this.userlogic.BrandGetOne(1);
-            this.brandRepoMock.Verify(r => r.GetOne(1));
-        }
-
-        /// <summary>
-        /// Tests the LaptopGetOne() method.
-        /// </summary>
-        [Test]
-        public void TestLaptopGetOne()
-        {
-            this.laptopRepoMock.Setup(r => r.GetOne(1)).Verifiable();
-            this.userlogic.LaptopGetOne(1);
-            this.laptopRepoMock.Verify(r => r.GetOne(1));
-        }
-
-        /// <summary>
         /// Tests the SpecGetOne() method.
         /// </summary>
-        [Test]
-        public void TestSpecGetOne()
+        /// <param name="id">ID of the Specification we want to list.</param>
+        [TestCase(0)]
+        public void TestSpecGetOne(int id)
         {
-            this.specRepoMock.Setup(r => r.GetOne(1)).Verifiable();
-            this.userlogic.SpecGetOne(1);
-            this.specRepoMock.Verify(r => r.GetOne(1));
+            // Arrange
+            this.specRepoMock.Setup(r => r.GetOne(id)).Returns(this.specList[id]).Verifiable();
+
+            // Act
+            this.userlogic.SpecGetOne(id);
+
+            // Assert
+            this.specRepoMock.Verify(r => r.GetOne(id));
         }
 
        /// <summary>
@@ -159,31 +158,14 @@ namespace MyLaptopShop.Logic.Tests
         [Test]
         public void TestGetAllBrand()
         {
+            // Arrange
             this.brandRepoMock.Setup(r => r.GetAll()).Verifiable();
+
+            // Act
             this.userlogic.GetAllBrand();
+            
+            // Assert
             this.brandRepoMock.Verify(r => r.GetAll());
-        }
-
-        /// <summary>
-        /// Test the GetAllLaptop() method.
-        /// </summary>
-        [Test]
-        public void TestGetAllLaptop()
-        {
-            this.laptopRepoMock.Setup(r => r.GetAll()).Verifiable();
-            this.userlogic.GetAllLaptop();
-            this.laptopRepoMock.Verify(r => r.GetAll());
-        }
-
-        /// <summary>
-        /// Test the GetAllSpec() method.
-        /// </summary>
-        [Test]
-        public void TestGetAllSpec()
-        {
-            this.specRepoMock.Setup(r => r.GetAll()).Verifiable();
-            this.userlogic.GetAllSpec();
-            this.specRepoMock.Verify(r => r.GetAll());
         }
     }
 }

@@ -14,32 +14,11 @@
             Sets the tests up.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Logic.Tests.AdministratorLogicTest.TestDeleteBrand(System.Int32)">
-            <summary>
-            Tests the DeleteBrand() method.
-            </summary>
-            <param name="id">ID of the brand we want to delete.</param>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Tests.AdministratorLogicTest.TestDeleteLaptop(System.Int32)">
-            <summary>
-            Tests the DeleteLaptop() method.
-            </summary>
-            <param name="id">ID of the Laptop we want to delete.</param>
-        </member>
         <member name="M:MyLaptopShop.Logic.Tests.AdministratorLogicTest.TestDeleteSpec(System.Int32)">
             <summary>
             Tests the DeleteSpec() method.
             </summary>
             <param name="id">ID of the specification we want to delete.</param>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Tests.AdministratorLogicTest.TestAddBrand(System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Test the AddBrand() method.
-            </summary>
-            <param name="name">Name of the brand, we want to add.</param>
-            <param name="fyear">Year of the foundation of the brnad, we want to add.</param>
-            <param name="headquarters">Headquarters name of the brand, we want to add.</param>
-            <param name="ceo">The CEOs name of the brand, we want to add.</param>
         </member>
         <member name="M:MyLaptopShop.Logic.Tests.AdministratorLogicTest.TestAddLaptop(System.Int32,System.String,System.Int32,System.Int32)">
             <summary>
@@ -49,17 +28,6 @@
             <param name="name">The name of the laptop, we want to add.</param>
             <param name="ryear">The release year of the laptop, we want to add.</param>
             <param name="price">The additional price of the laptop, we want to add.</param>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Tests.AdministratorLogicTest.TestAddSpec(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
-            <summary>
-            Tests the AddSpec() method.
-            </summary>
-            <param name="lid">Laptom ID of the specification, we want ot add.</param>
-            <param name="name">Name of the specification we want to add.</param>
-            <param name="cpu">The cpu of the specification, we want to add.</param>
-            <param name="vga">The VGA of the specification, we want to add.</param>
-            <param name="ram">Ram of the specification, we want to add.</param>
-            <param name="price">Price of the specification, we want to add.</param>
         </member>
         <member name="M:MyLaptopShop.Logic.Tests.AdministratorLogicTest.TestBrandUpdate(System.Int32,System.String,System.Int32,System.String,System.String)">
             <summary>
@@ -96,34 +64,15 @@
             Tests the GamerBrand() method.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Logic.Tests.UserLogicTest.TestBrandGetOne">
-            <summary>
-            Tests the BrandGetOne() method.
-            </summary>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Tests.UserLogicTest.TestLaptopGetOne">
-            <summary>
-            Tests the LaptopGetOne() method.
-            </summary>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Tests.UserLogicTest.TestSpecGetOne">
+        <member name="M:MyLaptopShop.Logic.Tests.UserLogicTest.TestSpecGetOne(System.Int32)">
             <summary>
             Tests the SpecGetOne() method.
             </summary>
+            <param name="id">ID of the Specification we want to list.</param>
         </member>
         <member name="M:MyLaptopShop.Logic.Tests.UserLogicTest.TestGetAllBrand">
             <summary>
             Test the GetAllBrand() method.
-            </summary>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Tests.UserLogicTest.TestGetAllLaptop">
-            <summary>
-            Test the GetAllLaptop() method.
-            </summary>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Tests.UserLogicTest.TestGetAllSpec">
-            <summary>
-            Test the GetAllSpec() method.
             </summary>
         </member>
     </members>
