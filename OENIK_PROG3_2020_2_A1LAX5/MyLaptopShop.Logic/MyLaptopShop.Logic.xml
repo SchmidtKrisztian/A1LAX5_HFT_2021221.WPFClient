@@ -170,6 +170,12 @@
             </summary>
             <returns>Task list.</returns>
         </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.LaptopCountAsync">
+            <summary>
+            Async method to LoaptopCount().
+            </summary>
+            <returns>async Task list.</returns>
+        </member>
         <member name="T:MyLaptopShop.Logic.Interfaces.IAdministratorLogic">
             <summary>
             This is the Laptoplogic interface.

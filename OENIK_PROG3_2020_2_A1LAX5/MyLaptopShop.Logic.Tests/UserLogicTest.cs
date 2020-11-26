@@ -163,7 +163,7 @@ namespace MyLaptopShop.Logic.Tests
 
             // Act
             this.userlogic.GetAllBrand();
-            
+
             // Assert
             this.brandRepoMock.Verify(r => r.GetAll());
         }
