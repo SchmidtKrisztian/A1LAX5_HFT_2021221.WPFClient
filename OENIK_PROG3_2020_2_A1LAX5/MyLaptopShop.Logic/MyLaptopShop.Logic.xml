@@ -164,6 +164,12 @@
             </summary>
             <returns>List of formed string of the result.</returns>
         </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.LaptopCountTask">
+            <summary>
+            LaptopCount() method that gives back task.
+            </summary>
+            <returns>Task list.</returns>
+        </member>
         <member name="T:MyLaptopShop.Logic.Interfaces.IAdministratorLogic">
             <summary>
             This is the Laptoplogic interface.

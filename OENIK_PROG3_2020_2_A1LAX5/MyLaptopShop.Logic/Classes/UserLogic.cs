@@ -8,6 +8,7 @@ namespace MyLaptopShop.Logic.Classes
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
     using Microsoft.EntityFrameworkCore;
     using MyLaptopShop.Data.Models;
     using MyLaptopShop.Logic.Interfaces;
@@ -164,7 +165,7 @@ namespace MyLaptopShop.Logic.Classes
         {
             List<string> list = new List<string>();
             var q = from spec in this.specrepo.GetAll()
-                    where EF.Functions.Like(spec.Name, "Gamer")
+                    where spec.Name.ToUpper() == "GAMER"
                     select spec;
 
             var q2 = from laptop in this.laptoprepo.GetAll()
@@ -188,6 +189,28 @@ namespace MyLaptopShop.Logic.Classes
             }
 
             return list;
+        }
+
+        /// <summary>
+        /// LaptopCount() method that gives back task.
+        /// </summary>
+        /// <returns>Task list.</returns>
+        public Task<IList<string>> LaptopCountTask()
+        {
+            return Task<IList<string>>.Factory.StartNew(() =>
+            {
+            return this.LaptopCount();
+            });
+        }
+
+       /// <summary>
+       /// Async method to LoaptopCount().
+       /// </summary>
+       /// <returns>async Task list.</returns>
+        public async Task<IList<string>> LaptopCountAsync()
+        {
+            var temp = await this.LaptopCountTask().ConfigureAwait(true);
+            return temp;
         }
     }
 }
