@@ -72,7 +72,21 @@ namespace MyLaptopShop.Logic.Tests
         [Test]
         public void TestLaptopCount()
         {
-            Assert.That(this.userlogic.LaptopCount().First() == "COUNTRY: place1\t LAPTOPS COUNT: 1");
+            // Arrange
+            this.brandRepoMock.Setup(x => x.GetAll()).Returns(this.brandList.AsQueryable());
+            this.laptopRepoMock.Setup(x => x.GetAll()).Returns(this.laptopList.AsQueryable());
+
+            // Act
+            List<string> expected = new List<string>();
+            expected.Add("COUNTRY: place1\t LAPTOPS COUNT: 1");
+            expected.Add("COUNTRY: place2\t LAPTOPS COUNT: 1");
+
+            // Assert
+            List<string> result = this.userlogic.LaptopCount().ToList<string>();
+            Assert.That(result, Is.Not.Empty);
+            Assert.That(result.First(), Is.EqualTo(expected.First()));
+            Assert.That(result.Last(), Is.EqualTo(expected.Last()));
+            Assert.That(result, Is.EquivalentTo(expected));
         }
 
         /// <summary>
@@ -90,7 +104,20 @@ namespace MyLaptopShop.Logic.Tests
         [Test]
         public void TestGamerBrand()
         {
-            Assert.That(this.userlogic.GamerBrand().First() == "brandname1");
+            this.brandRepoMock.Setup(x => x.GetAll()).Returns(this.brandList.AsQueryable());
+            this.laptopRepoMock.Setup(x => x.GetAll()).Returns(this.laptopList.AsQueryable());
+            this.specRepoMock.Setup(x => x.GetAll()).Returns(this.specList.AsQueryable());
+
+            List<string> lista = new List<string>();
+            lista.Add("brandname1");
+            List<string> result = new List<string>();
+
+            result = this.userlogic.GamerBrand().ToList<string>();
+
+            Assert.That(result, Is.Not.Empty);
+            Assert.That(result.First(), Is.EqualTo(lista.First()));
+            Assert.That(result.Last(), Is.EqualTo(lista.Last()));
+            Assert.That(result, Is.EquivalentTo(lista));
         }
 
         /// <summary>
