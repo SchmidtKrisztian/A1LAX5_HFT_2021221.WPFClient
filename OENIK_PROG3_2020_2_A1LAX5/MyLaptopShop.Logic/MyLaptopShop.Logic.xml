@@ -164,17 +164,23 @@
             </summary>
             <returns>List of formed string of the result.</returns>
         </member>
-        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.LaptopCountTask">
-            <summary>
-            LaptopCount() method that gives back task.
-            </summary>
-            <returns>Task list.</returns>
-        </member>
         <member name="M:MyLaptopShop.Logic.Classes.UserLogic.LaptopCountAsync">
             <summary>
-            Async method to LoaptopCount().
+            Async method to LaptopCount().
             </summary>
-            <returns>async Task list.</returns>
+            <returns>async Task.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.AvgSpecPriceAsync">
+            <summary>
+            Async method to AvgSpecPrice().
+            </summary>
+            <returns>async Task.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.GamerBrandAsync">
+            <summary>
+            Async method to GamerBrand().
+            </summary>
+            <returns>async Task.</returns>
         </member>
         <member name="T:MyLaptopShop.Logic.Interfaces.IAdministratorLogic">
             <summary>

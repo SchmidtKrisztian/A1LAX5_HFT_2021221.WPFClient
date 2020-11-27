@@ -191,26 +191,31 @@ namespace MyLaptopShop.Logic.Classes
             return list;
         }
 
-        /// <summary>
-        /// LaptopCount() method that gives back task.
-        /// </summary>
-        /// <returns>Task list.</returns>
-        public Task<IList<string>> LaptopCountTask()
+       /// <summary>
+       /// Async method to LaptopCount().
+       /// </summary>
+       /// <returns>async Task.</returns>
+        public Task<IList<string>> LaptopCountAsync()
         {
-            return Task<IList<string>>.Factory.StartNew(() =>
-            {
-            return this.LaptopCount();
-            });
+            return Task.Run(() => this.LaptopCount());
         }
 
-       /// <summary>
-       /// Async method to LoaptopCount().
-       /// </summary>
-       /// <returns>async Task list.</returns>
-        public async Task<IList<string>> LaptopCountAsync()
+        /// <summary>
+        /// Async method to AvgSpecPrice().
+        /// </summary>
+        /// <returns>async Task.</returns>
+        public Task<IList<string>> AvgSpecPriceAsync()
         {
-            var temp = await this.LaptopCountTask().ConfigureAwait(true);
-            return temp;
+            return Task.Run(() => this.AvgSpecPrice());
+        }
+
+        /// <summary>
+        /// Async method to GamerBrand().
+        /// </summary>
+        /// <returns>async Task.</returns>
+        public Task<IList<string>> GamerBrandAsync()
+        {
+            return Task.Run(() => this.GamerBrand());
         }
     }
 }

@@ -10,6 +10,7 @@ namespace MyLaptopShop.Program
     using System.Linq;
     using System.Runtime.CompilerServices;
     using System.Text;
+    using System.Threading;
     using ConsoleTools;
     using MyLaptopShop.Data.Models;
     using MyLaptopShop.Logic.Classes;
@@ -57,7 +58,10 @@ namespace MyLaptopShop.Program
                 .Add(">> List a SPECIFICATION, by ID", () => ListSpec(this.userlogic))
                 .Add(">> List countries with their laptop count", () => CountLaptop(this.userlogic))
                 .Add(">> List laptops with their average specification cost", () => AvgSpec(this.userlogic))
-                .Add(">> List the brands names who has Gamer specifications", () => GamerBrand(this.userlogic));
+                .Add(">> List the brands names who has Gamer specifications", () => GamerBrand(this.userlogic))
+                .Add(">> List countries with their laptop count (ASYNC)", () => LaptopCountASYNC(this.userlogic))
+                 .Add(">> List laptops with their average specification cost (ASYNC)", () => AvgSpecASYNC(this.userlogic))
+                .Add(">> List the brands names who has Gamer specifications (ASYNC)", () => GamerBrandASYNC(this.userlogic));
             menu.Show();
         }
 
@@ -67,7 +71,7 @@ namespace MyLaptopShop.Program
         /// <param name="userlogic">UserLogic instance.</param>
         private static void ListAllBrands(UserLogic userlogic)
         {
-            Console.WriteLine("<< ALL BRANDS >>");
+            Console.WriteLine("<< ALL BRANDS >> \n");
             userlogic.GetAllBrand()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
@@ -80,7 +84,7 @@ namespace MyLaptopShop.Program
         /// <param name="userlogic">UserLogic instance.</param>
         private static void ListAllLaptops(UserLogic userlogic)
         {
-            Console.WriteLine("<< ALL LAPTOPS >>");
+            Console.WriteLine("<< ALL LAPTOPS >> \n");
             userlogic.GetAllLaptop()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
@@ -93,7 +97,7 @@ namespace MyLaptopShop.Program
         /// <param name="userlogic">UserLogic instance.</param>
         private static void ListAllSpecs(UserLogic userlogic)
         {
-            Console.WriteLine("<< ALL SPECIFICATIONS >>");
+            Console.WriteLine("<< ALL SPECIFICATIONS >> \n");
             userlogic.GetAllSpec()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
@@ -394,7 +398,7 @@ namespace MyLaptopShop.Program
         /// <param name="userlogic">Userlogic instance.</param>
         private static void CountLaptop(UserLogic userlogic)
         {
-            var msg = new { msg = "<<Countries and their laptop counts>>" };
+            var msg = new { msg = "<<Countries and their laptop counts>> \n" };
             Console.WriteLine(msg.msg);
             foreach (var item in userlogic.LaptopCount())
             {
@@ -411,7 +415,7 @@ namespace MyLaptopShop.Program
         /// <param name="userlogic">Userlogic instance.</param>
         private static void AvgSpec(UserLogic userlogic)
         {
-            var msg = new { msg = "<<Laptops and their average specification price>>" };
+            var msg = new { msg = "<<Laptops and their average specification price>> \n" };
             Console.WriteLine(msg.msg);
             IList<string> list = userlogic.AvgSpecPrice();
             foreach (var item in list)
@@ -429,7 +433,7 @@ namespace MyLaptopShop.Program
         /// <param name="userlogic">Userlogic instance.</param>
         private static void GamerBrand(UserLogic userlogic)
         {
-            var msg = new { msg = "<<Brands names who has Gamer specifications>>" };
+            var msg = new { msg = "<<Brands names who has Gamer specifications>> \n" };
             Console.WriteLine(msg.msg);
             foreach (var item in userlogic.GamerBrand())
             {
@@ -437,6 +441,96 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg2.msg);
             }
 
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// LaptopCount() but with task.
+        /// </summary>
+        /// <param name="userLogic">UserLogic instance.</param>
+        private static void LaptopCountASYNC(UserLogic userLogic)
+        {
+            var tmp = userLogic.LaptopCountAsync();
+            Thread.Sleep(500);
+            var msg = new { msg = "\n Processing started...." };
+            Console.WriteLine(msg.msg);
+            Thread.Sleep(1000);
+            tmp.Wait();
+            var result = tmp.Result;
+            var msg1 = new { msg = "\n Process end! ^^" };
+            Console.WriteLine(msg1.msg);
+
+            var msg2 = new { msg = "\n <<Countries and their laptop counts>> \n" };
+            Console.WriteLine(msg2.msg);
+            for (int i = 0; i < result.Count; i++)
+            {
+                string item = result[i];
+                var msg3 = new { msg = item };
+                Console.WriteLine(msg3.msg);
+            }
+
+            var msg4 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg4.msg);
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// AvgSpec() but with task.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
+        private static void AvgSpecASYNC(UserLogic userlogic)
+        {
+            var tmp = userlogic.AvgSpecPriceAsync();
+            Thread.Sleep(500);
+            var msg = new { msg = "\n Processing started...." };
+            Console.WriteLine(msg.msg);
+            Thread.Sleep(1000);
+            tmp.Wait();
+            var result = tmp.Result;
+            var msg1 = new { msg = "\n Process end! ^^" };
+            Console.WriteLine(msg1.msg);
+
+            var msg2 = new { msg = "\n <<Laptops and their average specification price>> \n" };
+            Console.WriteLine(msg2.msg);
+            for (int i = 0; i < result.Count; i++)
+            {
+                string item = result[i];
+                var msg3 = new { msg = item };
+                Console.WriteLine(msg3.msg);
+            }
+
+            var msg4 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg4.msg);
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// GamerBrand() but with task.
+        /// </summary>
+        /// <param name="userlogic">UserLogic instance.</param>
+        private static void GamerBrandASYNC(UserLogic userlogic)
+        {
+            var tmp = userlogic.GamerBrandAsync();
+            Thread.Sleep(500);
+            var msg = new { msg = "Processing started...." };
+            Console.WriteLine(msg.msg);
+            Thread.Sleep(1000);
+            tmp.Wait();
+            var result = tmp.Result;
+            var msg1 = new { msg = "Process end! ^^" };
+            Console.WriteLine(msg1.msg);
+
+            var msg2 = new { msg = "<<Brands names who has Gamer specifications>> \n" };
+            Console.WriteLine(msg2.msg);
+            for (int i = 0; i < result.Count; i++)
+            {
+                string item = result[i];
+                var msg3 = new { msg = item };
+                Console.WriteLine(msg3.msg);
+            }
+
+            var msg4 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg4.msg);
             Console.ReadKey();
         }
     }

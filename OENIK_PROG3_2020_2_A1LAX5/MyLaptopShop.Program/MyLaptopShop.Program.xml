@@ -164,5 +164,23 @@
             </summary>
             <param name="userlogic">Userlogic instance.</param>
         </member>
+        <member name="M:MyLaptopShop.Program.Menu.LaptopCountASYNC(MyLaptopShop.Logic.Classes.UserLogic)">
+            <summary>
+            LaptopCount() but with task.
+            </summary>
+            <param name="userLogic">UserLogic instance.</param>
+        </member>
+        <member name="M:MyLaptopShop.Program.Menu.AvgSpecASYNC(MyLaptopShop.Logic.Classes.UserLogic)">
+            <summary>
+            AvgSpec() but with task.
+            </summary>
+            <param name="userlogic">UserLogic instance.</param>
+        </member>
+        <member name="M:MyLaptopShop.Program.Menu.GamerBrandASYNC(MyLaptopShop.Logic.Classes.UserLogic)">
+            <summary>
+            GamerBrand() but with task.
+            </summary>
+            <param name="userlogic">UserLogic instance.</param>
+        </member>
     </members>
 </doc>
