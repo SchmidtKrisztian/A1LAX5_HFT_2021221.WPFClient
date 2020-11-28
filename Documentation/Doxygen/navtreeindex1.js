@@ -1,6 +1,7 @@
 var NAVTREEINDEX1 =
 {
 "namespace_my_laptop_shop_1_1_repository_1_1_interfaces.html":[1,0,0,3,1],
+"namespace_my_laptop_shop_1_1_repository_1_1_interfaces.html":[0,0,0,3,1],
 "namespaces.html":[0,0],
 "netcoreapp2_81_2_my_laptop_shop_8_data_8_assembly_info_8cs_source.html":[2,0,0,0,0,0,0,0,0,1,0,0,1],
 "netcoreapp2_81_2_my_laptop_shop_8_logic_8_assembly_info_8cs_source.html":[2,0,0,0,0,0,0,0,1,2,0,0,1],
