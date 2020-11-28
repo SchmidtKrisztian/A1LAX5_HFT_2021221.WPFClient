@@ -161,5 +161,23 @@
             GamerBrand() but with task.
             </summary>
         </member>
+        <member name="M:MyLaptopShop.Program.Menu.LCount">
+            <summary>
+            Function to get the IDs of the Laptop table.
+            </summary>
+            <returns>List of IDs in Laptop Table.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Program.Menu.BCount">
+            <summary>
+            Function to get the IDs of the Brand table.
+            </summary>
+            <returns>List of IDs in Brand Table.</returns>
+        </member>
+        <member name="M:MyLaptopShop.Program.Menu.SCount">
+            <summary>
+            Function to get the IDs of the Specification table.
+            </summary>
+            <returns>List of IDs in Specification Table.</returns>
+        </member>
     </members>
 </doc>

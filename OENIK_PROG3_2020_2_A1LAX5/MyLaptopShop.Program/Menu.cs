@@ -60,8 +60,9 @@ namespace MyLaptopShop.Program
                 .Add(">> List laptops with their average specification cost", () => this.AvgSpec())
                 .Add(">> List the brands names who has Gamer specifications", () => this.GamerBrand())
                 .Add(">> List countries with their laptop count (ASYNC)", () => this.LaptopCountASYNC())
-                 .Add(">> List laptops with their average specification cost (ASYNC)", () => this.AvgSpecASYNC())
-                .Add(">> List the brands names who has Gamer specifications (ASYNC)", () => this.GamerBrandASYNC());
+                .Add(">> List laptops with their average specification cost (ASYNC)", () => this.AvgSpecASYNC())
+                .Add(">> List the brands names who has Gamer specifications (ASYNC)", () => this.GamerBrandASYNC())
+                .Add(">> EXIT", ConsoleMenu.Close);
             menu.Show();
         }
 
@@ -131,8 +132,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -144,6 +143,14 @@ namespace MyLaptopShop.Program
             var msg1 = new { msg = "Enter the new laptops brand ID" };
             Console.WriteLine(msg1.msg);
             int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            List<int> count = this.BCount();
+            while (!count.Contains(bid))
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
             var msg2 = new { msg = "Enter the new laptops name" };
             Console.WriteLine(msg2.msg);
             string name = Console.ReadLine();
@@ -160,8 +167,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -173,6 +178,14 @@ namespace MyLaptopShop.Program
             var msg1 = new { msg = "Enter the new specifications laptop ID" };
             Console.WriteLine(msg1.msg);
             int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            List<int> count = this.LCount();
+            while (!count.Contains(lid))
+            {
+                var msg9 = new { msg = "The is no instance with the given ID in the  [LAPTOP] table. \nTry again..." };
+                Console.WriteLine(msg9.msg);
+                lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
             var msg2 = new { msg = "Enter the new specifications name" };
             Console.WriteLine(msg2.msg);
             string name = Console.ReadLine();
@@ -195,8 +208,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg8 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg8.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -208,10 +219,10 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the brands ID, you want to delete." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.BCount();
-            while (id < 0 || id > count)
+            List<int> count = this.BCount();
+            while (!count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
@@ -223,8 +234,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -236,10 +245,10 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the laptop ID, you want to delete." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.LCount();
-            while (id < 0 || id > count)
+            List<int> count = this.LCount();
+            while (!count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
@@ -251,8 +260,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -264,10 +271,10 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the specification ID, you want to delete." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.SCount();
-            while (id < 0 || id > count)
+            List<int> count = this.SCount();
+            while (!count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [SPECIFICATION] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
@@ -279,8 +286,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -292,10 +297,10 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the brands ID, you want to update" };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.BCount();
-            while (id < 0 || id > count)
+            List<int> count = this.BCount();
+            while (!count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
@@ -317,10 +322,8 @@ namespace MyLaptopShop.Program
             var msg5 = new { msg = "Updating a BRAND was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
-            var msg6 = new { msg = "Press any key to continue..." };
-            Console.WriteLine(msg6.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -332,10 +335,10 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the laptops ID, you want to update" };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.LCount();
-            while (id < 0 || id > count)
+            List<int> count = this.LCount();
+            while (!count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
@@ -343,6 +346,14 @@ namespace MyLaptopShop.Program
             var msg1 = new { msg = "Enter the laptops  new  brand ID" };
             Console.WriteLine(msg1.msg);
             int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            List<int> count2 = this.BCount();
+            while (!count2.Contains(bid))
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
             var msg2 = new { msg = "Enter the laptops new name" };
             Console.WriteLine(msg2.msg);
             string name = Console.ReadLine();
@@ -359,8 +370,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -372,10 +381,10 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the specifications ID, you want to update" };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.SCount();
-            while (id < 0 || id > count)
+            List<int> count = this.SCount();
+            while (!count.Contains(id))
             {
-                var msg10 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg10 = new { msg = "The is no instance with the given ID in the [SPECIFICATION] table. \nTry again..." };
                 Console.WriteLine(msg10.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
@@ -383,6 +392,14 @@ namespace MyLaptopShop.Program
             var msg1 = new { msg = "Enter the specifications new  laptop ID" };
             Console.WriteLine(msg1.msg);
             int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            List<int> count2 = this.LCount();
+            while (!count2.Contains(lid))
+            {
+                var msg10 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
+                Console.WriteLine(msg10.msg);
+                lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
             var msg2 = new { msg = "Enter the specifications new  name" };
             Console.WriteLine(msg2.msg);
             string name = Console.ReadLine();
@@ -405,8 +422,6 @@ namespace MyLaptopShop.Program
             Console.ResetColor();
             var msg8 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg8.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
@@ -418,18 +433,18 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the ID of a brand, you want to find." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.BCount();
-            while (id < 0 || id > count)
+            List<int> count = this.BCount();
+            while (count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
 
             var msg2 = new { msg = this.userlogic.BrandGetOne(id) };
             Console.WriteLine(msg2.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -441,18 +456,18 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the ID of a laptop, you want to find." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.LCount();
-            while (id < 0 || id > count)
+            List<int> count = this.LCount();
+            while (!count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
 
             var msg2 = new { msg = this.userlogic.LaptopGetOne(id) };
             Console.WriteLine(msg2.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -464,18 +479,18 @@ namespace MyLaptopShop.Program
             var msg = new { msg = "Enter the ID of a specification, you want to find." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            int count = this.SCount();
-            while (id < 0 || id > count)
+            List<int> count = this.SCount();
+            while (!count.Contains(id))
             {
-                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                var msg8 = new { msg = "The is no instance with the given ID in the [SPECIFICATION] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
                 id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             }
 
             var msg2 = new { msg = this.userlogic.SpecGetOne(id) };
             Console.WriteLine(msg2.msg);
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -492,8 +507,8 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg2.msg);
             }
 
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -511,8 +526,8 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg2.msg);
             }
 
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -529,8 +544,8 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg2.msg);
             }
 
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -558,8 +573,8 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg3.msg);
             }
 
-            var msg4 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg4.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -587,8 +602,8 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg3.msg);
             }
 
-            var msg4 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg4.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
@@ -616,38 +631,56 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg3.msg);
             }
 
-            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg88.msg);
+            var msg86 = new { msg = "Press any key to continue..." };
+            Console.WriteLine(msg86.msg);
             Console.ReadKey();
         }
 
         /// <summary>
-        /// Function to get the length of the Laptop table.
+        /// Function to get the IDs of the Laptop table.
         /// </summary>
-        /// <returns>This many instanse the Laptop table has.</returns>
-        private int LCount()
+        /// <returns>List of IDs in Laptop Table.</returns>
+        private List<int> LCount()
         {
-            int tmp = this.userlogic.GetAllLaptop().Count;
+            List<int> tmp = new List<int>();
+            var tmp2 = this.userlogic.GetAllLaptop();
+            foreach (var item in tmp2)
+            {
+                tmp.Add(item.Id);
+            }
+
             return tmp;
         }
 
         /// <summary>
-        /// Function to get the length of the Brand table.
+        /// Function to get the IDs of the Brand table.
         /// </summary>
-        /// <returns>This many instanse the Brand table has.</returns>
-        private int BCount()
+        /// <returns>List of IDs in Brand Table.</returns>
+        private List<int> BCount()
         {
-            int tmp = this.userlogic.GetAllBrand().Count;
+            List<int> tmp = new List<int>();
+            var tmp2 = this.userlogic.GetAllBrand();
+            foreach (var item in tmp2)
+            {
+                tmp.Add(item.Id);
+            }
+
             return tmp;
         }
 
         /// <summary>
-        /// Function to get the length of the Specification table.
+        /// Function to get the IDs of the Specification table.
         /// </summary>
-        /// <returns>This many instanse the Specification table has.</returns>
-        private int SCount()
+        /// <returns>List of IDs in Specification Table.</returns>
+        private List<int> SCount()
         {
-            int tmp = this.userlogic.GetAllSpec().Count;
+            List<int> tmp = new List<int>();
+            var tmp2 = this.userlogic.GetAllSpec();
+            foreach (var item in tmp2)
+            {
+                tmp.Add(item.Id);
+            }
+
             return tmp;
         }
     }
