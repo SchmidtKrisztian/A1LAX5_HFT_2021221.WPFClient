@@ -41,74 +41,76 @@ namespace MyLaptopShop.Program
         public void MainMenu()
         {
             var menu = new ConsoleMenu()
-                .Add(" >> List all BRANDs", () => ListAllBrands(this.userlogic))
-                .Add(" >> List all LAPTOPs", () => ListAllLaptops(this.userlogic))
-                .Add(" >> List all SPECIFICATIONs", () => ListAllSpecs(this.userlogic))
-                .Add(" >> Add new BRAND", () => AddBrands(this.adminlogic))
-                .Add(" >> Add new LAPTOP", () => AddLaptops(this.adminlogic))
-                .Add(" >> Add new SPECIFICATION", () => AddSpecs(this.adminlogic))
-                .Add(" >> Delete a BRAND", () => DeleteBrand(this.adminlogic))
-                .Add(" >> Delete a LAPTOP", () => DeleteLaptop(this.adminlogic))
-                .Add(" >> Delete a SPECIFICATION", () => DeleteSpec(this.adminlogic))
-                .Add(" >> Update a BRAND", () => UpdateBrand(this.adminlogic))
-                .Add(">> Update a LAPTOP", () => UpdateLaptop(this.adminlogic))
-                .Add(">> Update a SPECIFICATION", () => UpdateSpec(this.adminlogic))
-                .Add(">> List a BRAND, by ID", () => ListBrand(this.userlogic))
-                .Add(">> List a LAPTOP, by ID", () => ListLaptop(this.userlogic))
-                .Add(">> List a SPECIFICATION, by ID", () => ListSpec(this.userlogic))
-                .Add(">> List countries with their laptop count", () => CountLaptop(this.userlogic))
-                .Add(">> List laptops with their average specification cost", () => AvgSpec(this.userlogic))
-                .Add(">> List the brands names who has Gamer specifications", () => GamerBrand(this.userlogic))
-                .Add(">> List countries with their laptop count (ASYNC)", () => LaptopCountASYNC(this.userlogic))
-                 .Add(">> List laptops with their average specification cost (ASYNC)", () => AvgSpecASYNC(this.userlogic))
-                .Add(">> List the brands names who has Gamer specifications (ASYNC)", () => GamerBrandASYNC(this.userlogic));
+                .Add(" >> List all BRANDs", () => this.ListAllBrands())
+                .Add(" >> List all LAPTOPs", () => this.ListAllLaptops())
+                .Add(" >> List all SPECIFICATIONs", () => this.ListAllSpecs())
+                .Add(" >> Add new BRAND", () => this.AddBrands())
+                .Add(" >> Add new LAPTOP", () => this.AddLaptops())
+                .Add(" >> Add new SPECIFICATION", () => this.AddSpecs())
+                .Add(" >> Delete a BRAND", () => this.DeleteBrand())
+                .Add(" >> Delete a LAPTOP", () => this.DeleteLaptop())
+                .Add(" >> Delete a SPECIFICATION", () => this.DeleteSpec())
+                .Add(" >> Update a BRAND", () => this.UpdateBrand())
+                .Add(">> Update a LAPTOP", () => this.UpdateLaptop())
+                .Add(">> Update a SPECIFICATION", () => this.UpdateSpec())
+                .Add(">> List a BRAND, by ID", () => this.ListBrand())
+                .Add(">> List a LAPTOP, by ID", () => this.ListLaptop())
+                .Add(">> List a SPECIFICATION, by ID", () => this.ListSpec())
+                .Add(">> List countries with their laptop count", () => this.CountLaptop())
+                .Add(">> List laptops with their average specification cost", () => this.AvgSpec())
+                .Add(">> List the brands names who has Gamer specifications", () => this.GamerBrand())
+                .Add(">> List countries with their laptop count (ASYNC)", () => this.LaptopCountASYNC())
+                 .Add(">> List laptops with their average specification cost (ASYNC)", () => this.AvgSpecASYNC())
+                .Add(">> List the brands names who has Gamer specifications (ASYNC)", () => this.GamerBrandASYNC());
             menu.Show();
         }
 
         /// <summary>
         /// Lists all brands.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void ListAllBrands(UserLogic userlogic)
+        private void ListAllBrands()
         {
             Console.WriteLine("<< ALL BRANDS >> \n");
-            userlogic.GetAllBrand()
+            this.userlogic.GetAllBrand()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Lists all laptops.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void ListAllLaptops(UserLogic userlogic)
+        private void ListAllLaptops()
         {
             Console.WriteLine("<< ALL LAPTOPS >> \n");
-            userlogic.GetAllLaptop()
+            this.userlogic.GetAllLaptop()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Lists all specifications.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void ListAllSpecs(UserLogic userlogic)
+        private void ListAllSpecs()
         {
             Console.WriteLine("<< ALL SPECIFICATIONS >> \n");
-            userlogic.GetAllSpec()
+            this.userlogic.GetAllSpec()
                 .ToList()
                 .ForEach(x => Console.WriteLine(x.ToString()));
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for the new brands parameters and adds it to the DB.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void AddBrands(AdministratorLogic adminlogic)
+        private void AddBrands()
         {
             var msg1 = new { msg = "Enter the new brands name" };
             Console.WriteLine(msg1.msg);
@@ -122,21 +124,22 @@ namespace MyLaptopShop.Program
             var msg4 = new { msg = "Enter the new CEO name" };
             Console.WriteLine(msg4.msg);
             string ceo = Console.ReadLine();
-            adminlogic.AddBrand(name, fyear, head, ceo);
+            this.adminlogic.AddBrand(name, fyear, head, ceo);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Adding a BRAND was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for the new laptops parameters and adds it to the DB.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void AddLaptops(AdministratorLogic adminlogic)
+        private void AddLaptops()
         {
             var msg1 = new { msg = "Enter the new laptops brand ID" };
             Console.WriteLine(msg1.msg);
@@ -150,21 +153,22 @@ namespace MyLaptopShop.Program
             var msg4 = new { msg = "Enter the new price" };
             Console.WriteLine(msg4.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.AddLaptop(bid, name, ryear, price);
+            this.adminlogic.AddLaptop(bid, name, ryear, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Adding a LAPTOP was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for the new specifications parameters and adds it to the DB.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void AddSpecs(AdministratorLogic adminlogic)
+        private void AddSpecs()
         {
             var msg1 = new { msg = "Enter the new specifications laptop ID" };
             Console.WriteLine(msg1.msg);
@@ -184,82 +188,118 @@ namespace MyLaptopShop.Program
             var msg6 = new { msg = "Enter the specification price" };
             Console.WriteLine(msg6.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.AddSpec(lid, name, cpu, vga, ram, price);
+            this.adminlogic.AddSpec(lid, name, cpu, vga, ram, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg7 = new { msg = "Adding a SPECIFICATION was successfull! ^^" };
             Console.WriteLine(msg7.msg);
             Console.ResetColor();
             var msg8 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg8.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for a brands ID you want to delet from the DB and Delets it.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void DeleteBrand(AdministratorLogic adminlogic)
+        private void DeleteBrand()
         {
             var msg = new { msg = "Enter the brands ID, you want to delete." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.DeleteBrand(id);
+            int count = this.BCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
+            this.adminlogic.DeleteBrand(id);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Deleting a BRAND was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for a laptops ID you want to delet from the DB and Delets it.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void DeleteLaptop(AdministratorLogic adminlogic)
+        private void DeleteLaptop()
         {
             var msg = new { msg = "Enter the laptop ID, you want to delete." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.DeleteLaptop(id);
+            int count = this.LCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
+            this.adminlogic.DeleteLaptop(id);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Deleting a lAPTOP was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for a specifications ID you want to delet from the DB and Delets it.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void DeleteSpec(AdministratorLogic adminlogic)
+        private void DeleteSpec()
         {
             var msg = new { msg = "Enter the specification ID, you want to delete." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.DeleteSpec(id);
+            int count = this.SCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
+            this.adminlogic.DeleteSpec(id);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Deleting a SPECIFICATION was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for the id of the brand you want to update, than asks for the new parameters, than upedates is.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void UpdateBrand(AdministratorLogic adminlogic)
+        private void UpdateBrand()
         {
             var msg = new { msg = "Enter the brands ID, you want to update" };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int count = this.BCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
             var msg1 = new { msg = "Enter the brands new name" };
             Console.WriteLine(msg1.msg);
             string name = Console.ReadLine();
@@ -272,25 +312,34 @@ namespace MyLaptopShop.Program
             var msg4 = new { msg = "Enter the new CEO name" };
             Console.WriteLine(msg4.msg);
             string ceo = Console.ReadLine();
-            adminlogic.BrandUpdate(id, name, fyear, head, ceo);
+            this.adminlogic.BrandUpdate(id, name, fyear, head, ceo);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Updating a BRAND was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for the id of the laptops you want to update, than asks for the new parameters, than upedates is.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void UpdateLaptop(AdministratorLogic adminlogic)
+        private void UpdateLaptop()
         {
             var msg = new { msg = "Enter the laptops ID, you want to update" };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int count = this.LCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
             var msg1 = new { msg = "Enter the laptops  new  brand ID" };
             Console.WriteLine(msg1.msg);
             int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -303,25 +352,34 @@ namespace MyLaptopShop.Program
             var msg4 = new { msg = "Enter the new price" };
             Console.WriteLine(msg4.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.LaptopUpdate(id, name, ryear, price);
+            this.adminlogic.LaptopUpdate(id, name, ryear, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Updating a LAPTOP was successfull! ^^" };
             Console.WriteLine(msg5.msg);
             Console.ResetColor();
             var msg6 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg6.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for the id of the specifications you want to update, than asks for the new parameters, than upedates is.
         /// </summary>
-        /// <param name="adminlogic">AdministratorLogic instance.</param>
-        private static void UpdateSpec(AdministratorLogic adminlogic)
+        private void UpdateSpec()
         {
             var msg = new { msg = "Enter the specifications ID, you want to update" };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int count = this.SCount();
+            while (id < 0 || id > count)
+            {
+                var msg10 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg10.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
             var msg1 = new { msg = "Enter the specifications new  laptop ID" };
             Console.WriteLine(msg1.msg);
             int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -340,117 +398,148 @@ namespace MyLaptopShop.Program
             var msg6 = new { msg = "Enter the specification price" };
             Console.WriteLine(msg6.msg);
             int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            adminlogic.SpecUpdate(id, name, cpu, vga, ram, price);
+            this.adminlogic.SpecUpdate(id, name, cpu, vga, ram, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg7 = new { msg = "Updating a LAPTOP was successfull! ^^" };
             Console.WriteLine(msg7.msg);
             Console.ResetColor();
             var msg8 = new { msg = "Press any key to continue..." };
             Console.WriteLine(msg8.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for an ID of the brand you want to see, and lists it.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void ListBrand(UserLogic userlogic)
+        private void ListBrand()
         {
             var msg = new { msg = "Enter the ID of a brand, you want to find." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            var msg2 = new { msg = userlogic.BrandGetOne(id) };
+            int count = this.BCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
+            var msg2 = new { msg = this.userlogic.BrandGetOne(id) };
             Console.WriteLine(msg2.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for an ID of the laptop you want to see, and lists it.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void ListLaptop(UserLogic userlogic)
+        private void ListLaptop()
         {
             var msg = new { msg = "Enter the ID of a laptop, you want to find." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            var msg2 = new { msg = userlogic.LaptopGetOne(id) };
+            int count = this.LCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
+            var msg2 = new { msg = this.userlogic.LaptopGetOne(id) };
             Console.WriteLine(msg2.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Asks for an ID of the specification you want to see, and lists it.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void ListSpec(UserLogic userlogic)
+        private void ListSpec()
         {
             var msg = new { msg = "Enter the ID of a specification, you want to find." };
             Console.WriteLine(msg.msg);
             int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            var msg2 = new { msg = userlogic.SpecGetOne(id) };
+            int count = this.SCount();
+            while (id < 0 || id > count)
+            {
+                var msg8 = new { msg = "The is no instance with the given ID in the table. \nTry again..." };
+                Console.WriteLine(msg8.msg);
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+
+            var msg2 = new { msg = this.userlogic.SpecGetOne(id) };
             Console.WriteLine(msg2.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Lists countries and their laptop counts.
         /// </summary>
-        /// <param name="userlogic">Userlogic instance.</param>
-        private static void CountLaptop(UserLogic userlogic)
+        private void CountLaptop()
         {
             var msg = new { msg = "<<Countries and their laptop counts>> \n" };
             Console.WriteLine(msg.msg);
-            foreach (var item in userlogic.LaptopCount())
+            foreach (var item in this.userlogic.LaptopCount())
             {
                 var msg2 = new { msg = item };
                 Console.WriteLine(msg2.msg);
             }
 
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Lists laptops and their average specification price.
         /// </summary>
-        /// <param name="userlogic">Userlogic instance.</param>
-        private static void AvgSpec(UserLogic userlogic)
+        private void AvgSpec()
         {
             var msg = new { msg = "<<Laptops and their average specification price>> \n" };
             Console.WriteLine(msg.msg);
-            IList<string> list = userlogic.AvgSpecPrice();
+            IList<string> list = this.userlogic.AvgSpecPrice();
             foreach (var item in list)
             {
                 var msg2 = new { msg = item.ToString() };
                 Console.WriteLine(msg2.msg);
             }
 
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// Lists the brands names who has Gamer specifications.
         /// </summary>
-        /// <param name="userlogic">Userlogic instance.</param>
-        private static void GamerBrand(UserLogic userlogic)
+        private void GamerBrand()
         {
             var msg = new { msg = "<<Brands names who has Gamer specifications>> \n" };
             Console.WriteLine(msg.msg);
-            foreach (var item in userlogic.GamerBrand())
+            foreach (var item in this.userlogic.GamerBrand())
             {
                 var msg2 = new { msg = item };
                 Console.WriteLine(msg2.msg);
             }
 
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
         }
 
         /// <summary>
         /// LaptopCount() but with task.
         /// </summary>
-        /// <param name="userLogic">UserLogic instance.</param>
-        private static void LaptopCountASYNC(UserLogic userLogic)
+        private void LaptopCountASYNC()
         {
-            var tmp = userLogic.LaptopCountAsync();
+            var tmp = this.userlogic.LaptopCountAsync();
             Thread.Sleep(500);
             var msg = new { msg = "\n Processing started...." };
             Console.WriteLine(msg.msg);
@@ -477,10 +566,9 @@ namespace MyLaptopShop.Program
         /// <summary>
         /// AvgSpec() but with task.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void AvgSpecASYNC(UserLogic userlogic)
+        private void AvgSpecASYNC()
         {
-            var tmp = userlogic.AvgSpecPriceAsync();
+            var tmp = this.userlogic.AvgSpecPriceAsync();
             Thread.Sleep(500);
             var msg = new { msg = "\n Processing started...." };
             Console.WriteLine(msg.msg);
@@ -507,10 +595,9 @@ namespace MyLaptopShop.Program
         /// <summary>
         /// GamerBrand() but with task.
         /// </summary>
-        /// <param name="userlogic">UserLogic instance.</param>
-        private static void GamerBrandASYNC(UserLogic userlogic)
+        private void GamerBrandASYNC()
         {
-            var tmp = userlogic.GamerBrandAsync();
+            var tmp = this.userlogic.GamerBrandAsync();
             Thread.Sleep(500);
             var msg = new { msg = "Processing started...." };
             Console.WriteLine(msg.msg);
@@ -529,9 +616,39 @@ namespace MyLaptopShop.Program
                 Console.WriteLine(msg3.msg);
             }
 
-            var msg4 = new { msg = "\n Press [ENTER] to continue...." };
-            Console.WriteLine(msg4.msg);
+            var msg88 = new { msg = "\n Press [ENTER] to continue...." };
+            Console.WriteLine(msg88.msg);
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Function to get the length of the Laptop table.
+        /// </summary>
+        /// <returns>This many instanse the Laptop table has.</returns>
+        private int LCount()
+        {
+            int tmp = this.userlogic.GetAllLaptop().Count;
+            return tmp;
+        }
+
+        /// <summary>
+        /// Function to get the length of the Brand table.
+        /// </summary>
+        /// <returns>This many instanse the Brand table has.</returns>
+        private int BCount()
+        {
+            int tmp = this.userlogic.GetAllBrand().Count;
+            return tmp;
+        }
+
+        /// <summary>
+        /// Function to get the length of the Specification table.
+        /// </summary>
+        /// <returns>This many instanse the Specification table has.</returns>
+        private int SCount()
+        {
+            int tmp = this.userlogic.GetAllSpec().Count;
+            return tmp;
         }
     }
 }

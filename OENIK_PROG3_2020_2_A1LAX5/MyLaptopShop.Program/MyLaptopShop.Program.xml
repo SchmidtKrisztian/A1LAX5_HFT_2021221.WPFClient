@@ -56,131 +56,110 @@
             The maithod that runs the menu.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.ListAllBrands(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.ListAllBrands">
             <summary>
             Lists all brands.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.ListAllLaptops(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.ListAllLaptops">
             <summary>
             Lists all laptops.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.ListAllSpecs(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.ListAllSpecs">
             <summary>
             Lists all specifications.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.AddBrands(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.AddBrands">
             <summary>
             Asks for the new brands parameters and adds it to the DB.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.AddLaptops(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.AddLaptops">
             <summary>
             Asks for the new laptops parameters and adds it to the DB.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.AddSpecs(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.AddSpecs">
             <summary>
             Asks for the new specifications parameters and adds it to the DB.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.DeleteBrand(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.DeleteBrand">
             <summary>
             Asks for a brands ID you want to delet from the DB and Delets it.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.DeleteLaptop(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.DeleteLaptop">
             <summary>
             Asks for a laptops ID you want to delet from the DB and Delets it.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.DeleteSpec(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.DeleteSpec">
             <summary>
             Asks for a specifications ID you want to delet from the DB and Delets it.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.UpdateBrand(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.UpdateBrand">
             <summary>
             Asks for the id of the brand you want to update, than asks for the new parameters, than upedates is.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.UpdateLaptop(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.UpdateLaptop">
             <summary>
             Asks for the id of the laptops you want to update, than asks for the new parameters, than upedates is.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.UpdateSpec(MyLaptopShop.Logic.Classes.AdministratorLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.UpdateSpec">
             <summary>
             Asks for the id of the specifications you want to update, than asks for the new parameters, than upedates is.
             </summary>
-            <param name="adminlogic">AdministratorLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.ListBrand(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.ListBrand">
             <summary>
             Asks for an ID of the brand you want to see, and lists it.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.ListLaptop(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.ListLaptop">
             <summary>
             Asks for an ID of the laptop you want to see, and lists it.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.ListSpec(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.ListSpec">
             <summary>
             Asks for an ID of the specification you want to see, and lists it.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.CountLaptop(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.CountLaptop">
             <summary>
             Lists countries and their laptop counts.
             </summary>
-            <param name="userlogic">Userlogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.AvgSpec(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.AvgSpec">
             <summary>
             Lists laptops and their average specification price.
             </summary>
-            <param name="userlogic">Userlogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.GamerBrand(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.GamerBrand">
             <summary>
             Lists the brands names who has Gamer specifications.
             </summary>
-            <param name="userlogic">Userlogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.LaptopCountASYNC(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.LaptopCountASYNC">
             <summary>
             LaptopCount() but with task.
             </summary>
-            <param name="userLogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.AvgSpecASYNC(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.AvgSpecASYNC">
             <summary>
             AvgSpec() but with task.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
-        <member name="M:MyLaptopShop.Program.Menu.GamerBrandASYNC(MyLaptopShop.Logic.Classes.UserLogic)">
+        <member name="M:MyLaptopShop.Program.Menu.GamerBrandASYNC">
             <summary>
             GamerBrand() but with task.
             </summary>
-            <param name="userlogic">UserLogic instance.</param>
         </member>
     </members>
 </doc>
