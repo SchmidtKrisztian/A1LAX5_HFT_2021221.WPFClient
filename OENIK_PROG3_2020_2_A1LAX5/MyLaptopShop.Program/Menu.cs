@@ -118,7 +118,34 @@ namespace MyLaptopShop.Program
             string name = Console.ReadLine();
             var msg2 = new { msg = "Enter the new foundation year" };
             Console.WriteLine(msg2.msg);
-            int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int fyear = 0;
+            try
+            {
+                fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                fyear = -1;
+            }
+
+            while (fyear < 0 || fyear > 2021)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    fyear = -1;
+                }
+            }
+
             var msg3 = new { msg = "Enter the new headquarters" };
             Console.WriteLine(msg3.msg);
             string head = Console.ReadLine();
@@ -142,13 +169,32 @@ namespace MyLaptopShop.Program
         {
             var msg1 = new { msg = "Enter the new laptops brand ID" };
             Console.WriteLine(msg1.msg);
-            int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int bid = 0;
+            try
+            {
+                bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                bid = -1;
+            }
+
             List<int> count = this.BCount();
             while (!count.Contains(bid))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg2 = new { msg = "Enter the new laptops name" };
@@ -156,10 +202,64 @@ namespace MyLaptopShop.Program
             string name = Console.ReadLine();
             var msg3 = new { msg = "Enter the new release year" };
             Console.WriteLine(msg3.msg);
-            int ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int ryear = 0;
+            try
+            {
+                ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                ryear = -1;
+            }
+
+            while (ryear < 0 || ryear > 2021)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    ryear = -1;
+                }
+            }
+
             var msg4 = new { msg = "Enter the new price" };
             Console.WriteLine(msg4.msg);
-            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int price = 0;
+            try
+            {
+                price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                price = -1;
+            }
+
+            while (price < 0)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    price = -1;
+                }
+            }
+
             this.adminlogic.AddLaptop(bid, name, ryear, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Adding a LAPTOP was successfull! ^^" };
@@ -177,13 +277,32 @@ namespace MyLaptopShop.Program
         {
             var msg1 = new { msg = "Enter the new specifications laptop ID" };
             Console.WriteLine(msg1.msg);
-            int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int lid = 0;
+            try
+            {
+                lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                lid = -1;
+            }
+
             List<int> count = this.LCount();
             while (!count.Contains(lid))
             {
                 var msg9 = new { msg = "The is no instance with the given ID in the  [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg9.msg);
-                lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg2 = new { msg = "Enter the new specifications name" };
@@ -197,10 +316,64 @@ namespace MyLaptopShop.Program
             string vga = Console.ReadLine();
             var msg5 = new { msg = "Enter the RAM in Gb" };
             Console.WriteLine(msg5.msg);
-            int ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int ram = 0;
+            try
+            {
+                ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                ram = -1;
+            }
+
+            while (ram < 0)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    ram = -1;
+                }
+            }
+
             var msg6 = new { msg = "Enter the specification price" };
             Console.WriteLine(msg6.msg);
-            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int price = 0;
+            try
+            {
+                price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                price = -1;
+            }
+
+            while (price < 0)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    price = -1;
+                }
+            }
+
             this.adminlogic.AddSpec(lid, name, cpu, vga, ram, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg7 = new { msg = "Adding a SPECIFICATION was successfull! ^^" };
@@ -218,13 +391,32 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the brands ID, you want to delete." };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.BCount();
             while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             this.adminlogic.DeleteBrand(id);
@@ -244,13 +436,32 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the laptop ID, you want to delete." };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.LCount();
             while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             this.adminlogic.DeleteLaptop(id);
@@ -270,13 +481,32 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the specification ID, you want to delete." };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.SCount();
             while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [SPECIFICATION] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             this.adminlogic.DeleteSpec(id);
@@ -296,13 +526,32 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the brands ID, you want to update" };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.BCount();
             while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg1 = new { msg = "Enter the brands new name" };
@@ -310,7 +559,34 @@ namespace MyLaptopShop.Program
             string name = Console.ReadLine();
             var msg2 = new { msg = "Enter the foundation new  year" };
             Console.WriteLine(msg2.msg);
-            int fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int fyear = 0;
+            try
+            {
+                fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                fyear = -1;
+            }
+
+            while (fyear < 0 || fyear > 2021)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    fyear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    fyear = -1;
+                }
+            }
+
             var msg3 = new { msg = "Enter the new headquarters" };
             Console.WriteLine(msg3.msg);
             string head = Console.ReadLine();
@@ -334,24 +610,62 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the laptops ID, you want to update" };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.LCount();
             while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg1 = new { msg = "Enter the laptops  new  brand ID" };
             Console.WriteLine(msg1.msg);
-            int bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int bid = 0;
+            try
+            {
+                bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                bid = -1;
+            }
+
             List<int> count2 = this.BCount();
             while (!count2.Contains(bid))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    bid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg2 = new { msg = "Enter the laptops new name" };
@@ -359,10 +673,64 @@ namespace MyLaptopShop.Program
             string name = Console.ReadLine();
             var msg3 = new { msg = "Enter the new release year" };
             Console.WriteLine(msg3.msg);
-            int ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int ryear = 0;
+            try
+            {
+                ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                ryear = -1;
+            }
+
+            while (ryear < 0 || ryear > 2021)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    ryear = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    ryear = -1;
+                }
+            }
+
             var msg4 = new { msg = "Enter the new price" };
             Console.WriteLine(msg4.msg);
-            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int price = 0;
+            try
+            {
+                price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                price = -1;
+            }
+
+            while (price < 0)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    price = -1;
+                }
+            }
+
             this.adminlogic.LaptopUpdate(id, name, ryear, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg5 = new { msg = "Updating a LAPTOP was successfull! ^^" };
@@ -380,24 +748,62 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the specifications ID, you want to update" };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.SCount();
             while (!count.Contains(id))
             {
                 var msg10 = new { msg = "The is no instance with the given ID in the [SPECIFICATION] table. \nTry again..." };
                 Console.WriteLine(msg10.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg1 = new { msg = "Enter the specifications new  laptop ID" };
             Console.WriteLine(msg1.msg);
-            int lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int lid = 0;
+            try
+            {
+                lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+            }
+
             List<int> count2 = this.LCount();
             while (!count2.Contains(lid))
             {
                 var msg10 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg10.msg);
-                lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    lid = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    lid = -1;
+                }
             }
 
             var msg2 = new { msg = "Enter the specifications new  name" };
@@ -411,10 +817,64 @@ namespace MyLaptopShop.Program
             string vga = Console.ReadLine();
             var msg5 = new { msg = "Enter the RAM in Gb" };
             Console.WriteLine(msg5.msg);
-            int ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int ram = 0;
+            try
+            {
+                ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                ram = -1;
+            }
+
+            while (ram < 0)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    ram = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    ram = -1;
+                }
+            }
+
             var msg6 = new { msg = "Enter the specification price" };
             Console.WriteLine(msg6.msg);
-            int price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int price = 0;
+            try
+            {
+                price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                price = -1;
+            }
+
+            while (price < 0)
+            {
+                var msg26 = new { msg = "Try again..." };
+                Console.WriteLine(msg26.msg);
+                try
+                {
+                    price = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                    price = -1;
+                }
+            }
+
             this.adminlogic.SpecUpdate(id, name, cpu, vga, ram, price);
             Console.ForegroundColor = ConsoleColor.Green;
             var msg7 = new { msg = "Updating a LAPTOP was successfull! ^^" };
@@ -432,13 +892,32 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the ID of a brand, you want to find." };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.BCount();
-            while (count.Contains(id))
+            while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [BRAND] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg2 = new { msg = this.userlogic.BrandGetOne(id) };
@@ -455,13 +934,32 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the ID of a laptop, you want to find." };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.LCount();
             while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [LAPTOP] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg2 = new { msg = this.userlogic.LaptopGetOne(id) };
@@ -478,13 +976,32 @@ namespace MyLaptopShop.Program
         {
             var msg = new { msg = "Enter the ID of a specification, you want to find." };
             Console.WriteLine(msg.msg);
-            int id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            int id = 0;
+            try
+            {
+                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+            }
+            catch (System.FormatException)
+            {
+                var msg95 = new { msg = "It must be and integer!" };
+                Console.WriteLine(msg95.msg);
+                id = -1;
+            }
+
             List<int> count = this.SCount();
             while (!count.Contains(id))
             {
                 var msg8 = new { msg = "The is no instance with the given ID in the [SPECIFICATION] table. \nTry again..." };
                 Console.WriteLine(msg8.msg);
-                id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                try
+                {
+                    id = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
+                }
+                catch (System.FormatException)
+                {
+                    var msg95 = new { msg = "It must be and integer!" };
+                    Console.WriteLine(msg95.msg);
+                }
             }
 
             var msg2 = new { msg = this.userlogic.SpecGetOne(id) };
