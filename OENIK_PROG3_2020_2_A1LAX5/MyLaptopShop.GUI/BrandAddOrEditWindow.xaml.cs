@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace MyLaptopShop.GUI
 {
     /// <summary>
-    /// Interaction logic for LaptopAddOrEditWindow.xaml
+    /// Interaction logic for BrandAddOrEditWindow.xaml
     /// </summary>
-    public partial class LaptopAddOrEditWindow : Window
+    public partial class BrandAddOrEditWindow : Window
     {
-        public LaptopAddOrEditWindow()
+        public BrandAddOrEditWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

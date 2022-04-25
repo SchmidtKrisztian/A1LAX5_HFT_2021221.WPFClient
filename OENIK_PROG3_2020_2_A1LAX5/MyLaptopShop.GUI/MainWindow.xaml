@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1">
+            <Button Content="Add new laptop" Padding="10" Margin="10"/>
+            <Button Content="Edit selected laptop" Padding="10" Margin="10"/>
+            <Button Content="Delete selected laptop" Padding="10" Margin="10"/>
+        </StackPanel>
     </Grid>
 </Window>
