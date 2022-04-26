@@ -12,9 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Logic\" />
     <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyLaptopShop.Logic\MyLaptopShop.Logic.csproj" />
   </ItemGroup>
 
 </Project>
