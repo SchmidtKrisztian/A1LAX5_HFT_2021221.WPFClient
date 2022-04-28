@@ -34,5 +34,9 @@ namespace MyLaptopShop.Repository
         /// </summary>
         /// <returns>All the objects.</returns>
         IQueryable<T> GetAll();
+
+        void Update(T item);
+
+        void Create(T item);
      }
 }

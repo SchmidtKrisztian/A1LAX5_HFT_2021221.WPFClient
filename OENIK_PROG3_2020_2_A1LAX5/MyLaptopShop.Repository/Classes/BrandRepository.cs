@@ -6,24 +6,24 @@ namespace MyLaptopShop.Repository.Classes
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using Microsoft.EntityFrameworkCore;
     using MyLaptopShop.Data.Models;
-    using MyLaptopShop.Repository.Interfaces;
+    using MyLaptopShop.Repository;
 
     /// <summary>
     /// This is the Brands reposotory class.
     /// </summary>
-    public class BrandRepository : MainRepository<Brand>, IBrandRepository
+    public class BrandRepository : Repository<Brand>, IRepository<Brand>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BrandRepository"/> class.
         /// </summary>
         /// <param name="ctx">Database context.</param>
-        public BrandRepository(DbContext ctx)
+        public BrandRepository(LaptopShopContext ctx)
             : base(ctx)
         {
-            this.Ctx = ctx;
         }
 
         /// <summary>
@@ -42,8 +42,13 @@ namespace MyLaptopShop.Repository.Classes
                 Headquarters = headquarters,
                 CEOName = ceoname,
             };
-            this.Ctx.Add(tmp);
-            this.Ctx.SaveChanges();
+            this.ctx.Add(tmp);
+            this.ctx.SaveChanges();
+        }
+
+        public override Brand GetOne(int id)
+        {
+            return ctx.Brands.FirstOrDefault(t => t.Id == id);
         }
 
         /// <summary>
@@ -54,14 +59,18 @@ namespace MyLaptopShop.Repository.Classes
         /// <param name="foundationyear">New year of foundation of the brand.</param>
         /// <param name="headquarters">New headquarters of the brand.</param>
         /// <param name="ceoname">New name of the brands CEO.</param>
-        public void Update(int id, string name, int foundationyear, string headquarters, string ceoname)
+        public override void Update(Brand item)
         {
-            var brand = this.GetOne(id);
-            brand.Name = name;
-            brand.Headquarters = headquarters;
-            brand.FoundationYear = foundationyear;
-            brand.CEOName = ceoname;
-            this.Ctx.SaveChanges();
+            var old = GetOne(item.Id);
+            foreach (var prop in old.GetType().GetProperties())
+            {
+                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
+                {
+                    prop.SetValue(old, prop.GetValue(item));
+                }
+            }
+
+            ctx.SaveChanges();
         }
     }
 }

@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLaptopShop.Logic.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLaptopShop.GUI", "MyLaptopShop.GUI\MyLaptopShop.GUI.csproj", "{5C8F42A6-1786-45B2-897D-5847CC138C9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLaptopShop.Endpoint", "MyLaptopShop.Endpoint\MyLaptopShop.Endpoint.csproj", "{CB686200-8AA7-423C-99BE-415260E8441D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLaptopShop.Endpoint", "MyLaptopShop.Endpoint\MyLaptopShop.Endpoint.csproj", "{C3A3BAC3-618A-4FDD-84A3-185FAD0D7AD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{5C8F42A6-1786-45B2-897D-5847CC138C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C8F42A6-1786-45B2-897D-5847CC138C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C8F42A6-1786-45B2-897D-5847CC138C9B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB686200-8AA7-423C-99BE-415260E8441D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB686200-8AA7-423C-99BE-415260E8441D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB686200-8AA7-423C-99BE-415260E8441D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB686200-8AA7-423C-99BE-415260E8441D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A3BAC3-618A-4FDD-84A3-185FAD0D7AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A3BAC3-618A-4FDD-84A3-185FAD0D7AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A3BAC3-618A-4FDD-84A3-185FAD0D7AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A3BAC3-618A-4FDD-84A3-185FAD0D7AD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,42 +6,30 @@ namespace MyLaptopShop.Repository.Classes
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Runtime.InteropServices.ComTypes;
     using System.Text;
     using Microsoft.EntityFrameworkCore;
     using MyLaptopShop.Data.Models;
-    using MyLaptopShop.Repository.Interfaces;
+    using MyLaptopShop.Repository;
 
     /// <summary>
     /// This is the Laptop repository class.
     /// </summary>
-    public class LaptopRepository : MainRepository<Laptop>, ILaptopRepository
+    public class LaptopRepository : Repository<Laptop>, IRepository<Laptop>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LaptopRepository"/> class.
         /// </summary>
         /// <param name="ctx">DbContext from the original class.</param>
-        public LaptopRepository(DbContext ctx)
-            : base(ctx) => this.Ctx = ctx;
-
-        /// <summary>
-        /// Add a new laptop to the DB.
-        /// </summary>
-        /// <param name="brandid">ID of the laptops brand.</param>
-        /// <param name="name">Name of the laptop.</param>
-        /// <param name="releaseyear">The year when the laptop was released.</param>
-        /// <param name="baseprice">Base price.</param>
-        public void Add(int brandid, string name, int releaseyear, int baseprice)
+        public LaptopRepository(LaptopShopContext ctx)
+           : base(ctx)
         {
-            Laptop tmp = new Laptop
-            {
-                BrandId = brandid,
-                Name = name,
-                ReleaseYear = releaseyear,
-                BasePrice = baseprice,
-            };
-            this.Ctx.Add(tmp);
-            this.Ctx.SaveChanges();
+        }
+
+        public override Laptop GetOne(int id)
+        {
+            return ctx.Laptops.FirstOrDefault(t => t.Id == id);
         }
 
         /// <summary>
@@ -51,13 +39,17 @@ namespace MyLaptopShop.Repository.Classes
         /// <param name="name">The new name of the laptop.</param>
         /// <param name="releaseyear">The new year of the laptops release.</param>
         /// <param name="baseprice">The new price of the laptop.</param>
-        public void Update(int id, string name, int releaseyear, int baseprice)
+        public override void Update(Laptop item)
         {
-            var laptop = this.GetOne(id);
-            laptop.Name = name;
-            laptop.BasePrice = baseprice;
-            laptop.ReleaseYear = releaseyear;
-            this.Ctx.SaveChanges();
+            var old = GetOne(item.Id);
+            foreach (var prop in old.GetType().GetProperties())
+            {
+                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
+                {
+                    prop.SetValue(old, prop.GetValue(item));
+                }
+            }
+            ctx.SaveChanges();
         }
     }
 }

@@ -6,6 +6,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MyLaptopShop.Data.Models;
+using MyLaptopShop.Logic.Classes;
+using MyLaptopShop.Logic.Interfaces;
+using MyLaptopShop.Repository;
+using MyLaptopShop.Repository.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +30,16 @@ namespace MyLaptopShop.Endpoint
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddTransient<LaptopShopContext>();
+
+            services.AddTransient<IRepository<Brand>, BrandRepository>();
+            services.AddTransient<IRepository<Specification>, SpecificationRepository>();
+            services.AddTransient<IRepository<Laptop>, LaptopRepository>();
+
+            services.AddTransient<IAdministratorLogic, AdministratorLogic>();
+            services.AddTransient<IUserLogic, UserLogic>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

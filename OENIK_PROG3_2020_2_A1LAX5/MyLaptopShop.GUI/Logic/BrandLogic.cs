@@ -17,7 +17,7 @@ namespace MyLaptopShop.GUI.Logic
         {
 
         }
-        public DeleteBrand()
+        public void DeleteBrand()
         {
 
         }

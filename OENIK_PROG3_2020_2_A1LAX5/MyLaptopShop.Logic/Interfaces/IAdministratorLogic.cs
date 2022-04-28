@@ -21,7 +21,7 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <param name="foundationyear">Foundation year of the new brand.</param>
         /// <param name="headquarters">Headquarters of the new brand.</param>
         /// <param name="ceoname">The CEOs name of the new brand.</param>
-        void AddBrand(string name, int foundationyear, string headquarters, string ceoname);
+        void AddBrand(Brand item);
 
         /// <summary>
         /// Add a new laptop to the DB.
@@ -30,7 +30,7 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <param name="name">Name of the laptop.</param>
         /// <param name="releaseyear">The year when the laptop was released.</param>
         /// <param name="baseprice">Base price.</param>
-        void AddLaptop(int brandid, string name, int releaseyear, int baseprice);
+        void AddLaptop(Laptop item);
 
         /// <summary>
         /// Add a new specification to the DB.
@@ -41,7 +41,7 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <param name="graphicscard">Nem of the Graphicscard.</param>
         /// <param name="ram">Gb of RAM.</param>
         /// <param name="price">Additional price of the specification.</param>
-        void AddSpec(int laptopid, string name, string cpu, string graphicscard, int ram, int price);
+        void AddSpec(Specification item);
 
         /// <summary>
         /// Deleting the brand with the given ID.
@@ -69,7 +69,7 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <param name="foundationyear">New year of foundation of the brand.</param>
         /// <param name="headquarters">New headquarters of the brand.</param>
         /// <param name="ceoname">New name of the brands CEO.</param>
-        void BrandUpdate(int id, string name, int foundationyear, string headquarters, string ceoname);
+        void BrandUpdate(Brand item);
 
         /// <summary>
         /// Updating a laptops parameters.
@@ -78,7 +78,7 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <param name="name">The new name of the laptop.</param>
         /// <param name="releaseyear">The new year of the laptops release.</param>
         /// <param name="baseprice">The new price of the laptop.</param>
-        void LaptopUpdate(int id, string name, int releaseyear, int baseprice);
+        void LaptopUpdate(Laptop item);
 
         /// <summary>
         /// Updating a specification parameters.
@@ -89,6 +89,6 @@ namespace MyLaptopShop.Logic.Interfaces
         /// <param name="graphicscard">New nameof the graphicscard.</param>
         /// <param name="ram">New Gb of RAMs.</param>
         /// <param name="price">Additional price of the specification.</param>
-        void SpecUpdate(int id, string name, string cpu, string graphicscard, int ram, int price);
+        void SpecUpdate(Specification item);
     }
 }

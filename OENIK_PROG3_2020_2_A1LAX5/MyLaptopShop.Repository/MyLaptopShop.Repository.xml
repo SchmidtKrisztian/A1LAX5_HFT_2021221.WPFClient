@@ -9,7 +9,7 @@
             This is the Brands reposotory class.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.#ctor(MyLaptopShop.Data.Models.LaptopShopContext)">
             <summary>
             Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.BrandRepository"/> class.
             </summary>
@@ -24,7 +24,7 @@
             <param name="headquarters">Headquarters of the new brand.</param>
             <param name="ceoname">The CEOs name of the new brand.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.Update(System.Int32,System.String,System.Int32,System.String,System.String)">
+        <member name="M:MyLaptopShop.Repository.Classes.BrandRepository.Update(MyLaptopShop.Data.Models.Brand)">
             <summary>
             Updating a brands parameters.
             </summary>
@@ -39,22 +39,13 @@
             This is the Laptop repository class.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.#ctor(MyLaptopShop.Data.Models.LaptopShopContext)">
             <summary>
             Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.LaptopRepository"/> class.
             </summary>
             <param name="ctx">DbContext from the original class.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.Add(System.Int32,System.String,System.Int32,System.Int32)">
-            <summary>
-            Add a new laptop to the DB.
-            </summary>
-            <param name="brandid">ID of the laptops brand.</param>
-            <param name="name">Name of the laptop.</param>
-            <param name="releaseyear">The year when the laptop was released.</param>
-            <param name="baseprice">Base price.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.Update(System.Int32,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Repository.Classes.LaptopRepository.Update(MyLaptopShop.Data.Models.Laptop)">
             <summary>
             Updating a laptops parameters.
             </summary>
@@ -63,36 +54,36 @@
             <param name="releaseyear">The new year of the laptops release.</param>
             <param name="baseprice">The new price of the laptop.</param>
         </member>
-        <member name="T:MyLaptopShop.Repository.Classes.MainRepository`1">
+        <member name="T:MyLaptopShop.Repository.Classes.Repository`1">
             <summary>
             Abstract MainRepository class.
             </summary>
             <typeparam name="T">Generic parameter, class type.</typeparam>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.#ctor(MyLaptopShop.Data.Models.LaptopShopContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.MainRepository`1"/> class.
+            Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.Repository`1"/> class.
             </summary>
             <param name="ctx">BdContext parameter.</param>
         </member>
-        <member name="P:MyLaptopShop.Repository.Classes.MainRepository`1.Ctx">
+        <member name="F:MyLaptopShop.Repository.Classes.Repository`1.ctx">
             <summary>
             Gets or sets DbContext property.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.Delete(System.Int32)">
+        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.Delete(System.Int32)">
             <summary>
             Method, youn can delete instances to the context.
             </summary>
             <param name="id">The id of the instance we want to delete.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.GetAll">
+        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.GetAll">
             <summary>
             Function, you can get a set of the instances in the context.
             </summary>
             <returns>A set of instances.</returns>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.MainRepository`1.GetOne(System.Int32)">
+        <member name="M:MyLaptopShop.Repository.Classes.Repository`1.GetOne(System.Int32)">
             <summary>
             Function, you can get the instance which belong to the parameter ID.
             </summary>
@@ -104,98 +95,13 @@
             This is the repository class of the specifications.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.#ctor(MyLaptopShop.Data.Models.LaptopShopContext)">
             <summary>
             Initializes a new instance of the <see cref="T:MyLaptopShop.Repository.Classes.SpecificationRepository"/> class.
             </summary>
             <param name="ctx">Database context.</param>
         </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.Add(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
-            <summary>
-            Add a new specification to the DB.
-            </summary>
-            <param name="laptopid">The id of the laptop witch has the specification.</param>
-            <param name="name">Name of the specification.</param>
-            <param name="cpu">Name of the cpu.</param>
-            <param name="graphicscard">Nem of the Graphicscard.</param>
-            <param name="ram">Gb of RAM.</param>
-            <param name="price">Additional price of the specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.Update(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
-            <summary>
-            Updating a specification parameters.
-            </summary>
-            <param name="id">Id of the specification.</param>
-            <param name="name">New name of the specification.</param>
-            <param name="cpu">New CPUs name.</param>
-            <param name="graphicscard">New nameof the graphicscard.</param>
-            <param name="ram">New Gb of RAMs.</param>
-            <param name="price">Additional price of the specification.</param>
-        </member>
-        <member name="T:MyLaptopShop.Repository.Interfaces.IBrandRepository">
-            <summary>
-            This is the interface of the BrandRepository.
-            </summary>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.IBrandRepository.Add(System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Add a new brand to the DB.
-            </summary>
-            <param name="name">Name of the new brand.</param>
-            <param name="foundationyear">Foundation year of the new brand.</param>
-            <param name="headquarters">Headquarters of the new brand.</param>
-            <param name="ceoname">The CEOs name of the new brand.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.IBrandRepository.Update(System.Int32,System.String,System.Int32,System.String,System.String)">
-            <summary>
-            Updating a brands parameters.
-            </summary>
-            <param name="id">Id of the brand.</param>
-            <param name="name">New name of the brand.</param>
-            <param name="foundationyear">New year of foundation of the brand.</param>
-            <param name="headquarters">New headquarters of the brand.</param>
-            <param name="ceoname">New name of the brands CEO.</param>
-        </member>
-        <member name="T:MyLaptopShop.Repository.Interfaces.ILaptopRepository">
-            <summary>
-            This is the Interface of the LaptopRepository.
-            </summary>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ILaptopRepository.Add(System.Int32,System.String,System.Int32,System.Int32)">
-            <summary>
-            Add a new laptop to the DB.
-            </summary>
-            <param name="brandid">ID of the laptops brand.</param>
-            <param name="name">Name of the laptop.</param>
-            <param name="releaseyear">The year when the laptop was released.</param>
-            <param name="baseprice">Base price.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ILaptopRepository.Update(System.Int32,System.String,System.Int32,System.Int32)">
-            <summary>
-            Updating a laptops parameters.
-            </summary>
-            <param name="id">Id of the laptop.</param>
-            <param name="name">The new name of the laptop.</param>
-            <param name="releaseyear">The new year of the laptops release.</param>
-            <param name="baseprice">The new price of the laptop.</param>
-        </member>
-        <member name="T:MyLaptopShop.Repository.Interfaces.ISpecificationRepository">
-            <summary>
-            This is the interface of the SpecificationRepository.
-            </summary>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.Add(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
-            <summary>
-            Add a new specification to the DB.
-            </summary>
-            <param name="laptopid">The id of the laptop witch has the specification.</param>
-            <param name="name">Name of the specification.</param>
-            <param name="cpu">Name of the cpu.</param>
-            <param name="graphicscard">Nem of the Graphicscard.</param>
-            <param name="ram">Gb of RAM.</param>
-            <param name="price">Additional price of the specification.</param>
-        </member>
-        <member name="M:MyLaptopShop.Repository.Interfaces.ISpecificationRepository.Update(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Repository.Classes.SpecificationRepository.Update(MyLaptopShop.Data.Models.Specification)">
             <summary>
             Updating a specification parameters.
             </summary>

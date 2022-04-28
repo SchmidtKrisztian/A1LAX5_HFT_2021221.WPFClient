@@ -9,27 +9,34 @@ namespace MyLaptopShop.Repository.Classes
     using System.Linq;
     using System.Text;
     using Microsoft.EntityFrameworkCore;
+    using MyLaptopShop.Data.Models;
 
     /// <summary>
     /// Abstract MainRepository class.
     /// </summary>
     /// <typeparam name="T">Generic parameter, class type.</typeparam>
-    public abstract class MainRepository<T> : IRepository<T>
+    public abstract class Repository<T> : IRepository<T>
         where T : class
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainRepository{T}"/> class.
+        /// Initializes a new instance of the <see cref="Repository{T}"/> class.
         /// </summary>
         /// <param name="ctx">BdContext parameter.</param>
-        protected MainRepository(DbContext ctx)
+        protected Repository(LaptopShopContext ctx)
         {
-            this.Ctx = ctx;
+            this.ctx = ctx;
         }
 
         /// <summary>
         /// Gets or sets DbContext property.
         /// </summary>
-        protected DbContext Ctx { get; set; }
+        protected LaptopShopContext ctx;
+
+        public void Create(T item)
+        {
+            ctx.Set<T>().Add(item);
+            ctx.SaveChanges();
+        }
 
         /// <summary>
         /// Method, youn can delete instances to the context.
@@ -37,8 +44,8 @@ namespace MyLaptopShop.Repository.Classes
         /// <param name="id">The id of the instance we want to delete.</param>
         public void Delete(int id)
         {
-            this.Ctx.Set<T>().Remove(this.GetOne(id));
-            this.Ctx.SaveChanges();
+            this.ctx.Set<T>().Remove(this.GetOne(id));
+            this.ctx.SaveChanges();
         }
 
         /// <summary>
@@ -47,7 +54,7 @@ namespace MyLaptopShop.Repository.Classes
         /// <returns>A set of instances.</returns>
         public IQueryable<T> GetAll()
         {
-            return this.Ctx.Set<T>();
+            return this.ctx.Set<T>();
         }
 
         /// <summary>
@@ -55,9 +62,8 @@ namespace MyLaptopShop.Repository.Classes
         /// </summary>
         /// <param name="id">We want the instance of this ID.</param>
         /// <returns>The instance with the parameter ID.</returns>
-        public T GetOne(int id)
-        {
-            return this.Ctx.Find(typeof(T), id) as T;
-        }
+        public abstract T GetOne(int id);
+
+        public abstract void Update(T item);
     }
 }

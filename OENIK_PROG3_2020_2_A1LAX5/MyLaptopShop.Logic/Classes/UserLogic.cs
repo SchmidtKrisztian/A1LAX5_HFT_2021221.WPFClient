@@ -12,24 +12,18 @@ namespace MyLaptopShop.Logic.Classes
     using Microsoft.EntityFrameworkCore;
     using MyLaptopShop.Data.Models;
     using MyLaptopShop.Logic.Interfaces;
-    using MyLaptopShop.Repository.Interfaces;
+    using MyLaptopShop.Repository;
 
     /// <summary>
     /// Class that does the listing methods.
     /// </summary>
     public class UserLogic : IUserLogic
     {
-        private IBrandRepository brandrepo;
-        private ILaptopRepository laptoprepo;
-        private ISpecificationRepository specrepo;
+        private IRepository<Brand> brandrepo;
+        private IRepository<Laptop> laptoprepo;
+        private IRepository<Specification> specrepo;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserLogic"/> class.
-        /// </summary>
-        /// <param name="brandrepo">Brand repository instance.</param>
-        /// <param name="laptoprepo">Laptop repository instance.</param>
-        /// <param name="specrepo">Specification repository instance.</param>
-        public UserLogic(IBrandRepository brandrepo, ILaptopRepository laptoprepo, ISpecificationRepository specrepo)
+        public UserLogic(IRepository<Brand> brandrepo, IRepository<Laptop> laptoprepo, IRepository<Specification> specrepo)
         {
             this.brandrepo = brandrepo;
             this.laptoprepo = laptoprepo;

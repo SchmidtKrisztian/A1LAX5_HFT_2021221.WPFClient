@@ -9,15 +9,7 @@
             AdministratorLogic class, has all the create delete or update methods.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.#ctor(MyLaptopShop.Repository.Interfaces.IBrandRepository,MyLaptopShop.Repository.Interfaces.ILaptopRepository,MyLaptopShop.Repository.Interfaces.ISpecificationRepository)">
-            <summary>
-            Initializes a new instance of the <see cref="T:MyLaptopShop.Logic.Classes.AdministratorLogic"/> class.
-            </summary>
-            <param name="brandrepo">Brand repository instance.</param>
-            <param name="laptoprepo">Laptop repository instance.</param>
-            <param name="specrepo">Specification repository instance.</param>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddBrand(System.String,System.Int32,System.String,System.String)">
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddBrand(MyLaptopShop.Data.Models.Brand)">
             <summary>
             Add a new brand to the DB.
             </summary>
@@ -26,7 +18,7 @@
             <param name="headquarters">Headquarters of the new brand.</param>
             <param name="ceoname">The CEOs name of the new brand.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddLaptop(System.Int32,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddLaptop(MyLaptopShop.Data.Models.Laptop)">
             <summary>
             Add a new laptop to the DB.
             </summary>
@@ -35,7 +27,7 @@
             <param name="releaseyear">The year when the laptop was released.</param>
             <param name="baseprice">Base price.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddSpec(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.AddSpec(MyLaptopShop.Data.Models.Specification)">
             <summary>
             Add a new specification to the DB.
             </summary>
@@ -64,7 +56,7 @@
             </summary>
             <param name="id">ID of the laptop we want to delete.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.BrandUpdate(System.Int32,System.String,System.Int32,System.String,System.String)">
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.BrandUpdate(MyLaptopShop.Data.Models.Brand)">
             <summary>
             Updating a brands parameters.
             </summary>
@@ -74,7 +66,7 @@
             <param name="headquarters">New headquarters of the brand.</param>
             <param name="ceoname">New name of the brands CEO.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.LaptopUpdate(System.Int32,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.LaptopUpdate(MyLaptopShop.Data.Models.Laptop)">
             <summary>
             Updating a laptops parameters.
             </summary>
@@ -83,7 +75,7 @@
             <param name="releaseyear">The new year of the laptops release.</param>
             <param name="baseprice">The new price of the laptop.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.SpecUpdate(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Classes.AdministratorLogic.SpecUpdate(MyLaptopShop.Data.Models.Specification)">
             <summary>
             Updating a specification parameters.
             </summary>
@@ -98,14 +90,6 @@
             <summary>
             Class that does the listing methods.
             </summary>
-        </member>
-        <member name="M:MyLaptopShop.Logic.Classes.UserLogic.#ctor(MyLaptopShop.Repository.Interfaces.IBrandRepository,MyLaptopShop.Repository.Interfaces.ILaptopRepository,MyLaptopShop.Repository.Interfaces.ISpecificationRepository)">
-            <summary>
-            Initializes a new instance of the <see cref="T:MyLaptopShop.Logic.Classes.UserLogic"/> class.
-            </summary>
-            <param name="brandrepo">Brand repository instance.</param>
-            <param name="laptoprepo">Laptop repository instance.</param>
-            <param name="specrepo">Specification repository instance.</param>
         </member>
         <member name="M:MyLaptopShop.Logic.Classes.UserLogic.BrandGetOne(System.Int32)">
             <summary>
@@ -187,7 +171,7 @@
             This is the Laptoplogic interface.
             </summary>
         </member>
-        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddBrand(System.String,System.Int32,System.String,System.String)">
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddBrand(MyLaptopShop.Data.Models.Brand)">
             <summary>
             Add a new brand to the DB.
             </summary>
@@ -196,7 +180,7 @@
             <param name="headquarters">Headquarters of the new brand.</param>
             <param name="ceoname">The CEOs name of the new brand.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddLaptop(System.Int32,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddLaptop(MyLaptopShop.Data.Models.Laptop)">
             <summary>
             Add a new laptop to the DB.
             </summary>
@@ -205,7 +189,7 @@
             <param name="releaseyear">The year when the laptop was released.</param>
             <param name="baseprice">Base price.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddSpec(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.AddSpec(MyLaptopShop.Data.Models.Specification)">
             <summary>
             Add a new specification to the DB.
             </summary>
@@ -234,7 +218,7 @@
             </summary>
             <param name="id">ID of the laptop we want to delete.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.BrandUpdate(System.Int32,System.String,System.Int32,System.String,System.String)">
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.BrandUpdate(MyLaptopShop.Data.Models.Brand)">
             <summary>
             Updating a brands parameters.
             </summary>
@@ -244,7 +228,7 @@
             <param name="headquarters">New headquarters of the brand.</param>
             <param name="ceoname">New name of the brands CEO.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.LaptopUpdate(System.Int32,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.LaptopUpdate(MyLaptopShop.Data.Models.Laptop)">
             <summary>
             Updating a laptops parameters.
             </summary>
@@ -253,7 +237,7 @@
             <param name="releaseyear">The new year of the laptops release.</param>
             <param name="baseprice">The new price of the laptop.</param>
         </member>
-        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.SpecUpdate(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+        <member name="M:MyLaptopShop.Logic.Interfaces.IAdministratorLogic.SpecUpdate(MyLaptopShop.Data.Models.Specification)">
             <summary>
             Updating a specification parameters.
             </summary>
