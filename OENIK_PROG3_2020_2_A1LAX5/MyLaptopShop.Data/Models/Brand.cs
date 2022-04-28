@@ -10,6 +10,7 @@ namespace MyLaptopShop.Data.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Dynamic;
     using System.Text;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// This is the Model class of the Brands.
@@ -79,6 +80,7 @@ namespace MyLaptopShop.Data.Models
         /// <summary>
         /// Gets or sets the laptops of the brand, not mapped poroperty.
         /// </summary>
+        [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Laptop> Laptops { get; set; }
 

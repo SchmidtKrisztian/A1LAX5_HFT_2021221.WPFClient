@@ -9,6 +9,7 @@ namespace MyLaptopShop.Data.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// This the Model class of the Brands.
@@ -83,6 +84,7 @@ namespace MyLaptopShop.Data.Models
         /// <summary>
         /// Gets or sets the specifications of the laptop, not mapped poroperty.
         /// </summary>
+        [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Specification> Specifications { get; set; }
 
