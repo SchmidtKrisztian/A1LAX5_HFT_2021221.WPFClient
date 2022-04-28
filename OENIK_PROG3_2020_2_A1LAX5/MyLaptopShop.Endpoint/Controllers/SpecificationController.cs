@@ -9,12 +9,12 @@ namespace MyLaptopShop.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class LaptopController : ControllerBase
+    public class SpecificationController : ControllerBase
     {
         IAdministratorLogic adminlogic;
         IUserLogic userlogic;
 
-        public LaptopController(IAdministratorLogic adminlogic, IUserLogic userlogic)
+        public SpecificationController(IAdministratorLogic adminlogic, IUserLogic userlogic)
         {
             this.adminlogic = adminlogic;
             this.userlogic = userlogic;
@@ -22,37 +22,37 @@ namespace MyLaptopShop.Endpoint.Controllers
 
         // GET: api/<BrandController>
         [HttpGet]
-        public IEnumerable<Laptop> GetAll()
+        public IEnumerable<Specification> GetAll()
         {
-            return this.userlogic.GetAllLaptop();
+            return this.userlogic.GetAllSpec();
         }
 
         // GET api/<BrandController>/5
         [HttpGet("{id}")]
-        public Laptop GetOne(int id)
+        public Specification GetOne(int id)
         {
-            return this.userlogic.LaptopGetOne(id);
+            return this.userlogic.SpecGetOne(id);
         }
 
         // POST api/<BrandController>
         [HttpPost]
-        public void Create([FromBody] Laptop value)
+        public void Create([FromBody] Specification value)
         {
-            this.adminlogic.AddLaptop(value);
+            this.adminlogic.AddSpec(value);
         }
 
         // PUT api/<BrandController>/5
         [HttpPut]
-        public void Update([FromBody] Laptop value)
+        public void Update([FromBody] Specification value)
         {
-            this.adminlogic.LaptopUpdate(value);
+            this.adminlogic.SpecUpdate(value);
         }
 
         // DELETE api/<BrandController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            this.adminlogic.DeleteLaptop(id);
+            this.adminlogic.DeleteSpec(id);
         }
     }
 }
