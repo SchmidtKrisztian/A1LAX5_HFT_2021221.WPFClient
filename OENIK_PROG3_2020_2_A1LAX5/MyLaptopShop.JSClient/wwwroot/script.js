@@ -15,7 +15,7 @@ function setupSignalR() {
     connection.on("BrandCreated", (user, message) => {
         getdata();
     });
-    connection.on("BrandCreated", (user, message) => {
+    connection.on("BrandDeleted", (user, message) => {
         getdata();
     });
     connection.on("BrandUpdated", (user, message) => {

@@ -59,7 +59,10 @@ namespace MyLaptopShop.WpfClient
                 {
                     Brands.Add(new Brand()
                     {
-                        Name = SelectedBrand.Name
+                        Name = SelectedBrand.Name,
+                        Headquarters = SelectedBrand.Headquarters,
+                        FoundationYear = SelectedBrand.FoundationYear,
+                        CEOName = SelectedBrand.CEOName,
 
                     });
                 });
