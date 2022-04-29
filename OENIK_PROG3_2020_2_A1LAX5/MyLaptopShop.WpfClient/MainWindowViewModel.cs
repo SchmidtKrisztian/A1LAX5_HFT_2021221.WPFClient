@@ -50,7 +50,7 @@ namespace MyLaptopShop.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Brands = new RestCollection<Brand>("http://localhost:60327/", "brand");
+                Brands = new RestCollection<Brand>("http://localhost:60327/", "brand", "hub");
                 CreateBrandCommand = new RelayCommand(() =>
                 {
                     Brands.Add(new Brand()

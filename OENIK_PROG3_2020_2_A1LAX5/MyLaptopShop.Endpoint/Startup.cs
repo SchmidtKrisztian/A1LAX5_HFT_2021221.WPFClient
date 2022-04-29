@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MyLaptopShop.Data.Models;
+using MyLaptopShop.Endpoint.Services;
 using MyLaptopShop.Logic.Classes;
 using MyLaptopShop.Logic.Interfaces;
 using MyLaptopShop.Repository;
@@ -42,6 +43,7 @@ namespace MyLaptopShop.Endpoint
             services.AddTransient<IAdministratorLogic, AdministratorLogic>();
             services.AddTransient<IUserLogic, UserLogic>();
 
+            services.AddSignalR();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -81,6 +83,7 @@ namespace MyLaptopShop.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }
