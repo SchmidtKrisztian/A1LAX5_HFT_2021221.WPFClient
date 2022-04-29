@@ -4,11 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLaptopShop.WpfClient"
+        xmlns:local2="clr-namespace:MyLaptopShop.WpfClient.Converter"
         mc:Ignorable="d"
         Title="Brand Editor" Height="450" Width="800">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <local2:IntToDateTimeConverter x:Key="conv"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -27,10 +31,20 @@
         </ListBox>
         <StackPanel Grid.Column="1">
             <Label Content="Name" Background="LightBlue" Padding="10"/>
-            <TextBox Text="{Binding SelectedBrand.Name}" Padding="10" Margin="0,0,0,30"/>
-            <Button Content="Create" Command="{Binding CreateBrandCommand}" Padding="10" Margin="10"/>
-            <Button Content="Update" Command="{Binding UpdateBrandCommand}" Padding="10"  Margin="10"/>
-            <Button Content="Delete" Command="{Binding DeleteBrandCommand}" Padding="10"  Margin="10"/>
+            <TextBox Text="{Binding SelectedBrand.Name}" Padding="10"/>
+            <Label Content="Foundation Year" Background="LightBlue" Padding="10"/>
+            <DatePicker SelectedDate="{Binding SelectedBrand.FoundationYear, Converter={StaticResource conv}}" Padding="10"/>
+            <Label Content="Headquarters" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedBrand.Headquarters}" Padding="10"/>
+            <Label Content="CEOs name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedBrand.CEOName}" Padding="10" Margin="0,0,0,30"/>
+            
+            <WrapPanel HorizontalAlignment="Center">
+                <Button Content="Create" Command="{Binding CreateBrandCommand}"  Padding="10"  Margin="10"/>
+                <Button Content="Update" Command="{Binding UpdateBrandCommand}" Padding="10"  Margin="10"/>
+                <Button Content="Delete" Command="{Binding DeleteBrandCommand}" Padding="10"  Margin="10"/>
+            </WrapPanel>
+            
         </StackPanel>
 
     </Grid>

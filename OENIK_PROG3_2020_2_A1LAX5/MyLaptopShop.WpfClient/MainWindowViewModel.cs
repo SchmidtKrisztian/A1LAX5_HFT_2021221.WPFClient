@@ -25,7 +25,11 @@ namespace MyLaptopShop.WpfClient
                     selectedBrand = new Brand()
                     {
                         Name = value.Name,
-                        Id = value.Id
+                        Id = value.Id,
+                        Headquarters = value.Headquarters,
+                        FoundationYear = value.FoundationYear,
+                        CEOName = value.CEOName,
+
                     };
                     OnPropertyChanged();
                     (DeleteBrandCommand as RelayCommand).NotifyCanExecuteChanged();
