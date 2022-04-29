@@ -12,7 +12,9 @@ namespace MyLaptopShop.Program
     using ConsoleTools;
     using MyLaptopShop.Data.Models;
     using MyLaptopShop.Logic.Classes;
+    using MyLaptopShop.Repository;
     using MyLaptopShop.Repository.Classes;
+    using MyLaptopShop.Repository.Database;
 
     /// <summary>
     /// This is the main class.

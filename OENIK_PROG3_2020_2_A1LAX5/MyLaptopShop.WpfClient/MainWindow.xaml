@@ -10,6 +10,28 @@
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" ItemsSource="{Binding Brands}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedBrand}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <StackPanel>
+                            <Label Content="{Binding Name}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <Label Content="Name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedBrand.Name}" Padding="10" Margin="0,0,0,30"/>
+            <Button Content="Create" Command="{Binding CreateBrandCommand}" Padding="10" Margin="10"/>
+            <Button Content="Update" Command="{Binding UpdateBrandCommand}" Padding="10"  Margin="10"/>
+            <Button Content="Delete" Command="{Binding DeleteBrandCommand}" Padding="10"  Margin="10"/>
+        </StackPanel>
 
     </Grid>
 </Window>
