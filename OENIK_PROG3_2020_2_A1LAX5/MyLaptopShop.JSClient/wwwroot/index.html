@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Brand UI</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Brand Catalog</h1>
+
+    <div id="formdiv">
+        <label>Brand Name</label>
+        <input type="text" id="brandname" />
+        <label>Foundation Year</label>
+        <input type="text" id="foundyear" />
+        <label>Headquarters</label>
+        <input type="text" id="headq" />
+        <label>CEO name</label>
+        <input type="text" id="ceoname" />
+        <button type="button" onclick="create()">Add Brand</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Foundation year</th>
+                <th>Headquarters</th>
+                <th>CEO name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
