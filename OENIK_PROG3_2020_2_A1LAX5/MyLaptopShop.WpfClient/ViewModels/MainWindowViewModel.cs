@@ -53,7 +53,7 @@ namespace MyLaptopShop.WpfClient
         public MainWindowViewModel()
         {
             if (!IsInDesignMode)
-            {
+            {               
                 Brands = new RestCollection<Brand>("http://localhost:60327/", "brand", "hub");
                 CreateBrandCommand = new RelayCommand(() =>
                 {
@@ -80,7 +80,8 @@ namespace MyLaptopShop.WpfClient
                 {
                     Brands.Update(SelectedBrand);
                 });
-                SelectedBrand = new Brand();
+                selectedBrand = new Brand();               
+
             }
         }
 
