@@ -24,7 +24,7 @@
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">
                         <StackPanel>
-                            <Label Content="{Binding Name}" ContentStringFormat="Név: {0}"/>
+                            <Label Content="{Binding Name}" ContentStringFormat="Name: {0}"/>
                             <Label Content="{Binding ReleaseYear}" ContentStringFormat="Release year: {0}"/>
                             <Label Content="{Binding BasePrice}" ContentStringFormat="Baseprice: {0}"/>
                         </StackPanel>

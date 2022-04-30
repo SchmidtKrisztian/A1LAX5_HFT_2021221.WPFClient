@@ -21,11 +21,11 @@
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">
                         <StackPanel>
-                            <Label Content="{Binding Name}" ContentStringFormat="Név: {0}"/>
-                            <Label Content="{Binding CPU}" ContentStringFormat="Release year: {0}"/>
-                            <Label Content="{Binding GraphicsCardName}" ContentStringFormat="Baseprice: {0}"/>
-                            <Label Content="{Binding RAM}" ContentStringFormat="Baseprice: {0}"/>
-                            <Label Content="{Binding AdditionalPrice}" ContentStringFormat="Baseprice: {0}"/>
+                            <Label Content="{Binding Name}" ContentStringFormat="Name: {0}"/>
+                            <Label Content="{Binding CPU}" ContentStringFormat="CPU: {0}"/>
+                            <Label Content="{Binding GraphicsCardName}" ContentStringFormat="Graphincs card: {0}"/>
+                            <Label Content="{Binding RAM}" ContentStringFormat="RAM: {0}"/>
+                            <Label Content="{Binding AdditionalPrice}" ContentStringFormat="Additional pirce: {0}"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>

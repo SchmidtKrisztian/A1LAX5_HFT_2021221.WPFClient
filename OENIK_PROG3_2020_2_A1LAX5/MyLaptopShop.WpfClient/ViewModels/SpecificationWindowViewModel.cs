@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
+
 namespace MyLaptopShop.WpfClient.ViewModels
 {
-    public class SpecificationWindowViewModel : ObservableRecipient
+    public class SpecificationWindowViewModel :ObservableRecipient
     {
         public RestCollection<Specification> Specifications { get; set; }
 
@@ -63,11 +64,11 @@ namespace MyLaptopShop.WpfClient.ViewModels
                     Specifications.Add(new Specification()
                     {
                         Name = SelectedSpecification.Name,
-                        LaptopId= SelectedSpecification.LaptopId,
-                        CPU= SelectedSpecification.CPU,
+                        LaptopId = SelectedSpecification.LaptopId,
+                        CPU = SelectedSpecification.CPU,
                         RAM = SelectedSpecification.RAM,
-                        GraphicsCardName= SelectedSpecification.GraphicsCardName,
-                        AdditionalPrice= SelectedSpecification.AdditionalPrice,
+                        GraphicsCardName = SelectedSpecification.GraphicsCardName,
+                        AdditionalPrice = SelectedSpecification.AdditionalPrice,
                     });
                 });
 
