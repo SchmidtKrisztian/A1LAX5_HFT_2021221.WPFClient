@@ -23,7 +23,10 @@
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">
                         <StackPanel>
-                            <Label Content="{Binding Name}"/>
+                            <Label Content="{Binding Name}" ContentStringFormat="Név: {0}"/>
+                            <Label Content="{Binding FoundationYear}" ContentStringFormat="Foundation year: {0}"/>
+                            <Label Content="{Binding Headquarters}" ContentStringFormat="Headquarters: {0}"/>
+                            <Label Content="{Binding CEOName}" ContentStringFormat="CEOs name: {0}"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
