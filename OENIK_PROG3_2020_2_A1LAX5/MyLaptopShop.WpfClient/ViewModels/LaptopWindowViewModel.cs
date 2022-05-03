@@ -1,4 +1,5 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using MyLaptopShop.Data.Models;
 using System;
@@ -81,7 +82,7 @@ namespace MyLaptopShop.WpfClient.ViewModels
 
                 UpdateLaptopCommand = new RelayCommand(() =>
                 {
-                    Laptops.Update(SelectedLaptop);
+                        Laptops.Update(SelectedLaptop);                  
                 });
                 SelectedLaptop = new Laptop();
             }

@@ -13,7 +13,7 @@ using System.Windows.Input;
 
 namespace MyLaptopShop.WpfClient.ViewModels
 {
-    public class SpecificationWindowViewModel :ObservableRecipient
+    public class SpecificationWindowViewModel : ObservableRecipient
     {
         public RestCollection<Specification> Specifications { get; set; }
 
@@ -58,17 +58,17 @@ namespace MyLaptopShop.WpfClient.ViewModels
         {
             if (!IsInDesignMode)
             {
-                Specifications = new RestCollection<Specification>("http://localhost:60327/", "specification", "hub");
+                Specifications = new RestCollection<Specification>("http://localhost:60327/", "brand", "hub");
                 CreateSpecificationCommand = new RelayCommand(() =>
                 {
                     Specifications.Add(new Specification()
                     {
                         Name = SelectedSpecification.Name,
-                        LaptopId = SelectedSpecification.LaptopId,
-                        CPU = SelectedSpecification.CPU,
-                        RAM = SelectedSpecification.RAM,
-                        GraphicsCardName = SelectedSpecification.GraphicsCardName,
-                        AdditionalPrice = SelectedSpecification.AdditionalPrice,
+                        LaptopId= SelectedSpecification.LaptopId,
+                        CPU= SelectedSpecification.CPU,
+                        GraphicsCardName= SelectedSpecification.GraphicsCardName,
+                        RAM= SelectedSpecification.RAM,
+                        AdditionalPrice= SelectedSpecification.AdditionalPrice,
                     });
                 });
 
@@ -85,7 +85,7 @@ namespace MyLaptopShop.WpfClient.ViewModels
                 {
                     Specifications.Update(SelectedSpecification);
                 });
-                SelectedSpecification = new Specification();
+                selectedSpecification = new Specification();
             }
         }
     }

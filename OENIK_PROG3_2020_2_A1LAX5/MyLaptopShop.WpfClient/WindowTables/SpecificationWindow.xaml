@@ -10,7 +10,6 @@
     <Window.DataContext>
         <local2:SpecificationWindowViewModel/>
     </Window.DataContext>
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -26,6 +25,7 @@
                             <Label Content="{Binding GraphicsCardName}" ContentStringFormat="Graphincs card: {0}"/>
                             <Label Content="{Binding RAM}" ContentStringFormat="RAM: {0}"/>
                             <Label Content="{Binding AdditionalPrice}" ContentStringFormat="Additional pirce: {0}"/>
+                            <Label Content="{Binding LaptopId}" ContentStringFormat="Laptop ID: {0}"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>

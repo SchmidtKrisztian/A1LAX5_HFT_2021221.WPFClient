@@ -43,7 +43,7 @@ namespace MyLaptopShop.Endpoint.Controllers
         public void Create([FromBody] Specification value)
         {
             this.adminlogic.AddSpec(value);
-            this.hub.Clients.All.SendAsync("SpecCreated", value);
+            this.hub.Clients.All.SendAsync("SpecificationCreated", value);
         }
 
         // PUT api/<BrandController>/5
@@ -51,7 +51,7 @@ namespace MyLaptopShop.Endpoint.Controllers
         public void Update([FromBody] Specification value)
         {
             this.adminlogic.SpecUpdate(value);
-            this.hub.Clients.All.SendAsync("SpecUpdated", value);
+            this.hub.Clients.All.SendAsync("SpecificationUpdated", value);
         }
 
         // DELETE api/<BrandController>/5
@@ -60,7 +60,7 @@ namespace MyLaptopShop.Endpoint.Controllers
         {
             var specToDelete = this.userlogic.SpecGetOne(id);
             this.adminlogic.DeleteSpec(id);
-            this.hub.Clients.All.SendAsync("SpecDeleted", specToDelete);
+            this.hub.Clients.All.SendAsync("SpecificationDeleted", specToDelete);
         }
     }
 }
